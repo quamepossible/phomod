@@ -1,50 +1,65 @@
 
 $('.f-form').submit(function(e){
     e.preventDefault();
+    var errLn = $('.is-invalid').length;
+    console.log(errLn);
 
-    var fullName =  $('.fname').val();
-    var userName =  $('.username').val();
-    var phone =  $('.phone').val();
-    var whatsapp =  $('.whatsapp').val();
-    var insta =  $('.instagram').val();
-    var website =  $('.website').val();
-    var region =  $('.region').val();
-    var town =  $('.city').val();
-    var company =  $('.company').val();
-    var category =  $('.category').val();
-    var days =  $('.days').val();
-    var travel =  $('.travel').val();
+    if(errLn == 0){
+        var fullName =  $('.fname').val();
+        var userName =  $('.username').val();
+        var phone =  $('.phone').val();
+        var whatsapp =  $('.whatsapp').val();
+        var insta =  $('.instagram').val();
+        var website =  $('.website').val();
+        var region =  $('.region').val();
+        var town =  $('.city').val();
+        var company =  $('.company').val();
+        var category =  $('.category').val();
+        var days =  $('.days').val();
+        var travel =  $('.travel').val();
 
-    $.ajax({
-        method : 'POST',
-        url : 'save.php',
-        data : {
-            fullname : fullName,
-            username : userName,
-            phone : phone,
-            whatsapp : whatsapp,
-            instagram : insta,
-            website : website,
-            region : region,
-            city : town,
-            company : company,
-            category : category,
-            days : days,
-            travel : travel
-        },
-        success : function(data){
-            data = $.trim(data);
-            console.log(data)
-            if(data == 'changed'){
-                swal.fire(
-                    'Saved',
-                    'Changes saved successfully',
-                    'success'
-                )
-                $('.span-1-of-3').load('load.php', {uname : userName});
+        $.ajax({
+            method : 'POST',
+            url : 'save.php',
+            data : {
+                fullname : fullName,
+                username : userName,
+                phone : phone,
+                whatsapp : whatsapp,
+                instagram : insta,
+                website : website,
+                region : region,
+                city : town,
+                company : company,
+                category : category,
+                days : days,
+                travel : travel
+            },
+            success : function(data){
+                data = $.trim(data);
+                console.log(data);
+                // if(data == 'invalid'){
+
+                // }
+                if(data == 'changed'){
+                    swal.fire(
+                        'Saved',
+                        'Changes saved successfully',
+                        'success'
+                    )
+                    $('.span-1-of-3').load('load.php', {uname : userName});
+                }
+
+                else{
+                    swal.fire(
+                        'Error',
+                        'There was an error, try again',
+                        'error'
+                    )
+                }
             }
-        }
-    })
+        })
+    }
 })
 
 
@@ -136,6 +151,4 @@ $('.del-pic').submit(function(del){
             })
         })}
     })
-
-    
 })

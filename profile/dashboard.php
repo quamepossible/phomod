@@ -17,6 +17,7 @@
         <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
         <script src="dashboard.js" defer></script>
+        <script src="ots.js" defer></script>
         <meta name="theme-color" content="blue">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Edit Profile</title>
@@ -88,11 +89,26 @@
                 </div>
 
                 <div class="span-2-of-3">
+                    <?php
+                        if(isset($_GET['mes'])){
+                            $errMes = $_GET['mes'];
+                            if($errMes == 'success'){
+                                $errMes = 'Profile updated successfully';
+                                $col = 'green';
+                            }
+                            else{
+                                $col = 'red';
+                            }
+                        }
+                        else{
+                            $errMes = '';
+                        }
+                    ?>
 
                     <div class="sec-title">
                         <p class="feat-text">EDIT PROFILE</p>
                     </div>
-
+                    <p class="error" style="color:<?php echo $col?>; text-align:center"><?php echo $errMes?></p>
                     <form method="POST" action="save.php" onsubmit="return validate()" class="f-form">
                         <div class="row">
 
@@ -247,37 +263,6 @@
             </div>
         </div>
 <script src="../sweetalert/package/dist/sweetalert2.all.min.js"></script>
-<script src="ots.js"></script>
     </body>
     </html>
 <?php endif?>
-    <!-- EMAIL AND PASS -->
-    <!-- <div class="form-row">
-                            <div class="me-md-4 mb-3">
-                                <label for="validationServerEmail">Email*</label>
-                                <input name="email" value="" type="email" class="form-control" id="validationServerEmail" placeholder="user@mail.com">
-                                <div class="invalid-feedback">
-                                    Please provide a valid email.
-                                </div>
-                            </div>
-
-                            <div class="me-md-4 mb-3">
-                                <label for="validationServerPassOne">Password*</label>
-                                <input name="pass" type="password" class="form-control" id="validationServerPassOne" placeholder="*****">
-                                <div class="invalid-feedback" id="passOn">
-                                    Please provide a valid password.
-                                </div>
-                            </div>
-
-                            <div class="me-md-4 mb-3">
-                                <label for="validationServerPassTwo">Confirm password*</label>
-                                <input type="password" class="form-control" id="validationServerPassTwo" placeholder="*****">
-                                <div class="invalid-feedback" id="pass">
-                                    Please provide a valid password.
-                                </div>
-                            </div>
-
-                        </div> -->
-
-                        <!-- EMAIL AND PASS -->
-
