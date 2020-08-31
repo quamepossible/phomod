@@ -1,0 +1,829 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.mn-ppga{
+    display: none;
+}
+
+/******** OVERLAY **********/
+
+.grand{
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 1;
+}
+
+.paren{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cir{
+    background: rgba(255, 255, 255, 0.301);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: cover;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    z-index: -1;
+}
+
+@keyframes cover{
+    from{width: 150px; 
+        height: 150px;
+        background: linear-gradient(rgb(0, 238, 255), rgb(0, 162, 255));
+    }
+    to{
+        width: 180px; 
+        height: 180px;
+        background: linear-gradient(rgb(0, 238, 255), rgb(0, 162, 255));
+    }
+
+}
+
+.img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+}
+
+/******** OVERLAY **********/
+
+header{
+    background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url("../gallery/MODELS/photo (1).jpg");
+    height: 90vh;
+    width: 100%;
+    /* overflow: hidden; */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+
+}
+
+/* LOGIN SECTION */
+
+#loginModal{
+    background-color: rgb(0, 0, 0);
+    /* background: red; */
+    height: 100vh;
+    padding: 0;
+    position: relative;
+}
+
+.close-mod{
+    position: absolute;
+    z-index: 5;
+}
+
+button span{
+    font-size: 50px;
+    color: white;
+}
+
+.modal-dialog{
+    /* background: green; */
+    width: 100%;
+    height: 90%;
+}
+
+#loginModal .modal-content{
+    background: linear-gradient(rgba(0, 0, 0, 0.473), rgba(0, 0, 0, 0.473)), url('../gallery/MODELS/model.jpg');
+    height: 600px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.log-tex{
+    width: 90%;
+    padding: 10px;
+    border-radius: 50px;
+    margin: auto;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+
+.put-cen{
+    text-align: center;
+}
+
+.cir-logo{
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 5px black;
+}
+
+.err{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    color: red;
+    font-weight: bold;
+    /* background: blue; */
+}
+
+#log-form{
+    width: 90%;
+    margin-top: 10px;
+    /* background-color: red; */
+}
+
+.cent-inp{
+    width: 70%;
+    margin: auto;
+    /* background: red; */
+}
+
+.e-text, .p-text{
+    margin-bottom: 10px;
+    color: white;
+}
+
+
+#mail-inp, #pwd-inp{
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none !important;
+}
+
+#mail-inp{
+    margin-bottom: 40px;
+}
+
+.log-btn{
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    padding: 10px 10px;
+    border-radius: 30px;
+}
+
+#err{
+    position: absolute;
+    left: 50%;
+    margin-top: -50px;
+    transform: translateX(-50%);
+    color: red;
+    font-weight: bold;
+}
+
+.res-p{
+    text-align: center;
+}
+.reset{
+    padding: 10px;
+    padding-bottom: 3px;
+}
+
+/* LOGIN SECTION */
+
+
+
+
+.btn-tog{
+    cursor: pointer;
+    width: 40px;
+    float: right;
+    position: relative;
+    right: 30px;
+    top: 20px;
+    display: none;
+}
+
+.spans{
+    display: block;
+    width: 40px;
+    height: 5px;
+    background-color: #007d9c;
+    border-radius: 40px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.spans:nth-child(3){
+    margin-top: -15px;
+}
+
+.logo{
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    /* background: red; */
+    float: left;
+    /* text-align: center; */
+}
+
+.logo img{
+    width: 75px;
+}
+
+.logoname{
+    font-family: 'Lobster Two', cursive;    display: inline;
+    font-size: 30px;
+    position: relative;
+    top: 5px;
+    left: 10px;
+    font-weight: bold;
+    color: #007d9c;
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(255, 255, 255);
+    padding: 40px 0;
+    position: relative;
+    z-index: 5;
+}
+
+ul{
+    /* background-color: red; */
+    width: 50%;
+    left: 50%;
+    top: 40%;
+    transform: translateY(-40%);
+    position: absolute;
+}
+
+li{
+    display: inline;
+    list-style: none;
+    padding-left: 50px;
+}
+
+li a{
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 15px;
+    color: black;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.log:hover{
+    color: orangered;
+    box-shadow: 0 0 7px orangered;
+}
+
+.sign:hover{
+    color: white;
+    box-shadow: 0 0 7px orangered;
+    border: 2px solid white;
+}
+
+
+.log{
+    background: white;
+    color: orangered;    
+    padding: 10px 30px;
+    border-radius: 40px;
+    border: 2px solid orangered;
+}
+
+.sign{
+    background: orangered;
+    padding: 10px 30px;
+    border-radius: 40px;
+    color: white;
+    border: none;
+    border: 2px solid orangered;
+}
+
+.log-ico{
+    color: orangered;
+    font-size: 30px;
+    font-weight: bold;
+    padding-right: 5px;
+    top: 10px; 
+    position: relative;
+}
+
+.sign-ico{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 5px;
+    position: relative;
+    top: 4px;
+}
+
+.li-last{
+    padding-left: 25px;
+}
+
+
+
+.hero-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    font-family: 'K2D', sans-serif;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+.big-text{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+
+.text-cont{
+    font-size: 21px;
+    /* font-weight: bold; */
+    color: #aceeff;
+    text-shadow: 0 0 20px black;
+    text-align: center;
+    animation-delay: 0.5s;
+}
+
+
+form{
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+
+form select{
+    width: 30%;
+    padding-left: 15px;
+    /* padding-top: 15.2px;
+    padding-bottom: 18.2px; */
+    background-color: orangered;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: 0.3s;
+    outline: none !important;
+    cursor: pointer;
+}
+
+select option{
+    background: rgb(0, 140, 255);
+    color: rgb(255, 255, 255);
+}
+
+
+.search{
+    width: 60%;
+    margin: auto;
+    padding-left: 18px;
+    margin-left: -5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: none;
+    outline: none !important;
+}
+
+form select, .search, .browse{
+    height: 60px;
+}
+
+.browse{
+    width: 10%;
+    padding-right: 20px;
+    border-left: none;
+    margin-left: -7px;
+    margin-top: 0px;
+    background: white;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+}
+
+.search-ico:hover{
+    color: orangered;
+}
+
+.search-ico{
+    font-size: 17px;
+    color: black;
+    font-weight: bold;
+}
+
+/************* FEATURED PHOTOGRAPHERS*************/
+
+
+
+.feat-phot{
+    background: rgb(255, 255, 255);
+    /* background-color: red; */
+    margin-top: 50px;
+}
+
+.sec-title{
+    width: 73%;
+    height: 50px;
+    background: rgb(0, 140, 255);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: auto;
+}
+/* 
+.sec-title{
+    width: 73%;
+    height: 50px;
+    background: rgb(0, 140, 255);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 10px solid rgb(0, 140, 255);
+    margin: auto;
+} */
+
+
+.feat-text{
+    text-align: center;
+    padding-top: 12px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.row{
+    width: 75%;
+    margin: auto; 
+    margin-top: 0px;
+    /* background-color: yellow; */
+}
+
+.category{
+    margin-top: 10px;
+}
+
+.category .row{
+    width: 100%;
+}
+
+.span-1-of-4{
+    /* width: 16.66vw; */
+    width: 16.66%;
+    height: 16vw;
+    overflow: hidden;
+}
+
+
+.span-1-of-4 div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.span-1-of-4 div:hover{
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.span-1-of-4 div p{
+    color: white;
+    text-shadow: 0 0 5px black;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.span-1-of-3{
+    width: 31.5%;
+    /* margin: auto; */
+    margin-left: 15px;
+    margin-top: 15px;
+    background: rgba(246, 246, 246, 0.993);
+    white-space: nowrap;
+
+    /* background-color: green; */
+    /* border: 1px solid rgb(8, 218, 218); */
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.span-1-of-3:hover{
+    box-shadow: 0 0 20px rgb(136, 136, 136);
+}
+
+.span-1-of-ban{
+    overflow: auto;
+}
+
+.banner{
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('../logo.png');
+    background-size: cover;
+    background-position: center;
+    border: 10px solid rgb(0, 162, 255);
+    position: relative;
+}
+
+
+.ads{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: 600;
+    color: orangered;
+    text-shadow: 0 0 5px black;
+}
+
+.ads .span-one{
+    animation-name: pop;
+    animation-delay: 1s;
+    animation-duration: 0.5s;
+}
+
+.ads .span-two{
+    color:white;
+    animation-name: pop;
+    animation-delay: 1.5s;
+    animation-duration: 0.5s;
+}
+
+@keyframes pop{
+    from{
+        font-size: 0;
+    }
+    to{
+        font-size: 50px;
+    }
+}
+
+.ads a{
+    display: block;
+    width: 60%;
+    margin: auto;
+    text-decoration: none;
+    font-size: 25px;
+    background: white;
+    padding: 15px;
+    text-shadow: none;
+    border-radius: 50px;
+    margin-top: 30px;
+    animation-name: lip;
+    animation-delay: 2s;
+    animation-duration: 0.8s;
+
+}
+
+@keyframes lip{
+    from{
+        transform: rotateX(360deg);
+    }
+    to{
+        transform: rotateX(0deg);
+
+    }
+}
+
+.dp-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.dp{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 20px auto;
+    background-color: red;
+    position: relative;
+}
+
+.hold-init{
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.short-info{
+    /* width: 50%; */
+    /* background-color: red; */
+    margin: auto;
+    text-align: center;
+    line-height: 10px;
+}
+
+.short-name{
+    font-weight: 600;
+}
+
+.details{
+    width: 100%;
+    margin: auto;
+}
+
+/* .prof{
+    line-height: 20px;
+} */
+
+.span-1-of-2{
+    width: 40%;
+    margin: 10px auto;
+}
+
+.location{
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size: 16px;
+    color: rgb(5, 0, 82);
+}
+
+.loc-ico{
+    position: relative;
+    font-size: 20px;
+    top: 5px;
+    color: red;
+}
+
+.span-1-of-2 a{
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: white;
+    background: rgb(0, 140, 255);
+    float: right;
+}
+
+.rate{
+    margin-left: 10px;
+    margin-top: 10px;
+    /* background-color: blue; */
+}
+
+.ratee{
+    background: rgb(255, 208, 0);
+    padding: 7px;
+    color: white;
+}
+
+.star-ico{
+    color: rgb(255, 208, 0);
+}
+
+.others{
+    width: 50%;
+    margin: auto;
+    margin-bottom: 40px;
+    /* background-color: crimson; */
+    overflow: hidden;
+    text-align: center;
+}
+
+.ver-ico{
+    color: white;
+    background: rgb(0, 140, 255);
+    border: 2px solid white;
+    padding: 2px;
+    border-radius: 50%;
+    font-size: 30px;
+    position: relative;
+    top: 10px;
+}
+
+.ver-span{
+    padding: 0px 15px;
+    margin-left: -14px;
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background: rgb(0, 140, 255);
+    color: white;
+    line-height: 1px;
+}
+
+/************* FEATURED PHOTOGRAPHERS ************/
+
+
+/************* PHOTOGRAPHER OF THE WEEK ************/
+
+.photo-week{
+    /* margin-top: 70px;
+    padding-bottom: 50px; */
+    background: rgb(27, 27, 27);    
+}
+
+.photo-week .row{
+    width: 100%;
+    height: 200px;
+}
+
+.feat-star{
+    width: 90%;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.feat-star span{
+    font-size: 30px;
+    padding-left: 30px;
+    color: #fbe328;
+}
+
+.star{
+    padding: 10px;
+    width: 100px;
+    background: black;
+    border: 5px solid #fbe328;
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
+}
+
+/* .owl-theme{    
+
+}
+
+.owl-theme div{
+    height: 200px;
+} */
+
+
+/************* PHOTOGRAPHER OF THE WEEK ************/
+
+
+/************** FEATURED MODELS **************/
+
+
+
+.mod-sec-title{
+    width: 73%;
+    height: 50px;
+    background: rgb(204, 0, 255);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: auto;
+}
+
+
+.mod-feat-text{
+    text-align: center;
+    padding-top: 12px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.mod a{
+    background: rgb(204, 0, 255);
+}

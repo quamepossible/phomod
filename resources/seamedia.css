@@ -1,0 +1,309 @@
+@media screen and (min-width: 1400px) and (max-height: 780px){
+    .side-bar{
+        height: 780px;
+        position: absolute;
+    }
+}
+
+
+@media screen and (max-width: 1400px){
+    .main-body .row{
+        width: 100%;
+        margin: auto;
+        padding-left: 40px;
+    }
+
+    .side-bar{
+        position: relative;
+        float: none;
+        height: auto;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .side-bar form{
+        position: sticky;
+        top: 0;
+        margin: auto;
+        margin-top: 0;
+        width: 85%;
+        background: black;
+    }
+
+    .filter-title{
+        width: 85%;
+    }
+
+    .banner{
+        /* position: absolute; */
+        z-index: -1;
+    }
+
+    .hold-side, .span-1-of-ban{
+        display: inline;
+    }
+
+    .side-bar form select, input, .side-bar form button{
+        display: inline-block;
+        width: 33%;
+        border-radius: 60px;
+        padding: 15px;
+    }
+
+    .side-bar form select{
+        margin-left: 7px;
+    }
+
+    input{
+        width: 47%;
+    }
+
+    .side-bar form button{
+        width: 15%;
+        margin-top: 18px;
+        margin-left: 5px;
+        position: absolute;
+    }
+
+    .ads .span-one, .ads .span-two{
+        animation-name: none;
+        height: 50px;
+    }
+
+}
+
+@media screen and (max-width: 1400px) and (min-width: 451px){
+    .banner{
+        max-width: 80%;
+        height: 220px;
+    }
+
+    .ads a{
+        width: 30%;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 1205px){
+    .side-bar{
+        margin-top: 0;
+    }
+
+    .ads{
+        font-size: 30px;
+    }
+
+    .ads .span-one, .ads .span-two{
+        height: 40px;
+        animation-name: none;
+    }
+
+    .ads a{
+        padding: 10px;
+        margin-top: 20px;
+        animation-name: none;
+    }
+
+    .banner{
+        height: 200px;
+        margin-top: 10px;
+    }
+
+    .side-bar form, .filter-title{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1240px){
+
+    .main-body .row{
+        padding-left: 20px;
+    }
+
+    .span-1-of-3{
+        margin: 5px;
+        width: 32%;
+    }
+
+}
+
+@media screen and (max-width: 1120px){ 
+
+    .span-1-of-3{
+        width: 47%;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 890px){
+    .main-body .row{
+        padding-left: 15px;
+    }
+
+    .span-1-of-3{
+        width: 48%;
+        margin: 5px;
+    }
+}
+
+
+@media screen and (max-width: 770px){
+
+    .side-bar form, .filter-title{
+        width: 98%;
+    }
+
+    .side-bar form button{
+        width: 16%;
+    }
+
+    .main-body .row{
+        padding-left: 10px;
+    }
+
+    .span-1-of-3{
+        width: 48%;
+        /* margin: auto; */
+        margin-top: 15px;
+    }
+
+}
+
+@media screen and (max-width: 700px){
+    .main-body .row{
+        width: 100%;
+        margin-left: 0;
+        padding-left: 5px;
+    }
+
+    .span-1-of-3{
+        width: 47%;
+        margin: 0;
+        margin-left: 13px;
+        margin-top: 10px;
+        /* margin: 0; */
+    }
+
+    .ads a{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 620px) and (min-width: 600px){
+    .span-1-of-3{
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .span-1-of-3{
+        width: 48%;
+        margin-left: 7px;
+        /* margin: 3px; */
+    }
+}
+
+
+@media screen and (max-width: 562px){
+
+    .side-bar form, .filter-title{
+        width: 97%;
+    }
+    .side-bar form select, input, .side-bar form button{
+        padding: 10px;
+    }
+
+    .side-bar form button{
+        width: 14%;
+    }
+    .span-1-of-3{
+        width: 80%;
+        margin: auto;
+        margin-top: 15px;
+    }
+
+    .main-body .row{
+        margin: auto;
+    }
+
+
+}
+
+@media screen and (max-width: 450px){
+
+    .filter-title{
+        display: none;
+    }
+
+    .side-bar form{
+        background: rgb(1, 72, 131);
+        width: 100%;
+        padding: 5px;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        margin-bottom: 30px;
+        margin: 0;
+    }
+
+    .side-bar{
+        margin-top: 0;
+    }
+    .side-bar form select, input, .side-bar form button{
+        /* display: block;
+        width: 80%; */
+        margin: 0;
+        border-radius: 7px;
+    }
+
+    .side-bar form select{
+        width: 28%;
+    }
+    input{
+        width: 52%;
+    }
+    .side-bar form button{
+        width: 17%;
+        margin-left: 5px;
+    }
+
+    .banner{
+        margin-top: 70px;
+    }
+
+    .span-1-of-3{
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width: 300px){
+    .span-1-of-3{
+        width: 98%;
+        overflow: auto;
+    }
+
+    .ads a{
+        width: 80%;
+    }
+
+}
+/* 
+@media screen and (max-width: 530px){
+    .span-1-of-3{
+        width: 48%;
+        margin-left: 3px;
+    }
+
+}
+
+
+
+@media screen and (max-width: 499px){
+    .span-1-of-3{
+        width: 90%;
+        margin: auto;
+        margin-top: 15px;
+    }
+
+} */

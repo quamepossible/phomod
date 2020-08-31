@@ -1,0 +1,9 @@
+RewriteEngine on  
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^search/([0-9a-zA-Z_-]+) search.php?search=$1 [NC,L] 
+

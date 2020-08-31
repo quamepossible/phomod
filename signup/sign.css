@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.sec-title{
+    width: 80%;
+    height: 50px;
+    background: rgb(0, 140, 255);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+
+.feat-text{
+    text-align: center;
+    padding-top: 12px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.log{
+    border: 3px solid white;
+    box-shadow: 0 0 5px black;
+}
+
+.myform{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.whats{
+    color: green;
+}
+
+.insta{
+    color: orangered;
+}
+
+.web{
+    color: blue;
+}
+
+.signup{
+    width: 150px;
+    display: block;
+    margin: 30px auto;
+}
+
+@media screen and (max-width: 770px){
+    .sec-title{
+        width: 90%;
+        margin-top: 25px;
+    }
+}
+
+@media screen and (max-width: 370px){
+    .sec-title{
+        width: 95%;
+    }
+    .feat-text{
+        font-size: 18px;
+    }
+}

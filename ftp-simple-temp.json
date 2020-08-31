@@ -1,0 +1,13 @@
+[
+	{
+		"name": "",
+		"host": "files.000webhost.com",
+		"port": 21,
+		"type": "ftp",
+		"username": "phomod",
+		"password": "OPOKUappiah3580",
+		"path": "/",
+		"autosave": true,
+		"confirm": true
+	}
+]

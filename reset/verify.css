@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(226, 226, 226);
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.main-container{
+    /* background: red; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.head-text{
+    /* background-color: yellow; */
+    padding: 10px;
+    text-align: center;
+}
+
+.sub-text{
+    font-size: 25px;
+    font-weight: bold;
+    /* background-color: red; */
+    margin-bottom: 20px;
+}
+
+.mail-text{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.mail-text span:first-child{
+    /* display: block; */
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: rgb(3, 182, 3);
+
+}
+
+.hol{
+    display: inline-block;
+    position: relative;
+    margin: 20px 0;
+    /* background: blue; */
+    /* overflow: hidden; */
+}
+
+.hol .mail{
+    background: rgb(0, 0, 0);
+    color: white;
+    border: 3px solid white;
+    box-shadow: 0 0 5px black;
+    padding: 7px;
+    padding-left: 40px;
+    border-radius: 30px;
+}
+
+.p-ico{
+    background: white;
+    color: rgb(0, 140, 255);
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 5px;
+    left: 7px;
+    top: -3px;
+    position: absolute;
+}
+
+.error{
+    color: red;
+    text-align: center;
+}
+
+.res-form{
+    /* background: black; */
+    width: 300px;
+    margin: auto;
+}
+
+.form-container input{
+    display: block;
+    padding: 15px 10px;
+    width: 90%;
+    margin: auto;
+    border-radius: 40px;
+    outline: none !important;
+    margin-top: 10px;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(124, 123, 123, 0.726);
+    transition: 0.3s;
+}
+
+.form-container input:focus{
+    border: 2px solid rgb(0, 140, 255);
+    box-shadow: none;
+}
+
+.cod-form input{
+    display: none;
+}
+
+.form-container button{
+    background: rgb(1, 153, 8);
+    color: white;
+}
+
+.cod-form button{
+    background-color: rgb(0, 140, 255);
+    color: white;
+    font-weight: bold;
+    text-align: right;
+}
+
+.form-container button:hover{
+    background: rgb(1, 138, 8);
+}
+.cod-form button:hover{
+    background-color: white;
+    color: rgb(0, 140, 255);
+}
+
+.form-container button, .cod-form button{
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 250px;
+    border-radius: 40px;
+    font-size: 17px;
+    outline: none !important;
+    border: none;
+    position: relative;
+    transition: 0.3s;
+
+}
+
+.k-ico{
+    /* background: white; */
+    font-size: 20px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pl-ico{
+    font-size: 20px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.spin{
+    position: relative;
+    /* background: blue; */
+}
+.hold-load{
+    width: 100%;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background: black; */
+    position: absolute;
+    visibility: hidden;
+}
+
+.over{
+    position: absolute;
+    background: white;
+    box-shadow: 0 0 5px rgba(124, 121, 121, 0.836);
+    width: 270px;
+    padding: 25px 20px;
+    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+}
+
+.lds-ripple {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 50px;
+    height: 50px;
+    /* background: red; */
+}
+
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid rgb(0, 140, 255);
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+    0% {
+      top: 21px;
+      left: 21px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 45px;
+      height: 45px;
+      opacity: 0;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .main-container{
+        width: 100%;
+        /* background: red; */
+    }
+
+    .res-form{
+        width: 350px;
+    }
+}

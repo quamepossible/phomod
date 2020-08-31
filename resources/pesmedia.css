@@ -1,0 +1,228 @@
+@media screen and (max-width: 1010px){
+
+    .span-2-of-1{
+        width: 90%;
+    }
+
+    .over a, .delete{
+        width: 80%;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .over a, .delete{
+        width: 90%;
+        padding: 5px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 900px){
+    .cover-phot{
+        width: 80%;
+    }
+
+    .details{
+        width: 90%;
+    }
+
+    .span-2-of-2 .p-down{
+        padding: 0;
+    }
+
+    .span-2-of-2 span{
+        display: block;
+        width: 95%;
+        margin: auto;
+    }
+    .ico{
+        margin-left: 0px;
+    }
+
+
+}
+
+@media screen and (max-width: 640px){
+    .cover-phot{
+        width: 90%;
+    }
+
+    #cover{
+        height: 400px;
+    }
+
+    .cover-phot{
+        height: 300px;
+    }
+
+    .cover-name{
+        padding: 10px;
+    }
+
+    /* .cover-blur{
+        height: 300px;
+    } */
+}
+
+@media screen and (max-width: 640px){
+    .cover-name{
+        width: 70%;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .cover-name{
+        width: 85%;
+        padding: 5px;
+    }
+    .over a, .delete{
+        width: 100%;
+        padding: 5px;
+    }
+}
+
+@media screen and (max-width: 735px){
+
+    .row .row{
+        width: 100%;
+    }
+
+    .sec-title{
+        width: 100%;
+    }
+
+    .span-1-of-3{
+        width: 32%;
+        height: 32vw;
+        margin-top: 2vw;
+        margin-bottom: 0;
+        /* margin: 1.41vw; */
+    }
+
+    .span-1-of-3:nth-of-type(3n+2){
+        margin-left: 2vw;
+    }
+
+    .span-1-of-3:nth-of-type(3n+0){
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 650px){
+
+    .details{
+        background: none;
+        width: 95%;
+    }
+
+    .span-s-of-s{
+        width: 98%;
+        height: auto;
+        border-radius: 15px;
+        background: rgb(37, 37, 37);
+
+    }
+
+    .last{
+        padding: 20px;
+    }
+
+    .edit{
+        margin: auto;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .view-ico, .del-ico{
+        display: none;
+    }
+
+    .delete span, .view span{
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 450px){
+
+    
+
+    .hold-tags{
+        width: 95%;
+    }
+
+    .details{
+        width: 95%;
+    }
+    .span-s-of-s{
+        width: 98%;
+    }
+
+    .span-2-of-2 .p-down{
+        overflow: auto;
+        padding: 0;
+        /* padding-top: 10px;
+        padding-left: 10px; */
+    }
+
+    .span-2-of-2 p span{
+        display: block;
+        width: 95%;
+        margin: auto;
+        padding: 10px;
+        padding-left: 40px;
+    }
+
+    .ico{
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 375px){
+
+    .details{
+        width: 95%;
+    }
+
+    .over a{
+        margin-bottom: 20px;
+    }
+
+    /* .span-1-of-4{
+        margin-left: 0;
+        margin-right: 0;
+    } */
+
+    .up-pics{
+        padding: 10px 20px;
+        font-size: 25px;
+    }
+
+    .add{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 260px){
+    .edit{
+        width: 99%;
+    }
+
+    .up-pics{
+        width: 99%;
+        font-size: 10px;
+        padding: 0;
+    }
+
+    .up-pics span{
+        padding-left: 5px;
+    }
+
+    .add{
+        font-size: 20px;
+    }
+}

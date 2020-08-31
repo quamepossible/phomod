@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: 'Metropolis Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Regular'), url('../admin/Metropolis-Regular.woff') format('woff');
+}
+
+body{
+    font-family: 'Metropolis Regular';
+}
+
+.container{
+    width: 90%;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hold{
+    text-align: center;
+}
+
+.hold img{
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: 3px solid white;
+    box-shadow: 0 0 5px rgb(92, 91, 91);
+    animation-name: logo;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+
+@keyframes logo{
+    15%{
+        transform: rotate(180deg);
+    }
+
+    30%{
+        transform: rotate(90deg);
+    }
+
+    45%{
+        transform: rotate(90deg);
+    }
+
+    60%{
+        transform: rotate(90deg);
+    }
+
+    75%{
+        transform: rotate(360deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.text{
+    font-size: 30px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgb(149, 147, 147);
+    border: 5px solid rgb(0, 183, 255);
+    font-weight: bold;
+    border-radius: 40px;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+}
+
+.eye-ico{
+    font-size: 50px;
+    position: absolute;
+    top: 10px;
+}
+
+.text span{
+    padding-left: 55px;
+}
+
+.subt{
+    margin-top: 30px;
+    font-size: 17px;
+}
+
+@media screen and (max-width: 620px){
+    .container{
+        width: 95%;
+    }
+    .text{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 590px){
+    .text{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 510px){
+    .text{
+        font-size: 20px;
+    }
+
+    .eye-ico{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .text{
+        border-radius: 80px;
+        line-height: 30px;
+    }
+}

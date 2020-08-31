@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face{
+    font-family: 'Metropolis Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Regular'), url('Metropolis-Regular.woff') format('woff');
+}
+
+body{
+    font-family: 'Metropolis Regular';
+}
+
+
+.main{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background: rgb(235, 235, 235);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border: 20px solid rgb(3, 0, 34);
+    z-index: -1;
+}
+
+.row{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.one-of-three{
+    width: 30%;
+    height: 100%;
+    position: relative;
+}
+
+.two-of-three{
+    width: 67%;
+    height: 100%;
+    margin: auto;
+    margin-left: 3%;
+    overflow: auto;
+}
+
+.action{
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    overflow: auto;
+}
+
+.action .row{
+    width: 100%;
+    margin: auto;
+}
+
+.action .row .las-row{
+    width: 30%;
+    margin: auto;
+}
+
+.las-row button{
+    width: 100%;
+    padding: 10px;
+}
+
+
+.pic{
+    position: absolute;
+    width: 95%;
+    height: 80%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid white;
+}
+
+.title{
+    width: 99%;
+    margin: auto;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    position: relative;
+    background: white;
+    box-shadow: 0 0 5px black;
+    margin-top: 10px;
+    text-shadow: 0 0 5px black;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.user-ico{
+    position: absolute;
+    left: 37%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.details{
+    width: 100%;
+    margin: auto;
+}
+
+.details .row{
+    width: 100%;
+    margin-top: 60px;
+}
+
+.mb-5{
+    margin: auto;
+    margin-top: -45px;
+    width: 49%;
+}
+
+.mb-12{
+    width: 99%;
+    height: 100px;
+    margin: auto;
+    margin-top: -40px;
+}
+
+.info-span{
+    margin-left: 30px;
+}
+
+.ver-ico, .edi-ico, .del-ico{
+    font-size: 20px;
+}
+
+form{
+    display: inline;
+}
+
+
+/******************* EDIT MODAL *****************/
+
+#editModal{
+    background: rgba(0, 0, 0, 0.74);
+}
+
+#editModal .modal-dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#editModal .modal-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    overflow:hidden;
+    width: 950px;
+}
+
+
+.whats{
+    color: green;
+}
+
+.insta{
+    color: orangered;
+}
+
+.web{
+    color: blue;
+}
+
+/******************* EDIT MODAL *****************/
+
+
+

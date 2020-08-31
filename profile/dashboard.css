@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-color: rgba(238, 237, 237, 0.596); */
+    background: rgb(24, 23, 23);
+    white-space: nowrap;
+}
+
+
+input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: black;
+}
+
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.main-page .row{
+    width: 100%;
+    /* height: 100vh; */
+    /* overflow: auto; */
+    margin: auto;
+    z-index: 2;
+}
+
+.span-1-of-3{
+    width: 30%;
+    height: 100vh;
+    background: rgba(24, 23, 23, 0.247);
+    /* margin: auto; */
+    margin-left: 0;
+    position: fixed;
+}
+
+
+.span-2-of-3{
+    width: 70%;
+    margin-left: 30%;
+    height: auto;
+    background: rgb(24, 23, 23);
+    z-index: 1;
+}
+
+
+.hol-com{
+    height: 50px;
+    margin: 50px auto;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.p-comp{
+    text-align: center;
+    position: absolute;
+    display: inline-block;
+    white-space: nowrap;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.t-span{
+    margin: 5px;
+    padding: 10px 45px;
+    padding-right: 20px;
+    background-color: black;
+    border: 3px solid white;
+    color: white;
+    border-radius: 60px;
+    cursor: pointer;
+}
+
+.cam-ico-span{
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    padding: 6px;
+    font-size: 20px;
+    position: absolute;
+    left: 13px;
+    top: -5px;
+}
+
+.span-1-of-3 .profile-pic{
+    width: 270px;
+    height: 270px;
+    margin: auto;
+    border-radius: 50%;
+    position: relative;
+    border: 12px solid white;
+    cursor: pointer;
+}
+
+.cam-ico{
+    font-size: 50px;
+    color: rgb(236, 236, 236);
+    position: absolute;
+    padding: 5px;
+    bottom: 15%;
+    left: 85%;
+    background: rgba(51, 50, 50, 0.568);
+    border-radius: 50%;
+}
+
+.span-1-of-3 .name{
+    text-align: center;
+    background: rgb(0, 48, 182);
+    padding: 10px 20px;
+    position: absolute;
+    left: 50%;
+    margin-top: 30px;
+    transform: translateX(-50%);
+
+}
+
+.rate{
+    width: 90%;
+    margin: auto;
+    margin-top: 100px;
+    /* background: red; */
+}
+
+.rate p{
+    text-align: center;
+    color: white;
+
+}
+
+.sid{
+    display: none;
+}
+
+.ratee{
+    background: rgb(255, 208, 0);
+    padding: 7px;
+    color: white;
+}
+
+.star-ico{
+    color: rgb(255, 208, 0);
+}
+
+.location span{
+    padding-left: 17px;
+}
+
+.loc-ico{
+    position: relative;
+    font-size: 20px;
+    top: 5px;
+    color: red;
+}
+
+
+form{
+    width: 90%;
+    margin: auto;
+}
+
+.f-form button{
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.me-md-4{
+    width: 33.333333%;
+    padding: 0 5px;
+    /* background: green; */
+    /* margin-bottom: 0;
+    margin-top: 0; */
+}
+
+
+label{
+    color: white;
+}
+
+input{
+    font-weight: 600;
+}
+
+.no-edit{
+    color: rgb(3, 230, 3);
+}
+
+.whats{
+    color: green;
+}
+
+.insta{
+    color: orangered;
+}
+
+.web{
+    color: blue;
+}
+
+.sec-title{
+    width: 90%;
+    height: 50px;
+    background: rgb(0, 48, 182);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 30px auto;
+
+}
+
+
+.feat-text{
+    text-align: center;
+    padding-top: 12px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.pass-form{
+    width: 100%;
+    z-index: 10;
+    margin: auto;
+    /* margin-top: 100px; */
+}
+
+.pass-form button{
+    display: block;
+    margin: auto;
+}
+
+.wrap{
+    white-space: normal;
+}
+
+.up-form .up-btn, .del-btn{
+    display: block;
+    margin: auto;
+}
+
+.dpuser{
+    display: none;
+}
+
+.upl-btn{
+    /* background: red; */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    color: black;
+    position: relative;
+    cursor: pointer;
+}
+
+.clo-ico{
+    position: absolute;
+    margin-top: 5px;
+}
+
+.upl-btn span{
+    padding-left: 30px;
+}
+
+.del-btn{
+    margin-top: 10px;
+}

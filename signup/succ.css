@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face{
+    font-family: 'Metropolis Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Metropolis Regular'), url('../admin/Metropolis-Regular.woff') format('woff');
+}
+
+body{
+    background: rgb(236, 236, 236);
+    font-family: 'Metropolis Regular';
+}
+
+.parent{
+    width: 100%;
+    /* background-color: red; */
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+}
+
+.succtext{
+    font-size: 40px;
+    text-align: center;
+    color: green;
+    padding-top: 50px;
+    position: relative;
+}
+
+.che-ico{
+    display: block;
+    color: green;
+    font-size: 100px;
+    position: absolute;
+    top: 20px;
+    left: 200px;
+}
+
+.sub{
+    font-size: 25px;
+    color: green;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.some{
+    font-size: 20px;
+    color: rgb(34, 1, 1);
+    /* text-shadow: 0 0 5px black; */
+    padding-top: 20px;
+    text-align: center;
+}
+
+.link{
+    text-align: center;
+    margin-top: 20px;
+}
+
+a{
+    color: blue;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1300px){
+    .che-ico{
+        left: 150px;
+    }
+    /* .succtext span{
+        padding-left: 40px;
+    } */
+}
+
+@media screen and (max-width: 1188px){
+    .che-ico{
+        left: 100px;
+    }
+}
+
+@media screen and (max-width: 1081px){
+    .succtext span{
+        padding-left: 100px;
+    }
+}
+
+@media screen and (max-width: 990px){
+    .succtext span{
+        padding-left: 150px;
+    }
+}
+
+@media screen and (max-width: 940px){
+    .che-ico{
+        font-size: 150px;
+        display: block;
+        left: 0;
+        position: relative;
+        margin: auto;
+    }
+    .succtext span{
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .succtext{
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    .sub{
+        font-size: 20px;
+    }
+
+    .some{
+        font-size: 15px;
+    }
+
+}

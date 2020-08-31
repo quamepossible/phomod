@@ -1,0 +1,737 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(24, 23, 23);
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/******** OVERLAY **********/
+
+.grand{
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 1;
+}
+
+.paren{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cir{
+    background: rgba(255, 255, 255, 0.301);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: cover;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    z-index: -1;
+}
+
+@keyframes cover{
+    from{width: 150px; 
+        height: 150px;
+        background: linear-gradient(rgb(0, 238, 255), rgb(0, 162, 255));
+    }
+    to{
+        width: 180px; 
+        height: 180px;
+        background: linear-gradient(rgb(0, 238, 255), rgb(0, 162, 255));
+    }
+
+}
+
+.img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+}
+
+/******** OVERLAY **********/
+.main{
+    display: none;
+}
+
+span{
+    white-space: nowrap;
+}
+
+#cover{
+    background-color: black;
+    width: 100%;
+    height: 550px;
+    position: relative;
+    /* border-bottom: 1px solid black; */
+    overflow: hidden;
+}
+
+.cover-blur{
+    width: 120%;
+    height: 500px;
+    margin-top: -20px;
+    margin-left: -150px;
+    background: linear-gradient(rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.77)), url(./gallery/MODELS/model\ \(11\).jpg);
+    background-position: center;
+    background-size: cover;
+    filter: blur(120px);
+    z-index: -1;
+}
+
+.cover-phot{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.511), rgba(0, 0, 0, 0.511)), url(./gallery/MODELS/model\ \(11\).jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.cover-name{
+    width: 50%;
+    border-radius: 80px;
+    background: rgba(0, 0, 0, 0.582);
+    padding: 20px;
+    color: white;
+    border: 5px solid white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+}
+
+.cov{
+    text-align: center;
+    font-size: 30px;
+    /* background: red; */
+    margin-top: 20px;
+}
+
+.cov-up{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.cov-up .dp-ico{
+    color: white;
+}
+
+.cov-link{
+    cursor: pointer;
+    padding: 10px 5px;
+    border-radius: 15px;
+    border: 3px solid white;
+    color: white;
+    background: rgba(0, 0, 0, 0.685);
+    position: relative;
+    outline: none !important;
+}
+
+.cov-link span{
+    padding-left: 30px;
+    padding-right: 10px;
+}
+
+.cam-icon{
+    position: absolute;
+    padding: 5px;
+    top: 7px;
+    font-size: 20px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+.dp{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* border: 10px solid white; */
+    box-shadow: 0 0 10px black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 10px solid white;
+}
+
+.hold-a{
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.418);
+}
+
+.hover{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px;
+}
+
+.hover:hover{
+    color:white;
+    text-decoration: none;
+}
+
+.dp-ico{
+    font-size: 20px;
+}
+
+.up-btn{
+    display: block;
+    margin: auto;
+}
+
+/***************** TAGS SECTION *****************/
+.tag-section{
+    width: 100%;
+    margin: 30px 0;
+    /* background: yellow; */
+}
+
+
+.hold-tags{
+    width: 80%;
+    margin: auto;
+}
+
+.hold-tags p{
+    text-align: center;
+    line-height: 65px;
+}
+
+.t-span{
+    margin: 5px;
+    padding: 5px 20px;
+    background: rgb(0, 162, 255);
+    border: 3px solid white;
+    color: white;
+    border-radius: 60px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.name-only{
+    padding-left: 15px;
+}
+
+.comp{
+    background-color: black;
+}
+
+.cam-ico{
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 20px;
+    position: absolute;
+}
+
+.cam-ico, .tag-ico, .roc-ico{
+    left: 3px;
+    margin-top: 17.2px;
+}
+
+.tag-ico{
+    background: white;
+    color: blue;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 20px;
+    position: absolute;
+ 
+}
+
+.trav{
+    background: green;
+}
+
+.roc-ico{
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    color: green;
+    font-size: 20px;
+    position: absolute;
+}
+
+
+.others{
+  
+    margin-bottom: 40px;
+}
+
+
+
+.ver-ico{
+    color: white;
+    background: rgb(1, 161, 1);
+    border: 2px solid white;
+    padding: 2px;
+    border-radius: 50%;
+    font-size: 30px;
+    position: relative;
+    top: 10px;
+}
+
+.ver-span{
+    padding: 0px 15px;
+    margin-left: -14px;
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    background: green;
+    color: white;
+    line-height: 1px;
+}
+
+/***************** TAGS SECTION *****************/
+
+
+
+/***************** DETAILS SECTION *****************/
+
+.details{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    background: rgb(37, 37, 37);
+    padding-bottom: 30px;
+    border-radius: 15px;
+}
+
+
+.edit{
+    width: 250px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 0px;    
+    border-radius:650px;
+    margin-top: 30px;
+    font-weight: bold;
+    background: white;
+}
+
+.edit-prof{
+    font-size: 40px;
+    color: rgb(0, 162, 255);
+    position: absolute;
+    top: 5px;
+    left: 30px;
+}
+
+.edit span{
+    position: relative;
+    color: rgb(0, 162, 255);
+    font-size: 20px;
+    left: 20px;
+}
+
+.row{
+    width: 100%;
+    margin: auto;
+}
+
+.span-s-of-s{
+    width: 48%;
+    height: 350px;
+    margin: auto;
+    margin-top: 30px;
+    overflow: hidden;
+    /* background: red; */
+}
+
+
+.span-2-of-1{
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    color: rgb(207, 204, 204);
+    position: relative;
+}
+
+.span-2-of-2{
+    width: 98%;
+    height: 100%;
+    margin: auto;
+    /* background: red; */
+    overflow: auto;
+    position: relative;
+}
+
+.span-2-of-2 .p-down{
+    /* background: yellow; */
+}
+
+.span-2-of-2 span{
+    /* padding: 10px; */
+    background: rgb(5, 100, 189);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    border-radius: 40px;
+    padding-left: 40px;
+}
+
+.rate{
+  
+    margin-top: 20px;
+}
+
+.ratee{
+    background: rgb(255, 208, 0);
+    padding: 7px;
+    color: white;
+}
+
+.rate-btn{
+    background: rgb(201, 181, 0);
+    margin-left: 15px;
+    padding: 8px 25px;
+    position: relative;
+    padding-right: 15px;
+    cursor: pointer;
+    color: white;
+    display: block;
+    margin: 10px auto;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.rate-btn:hover{
+    background: rgb(173, 156, 0);
+}
+
+.rate-btn span{
+    font-size: 17px;
+    padding-left: 10px
+}
+
+.thumb-ico{
+    font-size: 25px;
+    /* position: absolute;
+    left: 5px; */
+    position: relative;
+    top: 5px;
+}
+
+.star-ico{
+    color: rgb(255, 208, 0);
+}
+
+.location span{
+    padding-left: 17px;
+}
+
+.loc-ico{
+    position: relative;
+    font-size: 20px;
+    top: 5px;
+    color: red;
+}
+
+.com-name{
+    /* color: b; */
+    padding-left: 20px;
+}
+
+.cam{
+    color: rgb(0, 132, 219);
+}
+
+.work-day span{
+    padding-left: 41px;
+}
+
+.username{
+    padding-top: 20px;
+}
+
+.connect{
+    background: rgb(0, 132, 219);
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+}
+
+.con-ico{
+    padding-left: 5px;
+}
+
+
+.insta{
+    color: orangered;
+    background: white;
+}
+
+.whats{
+    font-size: 25px;
+    color: white;
+    background: green;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.call{
+    color: blue;
+    background: rgb(255, 255, 255);
+}
+
+.web{
+    color: rgb(0, 102, 255);
+    background: rgb(255, 255, 255);
+}
+
+
+.ico{
+    position: absolute;
+    font-size: 30px;
+    padding: 7px;
+    border-radius: 40px;
+    bottom: 0;
+    margin-left: -10px;
+}
+
+.icon{
+    position: absolute;
+    font-size: 30px;
+}
+
+.com-name span{
+    padding-left: 40px;
+}
+
+.span-2-of-2 p{
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    /* background-color: yellow; */
+}
+
+
+/***************** DETAILS SECTION *****************/
+
+/******************* PICTURE MODAL *********************/
+
+
+/******************* PICTURE MODAL *********************/
+
+
+/*----------------- GALLERY SECTION -----------------*/
+
+
+.pho-gal{
+    background: rgb(24, 23, 23);
+}
+
+.upload{
+    margin: auto;
+}
+
+.up-pics{
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 20px 50px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: rgb(124, 124, 124);
+    cursor: pointer;
+    border: 1px solid rgb(124, 124, 124);
+    outline: none !important;
+    transition: 0.3s;
+}
+
+.up-pics:hover{
+    border: 1px solid rgb(124, 124, 124);
+    transform: scale(0.9);
+}
+
+.up-pics span{
+    padding-left: 55px;
+    padding-top: 15px;
+}
+
+.add{
+    position: absolute;
+    padding-top: -15px;
+    font-size: 50px;
+}
+
+.sec-title{
+    width: 80%;
+    height: 50px;
+    background: rgb(0, 132, 219);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: auto;
+}
+
+
+.feat-text{
+    text-align: center;
+    padding-top: 12px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.pho-gal .row{
+    width: 100%;
+    /* background-color: red; */
+}
+
+.row .row{
+    width: 80%;
+    /* background: yellow; */
+    margin: auto;
+}
+
+.span-1-of-3{
+    width: 32%; 
+    height: 32vw;
+    position: relative;
+    /* margin: auto; */
+    margin-top: 2%;
+    /* background-color: white; */
+}
+
+.span-1-of-3:nth-of-type(3n+1){
+    /* margin: auto; */
+    /* background: rgb(0, 255, 179); */
+    margin-left: 0;
+}
+
+.span-1-of-3:nth-of-type(3n+0){
+    margin: auto;
+    margin-right: 0;
+    margin-top: 2%;
+    /* background-color: blue; */
+}
+
+.span-1-of-3:nth-of-type(3n+2){
+    /* background: green; */
+    /* margin-left: 3.975vw; */
+    margin-left: 2%;
+}
+
+
+.div-img{
+    width: 100%;
+    height: 100%;
+}
+
+.over{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.712);
+    position: absolute;
+    visibility: hidden;
+}
+
+.hol-btn{
+    /* background: red; */
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.over a{
+    background: rgba(255, 255, 255, 0.932);
+    color: black;
+    display: block;
+    width: 60%;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: 50px;
+    padding: 20px 20px;
+    /* color: black; */
+    border: none;
+}
+
+.delete{
+    width: 60%;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.delete span{
+    margin-left: 30px;
+}
+
+.view span{
+    margin-left: 30px;
+}
+
+.view-ico{
+    font-size: 20px;
+    color: black;
+    position: absolute;
+}
+
+.del-ico{
+    font-size: 20px;
+    color: rgb(182, 0, 0);
+    position: absolute;
+}
+
+.dshow{
+    display: none;
+    overflow: hidden;
+}
+
+/*----------------- GALLERY SECTION -----------------*/

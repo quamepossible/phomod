@@ -1,0 +1,20 @@
+// $initName = $outDetails['FULL_NAME'];
+        // $exp = explode(' ', $initName);
+        // $initial = '';
+        // foreach($exp as $name => $init){
+        //     $initial .= ($exp[$name])[0]. ' ';
+        // }
+        // $finInit = ucwords($initial);
+        // $finInit = str_replace(" ", "", $finInit);
+
+        // $alp = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+        // $backColor = '';
+        // $textColor = '';
+        // for($i = 0; $i < 3; $i++){
+        //     $textColor .= $alp[mt_rand(0,5)];
+        // }
+
+        // for($j = 0; $j < 3; $j++){
+        //     $backColor .= mt_rand(0,9);
+        // }
