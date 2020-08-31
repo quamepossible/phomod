@@ -82,8 +82,12 @@ include 'myauto.php';
                                     <?php else:?>
 
                                     <?php while($picRow = $getPicMet->fetch()): ?>            
-                                        <?php $src = 'profilepic/'.$picRow['IMG_SRC']; ?>
-                                        
+                                        <?php if(empty($picRow['IMG_SRC'])):?>
+                                            <?php $src = 'profilepic/avatar.jpg';?>
+
+                                        <?php else:?>
+                                            <?php $src = 'profilepic/'.$picRow['IMG_SRC']; ?>
+                                        <?php endif?>
                                     <?php endwhile ?>
                             <?php endif ?>
 
