@@ -9,7 +9,7 @@ function validate(){
 
     for(var i = 3; i < inpLen; i++){
 
-        if((i >= 5 && i <= 7) || (i == 10)){
+        if((i >= 6 && i <= 8) || (i == 11)){
             continue;
         }
         if(inputs[i].value.length == 0){
