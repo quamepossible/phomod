@@ -2,7 +2,7 @@
     function logVal(){
         var email = document.getElementById("mail-inp");
         var pwd = document.getElementById("pwd-inp");
-        var err = document.getElementById("err");
+        var err = document.quer("err");
 
         if(email.value.length == 0 || pwd.value.length == 0){
             err.innerHTML = "Please fill all fields"; 
