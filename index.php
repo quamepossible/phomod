@@ -55,7 +55,7 @@ session_start();
                     <input type="password" name="pwd" id="pwd-inp">
                 </div>
             
-                <button type="submit" name="submit" class="btn btn-primary log-btn">Login</button>
+                <button id="dis" type="submit" name="submit" class="btn btn-primary log-btn" disabled='disabled'>Login</button>
                 <p class="res-p"><a href="reset/" class="reset">Reset password</a></p>        
             </form>
         </div>
@@ -306,35 +306,6 @@ session_start();
                 </div>
 
         </section>
-        <!---------------------- FEATURED PHOTOGRAPHERS ---------------------->
-
-
-        <!---------------------- PHOTOGRAPHER OF THE WEEK ---------------------->
-
-        <!-- <section class="photo-week">
-            <div class="feat-star">
-                <img src="gallery/star.png" alt="" class="star"><span>FEATURED PHOTOGRAPHER</span>
-            </div>
-
-            <div class="row">
-                <div class="owl-carousel">
-                    <div style="background:url('gallery/MODELS/model (1).jpg');background-position:center;background-size:cover;"></div>
-                    <div style="background:url('gallery/MODELS/model (2).jpg');background-position:center;background-size:cover;"></div>
-                    <div style="background:url('gallery/MODELS/model (3).jpg');background-position:center;background-size:cover;"></div>
-                    <div style="background:url('gallery/MODELS/model (4).jpg');background-position:center;background-size:cover;"></div>
-                    <div style="background:url('gallery/MODELS/model (5).jpg');background-position:center;background-size:cover;"></div>
-                    <div style="background:url('gallery/MODELS/model (6).jpg');background-position:center;background-size:cover;"></div>
-                    <div style="background:url('gallery/MODELS/model (7).jpg');background-position:center;background-size:cover;"></div>
-                </div>
-            </div>
-            
-            
-        </section> -->
-
-
-        <!---------------------- PHOTOGRAPHER OF THE WEEK ---------------------->
-
-
 
         <!---------------------- FEATURED MODELS ---------------------->
 
@@ -373,7 +344,7 @@ session_start();
                                                     <?php $src = 'profilepic/avatar.jpg';?>
 
                                                 <?php else:?>
-                                                <?php $src = 'profilepic/'.$row['IMG_SRC']; ?>
+                                                    <?php $src = 'profilepic/'.$row['IMG_SRC']; ?>
                                                <?php endif?>
                                             <?php endwhile ?>
                                     <?php endif ?>
@@ -430,5 +401,6 @@ session_start();
 
         <!-- <script src="resources/carousel.js"></script> -->
 </div>
+
 </body>
 </html>

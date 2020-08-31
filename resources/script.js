@@ -2,7 +2,11 @@
     function logVal(){
         var email = document.getElementById("mail-inp");
         var pwd = document.getElementById("pwd-inp");
-        var err = document.quer("err");
+
+        var err = document.querySelector("err");
+        var err = document.querySelector(".err");
+
+        var logBtn = document.querySelector('.log-btn');
 
         if(email.value.length == 0 || pwd.value.length == 0){
             err.innerHTML = "Please fill all fields"; 
@@ -81,8 +85,6 @@ $(document).ready(function(){
         var email = $('#mail-inp').val();
         var pass = $('#pwd-inp').val();
 
-        // if(email.value.length != 0){
-
         if(email.length > 0){
             $.ajax({
                 method : 'POST',
@@ -116,7 +118,7 @@ $(document).ready(function(){
                     }
                 }
             })
-         }
+        }
     })
 
 })
