@@ -82,6 +82,8 @@ $(document).ready(function(){
         var pass = $('#pwd-inp').val();
 
         // if(email.value.length != 0){
+
+        if(email.length > 0){
             $.ajax({
                 method : 'POST',
                 url : 'login.php',
@@ -114,7 +116,7 @@ $(document).ready(function(){
                     }
                 }
             })
-        // }
+         }
     })
 
 })

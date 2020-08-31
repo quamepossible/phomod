@@ -23,7 +23,7 @@
         <title>Edit Profile</title>
     </head>
     <body>
-
+        
     <!----------------- DP UPLOAD MODAL ----------------->
     <div class="modal fade" id="dpUploadModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
