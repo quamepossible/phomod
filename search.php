@@ -37,12 +37,12 @@ include 'myauto.php';
 
                     <form action="search.php" method="GET" class="search-form">
                         <select name="need" id="sel-one" required>
-                            <option value="" disabled selected>Search for</option>
+                            <option value="" selected>Search for</option>
                             <option value="photographer">Photographers</option>
                             <option value="model">Models</option>
                         </select>
 
-                        <input name="location" id="" type="text" placeholder="Enter location">
+                        <input name="location" id="" type="text" placeholder="Enter location" required>
                         <button type="submit"><ion-icon name="search" class="sea-ico"></ion-icon></button>
                     </form>
                 </div>
@@ -58,15 +58,30 @@ include 'myauto.php';
             </div>
 
             <div class="row parent" id="main-p">
-                
                 <?php 
-                $need = $_GET['need'];
-                $search = $_GET['location'];
+                    $need = $_GET['need'];
+                    $search = $_GET['location'];
 
-                $searchObj = new view;
-                $getData = $searchObj->viewSearchItem($need, $search);
-                $rows = $getData->fetchAll();
+                    $holdVal = [$need, $search];
+                    $holdLen = count($holdVal);
+                    $holdErr = '';
+                    for($i = 0; $i < $holdLen; $i++){
+                        if(empty($holdVal[$i])){
+                            $holdErr .= 'empty';
+                        }
+                    }
                 ?>
+
+                <?php if(!empty($holdErr)):?>
+                    <p class="holderr">No results found for your search</p>
+                    
+                <?php else:?>               
+
+                    <?php
+                        $searchObj = new view;
+                        $getData = $searchObj->viewSearchItem($need, $search);
+                        $rows = $getData->fetchAll();
+                    ?>
 
                     <?php if($getData->rowCount() > 0):?>
                         <?php foreach($rows as $row):?>
@@ -90,8 +105,7 @@ include 'myauto.php';
                                         <?php endif?>
                                     <?php endwhile ?>
                             <?php endif ?>
-
-
+                
                             <div class="span-1-of-3">
                                 <div class="dp-img" style="background:url(<?php echo $src;?>);background-position:center;background-size:cover;">
 
@@ -134,8 +148,9 @@ include 'myauto.php';
                     
 
                     <?php else:?>
-                        <p>User not found</p>
+                        <p class="holderr">No results found for your search</p>
                     <?php endif ?>
+                <?php endif?>
             </div>
         </div>
     </body>

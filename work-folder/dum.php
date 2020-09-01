@@ -22,3 +22,7 @@ if(!empty($err)){
 else{
     echo "Valid fields";
 }
+
+$name = 'off inso';
+$name = explode(" ", $name);
+echo end($name);
