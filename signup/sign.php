@@ -165,7 +165,7 @@
     <div class="col-md-4 mb-3">
       <label for="validationServerType">Lancer type</label>
       <select name="lancer" type="text" class="custom-select">
-          <option value="" disabled selected>Who are you?</option>
+          <option value="" selected>Who are you?</option>
           <option value="photographer">I'm a Photographer</option>
           <option value="model">I'm a Model</option>
       </select>
@@ -202,7 +202,7 @@
     <div class="col-md-4 mb-3">
       <label for="validationServerTrav">Available for travel</label>
       <select name="travel" class="custom-select" id="validationServerTrav">
-          <option value='' disabled selected>Select one</option>
+          <option value='' selected>Select one</option>
           <option value='yes'>YES</option>
           <option value='no'>NO</option>
       </select>

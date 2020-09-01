@@ -34,25 +34,38 @@ function validate(){
         }
     }
 
-    var getErr = document.getElementsByClassName("is-invalid");
-    var errLen = getErr.length;
-    console.log(errLen);
-    console.log(getErr);
-    console.log(selc.length);
-    console.log(inputs[13]);
-
     var notMatch = document.getElementById("pass");
     var notMa = document.getElementById("passOn");
-    if(passTwo.value !== passOne.value){
+  
+    var regE = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/;
+    if(regE.test(passOne.value)){    
+        if(passTwo.value !== passOne.value){
+            inputs[7].classList.remove('is-valid');
+            inputs[8].classList.remove('is-valid');
+            inputs[7].classList.add('is-invalid');
+            inputs[8].classList.add('is-invalid');
+
+            notMa.innerHTML = 'Passwords do not match';
+            notMatch.innerHTML = 'Passwords do not match';
+            alert("You have errors in your form");
+            return false;
+        }
+    }
+    else{
         inputs[7].classList.remove('is-valid');
         inputs[8].classList.remove('is-valid');
         inputs[7].classList.add('is-invalid');
         inputs[8].classList.add('is-invalid');
-
-        notMa.innerHTML = 'Passwords do not match';
-        notMatch.innerHTML = 'Passwords do not match';
+        notMa.innerHTML = 'Password must contain at least one upper and lower case letter, a number, and must be at least 6 characters long';
+        alert("You have errors in your form");
         return false;
     }
+
+    var getErr = document.getElementsByClassName("is-invalid");
+    var errLen = getErr.length;
+    console.log(errLen);
+    console.log(getErr);
+
 
     var inPhone = document.getElementById("phone");
     if(isNaN(phone.value) || phone.value.length < 9){
@@ -73,11 +86,8 @@ function validate(){
     var getErr = document.getElementsByClassName("is-invalid");
     var errLen = getErr.length;
     if(errLen > 0){
-        for(var j = 0; j < errLen; j++){
-            if(getErr[j].value.length == 0){
-                return false;
-            }
-        }
+        alert("You have errors in your form");
+        return false;
     }  
 }
 
