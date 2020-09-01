@@ -130,7 +130,7 @@ session_start();
                 <p class="big-text sub-big">or a model?</p>
                 <p class="text-cont">Browse our collection of freelance Photographers or find a Model to work with</p>
                 <form action='search.php' method="GET">
-                    <select name="need">
+                    <select name="need" required>
                         <option value="" selected style="background:rgb(211, 211, 211)">Need a</option>
                         <option value="photographer">Photographer</option>
                         <option value="model">Model</option>                        
