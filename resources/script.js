@@ -2,8 +2,6 @@
     function logVal(){
         var email = document.getElementById("mail-inp");
         var pwd = document.getElementById("pwd-inp");
-
-        var err = document.querySelector("err");
         var err = document.querySelector(".err");
 
         var logBtn = document.querySelector('.log-btn');

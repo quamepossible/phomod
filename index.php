@@ -55,7 +55,7 @@ session_start();
                     <input type="password" name="pwd" id="pwd-inp">
                 </div>
             
-                <button id="dis" type="submit" name="submit" class="btn btn-primary log-btn" disabled='disabled'>Login</button>
+                <button id="dis" type="submit" name="submit" class="btn btn-primary log-btn">Login</button>
                 <p class="res-p"><a href="reset/" class="reset">Reset password</a></p>        
             </form>
         </div>
