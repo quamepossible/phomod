@@ -215,6 +215,12 @@ a {
     animation-delay: -0.5s;
 }
 
+.err{
+    color: red;
+    padding-left: 20px;
+    /* font-weight: 600; */
+}
+
 @keyframes lds-ripple {
     0% {
       top: 21px;

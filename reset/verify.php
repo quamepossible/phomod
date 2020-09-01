@@ -31,11 +31,14 @@
 
         <div class="res-form">
             <p class="error"></p>
-            <form autocomplete="off" action="vercode.php" method="POST" class="form-container">
+            <form autocomplete="off" action="vercode.php" method="POST" class="form-container" onsubmit="return valpass()">
                 <input class="email" type="email" name="email" value="<?php echo $email?>" style="display:none">
                 <input class="cod-inp" autocomplete="off" type="text" name="code" placeholder="Enter verification code">
-                <input class="pas-inp" autocomplete="new-password" type="password" name="pass" placeholder="Enter new password">
-                <input type="password" class="pas-inp" placeholder="Confirm password">
+                    <p class="ver-err err"></p>
+                <input class="pas-inp pas-one" autocomplete="new-password" type="password" name="pass" placeholder="Enter new password">
+                    <p class="pass-one-err err"></p>
+                <input type="password" class="pas-inp pas-two" placeholder="Confirm password">
+                    <p class="pass-two-err err"></p>
                 <button type="submit" name="submit"><ion-icon name="key" class="k-ico"></ion-icon>Reset password</button>
             </form>
         </div>
@@ -55,33 +58,42 @@
         </div>
         
     </div>
+    <script src="verscript.js"></script>
 
     <script>
         $('.form-container').submit(function(e){
-            e.preventDefault();
-            
-            var email = $('.email').val();
-            var code = $('.cod-inp').val();
-            var password = $('.pas-inp').val();
-            $.ajax({
-                method : 'POST',
-                url : 'vercode.php',
-                data : {
-                    email : email,
-                    code : code,
-                    pass : password
-                },
-                success : function(data){
-                    if(data == 'correct'){
-                        $('.error').html("Password changed successfully");
-                        $('.error').css('color', 'green');
+
+            var getInv = document.querySelectorAll('.invalid');
+            if(getInv.length > 0){
+                return false;
+            }
+
+            else{
+                e.preventDefault();
+                
+                var email = $('.email').val();
+                var code = $('.cod-inp').val();
+                var password = $('.pas-inp').val();
+                $.ajax({
+                    method : 'POST',
+                    url : 'vercode.php',
+                    data : {
+                        email : email,
+                        code : code,
+                        pass : password
+                    },
+                    success : function(data){
+                        if(data == 'correct'){
+                            $('.error').html("Password changed successfully");
+                            $('.error').css('color', 'green');
+                        }
+                        else{
+                            $('.error').html("Wrong code entered")
+                            $('.error').css('color', 'red');
+                        }
                     }
-                    else{
-                        $('.error').html("Wrong code entered")
-                        $('.error').css('color', 'red');
-                    }
-                }
-            })
+                })
+            }
 
         })
 

@@ -89,6 +89,8 @@ function validate(){
         alert("You have errors in your form");
         return false;
     }  
+
+    return true;
 }
 
 
