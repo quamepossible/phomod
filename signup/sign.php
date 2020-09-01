@@ -19,7 +19,7 @@
     $details = $_GET['det'];
   ?>
 <?php else:?>
-  <?php for($i = 0; $i < 112; $i++){
+  <?php for($i = 0; $i < 11; $i++){
       $details[$i] = '';
   }
   ?>
