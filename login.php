@@ -33,7 +33,7 @@
                     $enc_pwd = $details['PWD'];
                 }
                 if(password_verify($pwd, $enc_pwd)){
-                    $_SESSION['log'] = $details['USERNAME'];
+                    $_SESSION['log'] = $details['PROFILE_ID'];
                     // header('Location: /');
                     echo 'logged in';
                 }

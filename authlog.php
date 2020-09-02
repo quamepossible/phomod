@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once 'myauto.php';
 require_once 'vendor/autoload.php';
 
@@ -22,9 +22,13 @@ if(isset($_POST['clientid'])){
             $checkFree = new controller;
             $sendDet = $checkFree->userDet($email);
             $getDet = $sendDet->fetchAll();
-            if($getDet->rowCount() == 1){
+            if($sendDet->rowCount() == 1){
                 //THIS MEANS USER IS A FREELANCER
                 echo 'user is a freelancer';
+                foreach($getDet as $getDet){
+                    $freeSes = $getDet['PROFILE_ID'];
+                }
+                $_SESSION['log'] = $freeSes;
             }
 
             //THIS BLOCK EXECUTES IF USER IS NOT IN FREELANCER LIST
@@ -33,8 +37,12 @@ if(isset($_POST['clientid'])){
                 $checkInd = new controller;
                 $indSend = $checkInd->indData($userid);
                 $getInd = $indSend->fetchAll();
-                if($getInd->rowCount() == 1){
+                if($indSend->rowCount() == 1){
                     //THIS MEANS USER IS AN INDIVIDUAL
+                    foreach($getInd as $indDet){
+                        $indSes = $indDet['PROFILE_ID'];
+                    }
+                    $_SESSION['log'] = $indSes;
                     echo 'user is an individual';
                 }
                 else{
@@ -42,9 +50,8 @@ if(isset($_POST['clientid'])){
                     //SO CREATE AN INDIVIDUAL DATA FOR THIS USER
                     $senData = new controller;
                     $getData = $senData->createInd($userid, $email, $name, $pic);
+
                     echo "User created";
-
-
 
                 }
             }

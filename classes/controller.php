@@ -13,7 +13,7 @@
         public function getConnect(){
             $mainConnect = $this->dbconnection();
             return $mainConnect;
-        }
+        }   
 
         public function pwdcon($email){
             return $this->getpwd($email);

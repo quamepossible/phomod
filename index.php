@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'myauto.php';
 ?>
 
 <!DOCTYPE html>
@@ -97,8 +98,40 @@ session_start();
             </nav>
     
         <?php else:?>
+            <?php
+                //SESSION['LOG'] = PROFILE_ID
+                //SO CHECK IF SESSION['LOG'] IS IN FREELANCER OR INDIVIDUAL
+                $conObj = new controller;
+                $getSes = $conObj->getConnect();
+                $sessDet = $_SESSION['log'];
+                $sessProf = 'SELECT USERNAME FROM freelancers WHERE PROFILE_ID = ?';
+                $varSess = $getSes->prepare($sessProf);
+                $varSess->execute([$sessDet]);
+                if($varSess->rowCount() == 1){
+                    $getUserName = $varSess->fetchAll();
+                    //USER IS A FREELANCER
+                    foreach($getUserName as $newUserName){
+                        $dispName = $newUserName['USERNAME'];
+                    }
+                }
+                else{
+                    //USER IS AN INDIVIDUAL
+                    //GET NAME WITH SESSION['LOG'];
+                    $indQue = 'SELECT NAME FROM individual WHERE PROFILE_ID = ?';
+                    $verInd = $getSes->prepare($indQue);
+                    $verInd->execute([$sessDet]);
+                    if($verInd->rowCount() == 1){
+                        $indUserName = $verInd->fetchAll();
+                        foreach($indUserName as $vidUserName){
+                            $dispName = $vidUserName['NAME'];
+                        }
+                    }
+                    else{
+                        $dispName = 'error';
+                    }
+                }
+            ?>
             <nav>
-
                 <div class="logo">
                     <img src="circleLogo.png" alt="">
                     <p class="logoname">PHOMOD.COM</p>
@@ -114,8 +147,8 @@ session_start();
                 <ul>
                     <li><a href="#">PHOTOGRAPHERS</a></li>
                     <li><a href="#">MODELS</a></li>
-                    <li class="log-li"><a href="u.php?name=<?php echo $_SESSION['log']?>" class="log"><ion-icon class="log-ico" name="person-circle-outline"></ion-icon><?php echo $_SESSION['log']?></a></li>
-                    <li class="li-last"><a href="logout.php" class="sign"><ion-icon class="sign-ico" name="log-out-outline"></ion-icon>LOG OUT</a></li>
+                    <li class="log-li"><a href="u.php?name=<?php echo $_SESSION['log']?>" class="log"><ion-icon class="log-ico" name="person-circle-outline"></ion-icon><?php echo $dispName?></a></li>
+                    <li class="li-last"><a href="logout.php" class="sign" onclick="signOut()"><ion-icon class="sign-ico" name="log-out-outline"></ion-icon>LOG OUT</a></li>
 
                 </ul>
             </nav>
@@ -198,10 +231,6 @@ session_start();
 
 
         <!---------------------- FEATURED PHOTOGRAPHERS ---------------------->
-
-        <?php
-            include 'myauto.php';
-        ?>
         <section class="feat-phot">
             <div class="sec-title">
                 <p class="feat-text">FEATURED PHOTOGRAPHERS</p>
@@ -406,7 +435,6 @@ session_start();
         <!-- <script src="resources/carousel.js"></script> -->
 </div>
 
-<p class="getoken"></p>
 <p class="phd"></p>
 
 </body>

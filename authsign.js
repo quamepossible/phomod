@@ -1,5 +1,4 @@
 function onSignIn(googleUser) {
-  var gett = document.querySelector('.getoken');
     // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
     console.log("ID: " + profile.getId()); // Don't send this directly to your server!
@@ -12,35 +11,22 @@ function onSignIn(googleUser) {
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
-    gett.innerHTML = id_token;
-    gett.style.display = 'none';
-}
 
-
-
-$(document).ready(function(){
-
-  function getData(){
-    let getok = $('.getoken').html();
-    if(getok.length > 0){
       $.ajax({
         method : 'POST',
         url : 'authlog.php',
         data : {
-          clientid : getok
+          clientid : id_token
         },
         success : function(data){
           $('.phd').html(data);
         }
       })
-    }
-    else{
-      $('.phd').html('no data available')
-    }
-  }   
-  
-  var doTime = setInterval(getData,1000);
-  if($('.getoken').html().length > 0){
-    clearInterval(doTime);
-  }
-})
+}
+
+function signOut() {
+  var auth2 = gapi.auth2.getAuthInstance();
+  auth2.signOut().then(function () {
+    console.log('User signed out.');
+  });
+}

@@ -67,7 +67,7 @@
         }
         
         protected function login($email){
-            $sql = 'SELECT USERNAME, PWD, RESET_PWD  FROM freelancers WHERE EMAIL = :email';
+            $sql = 'SELECT USERNAME, PROFILE_ID, PWD, RESET_PWD  FROM freelancers WHERE EMAIL = :email';
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute(['email' => $email]);
             return $stmt;
