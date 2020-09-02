@@ -2,14 +2,6 @@
 
     class Controller extends model{
 
-        // private $userMail;
-        // private $userPass;
-
-        // public function __construct($email, $pwd){
-        //     $this->userMail = $email;
-        //     $this->userPass = $pwd;
-        // }
-
         public function getConnect(){
             $mainConnect = $this->dbconnection();
             return $mainConnect;
@@ -63,6 +55,62 @@
         //CREATE ACCOUNT FOR INDIVIDUAL USER
         public function createInd($userid, $email, $name, $pic){
             $sendData = $this->createAcc($userid, $email, $name, $pic);
+        }
+
+        public function convert($sessDet){
+            $getSes = $this->dbconnection();
+            $sessProf = 'SELECT USERNAME FROM freelancers WHERE PROFILE_ID = ?';
+            $varSess = $getSes->prepare($sessProf);
+            $varSess->execute([$sessDet]);
+            if($varSess->rowCount() == 1){
+                $getUserName = $varSess->fetchAll();
+                //USER IS A FREELANCER
+                foreach($getUserName as $newUserName){
+                    $dispName = $newUserName['USERNAME'];
+                }
+            }
+            else{
+                //USER IS AN INDIVIDUAL
+                //GET NAME WITH SESSION['LOG'];
+                $indQue = 'SELECT NAME FROM individual WHERE PROFILE_ID = ?';
+                $verInd = $getSes->prepare($indQue);
+                $verInd->execute([$sessDet]);
+                if($verInd->rowCount() == 1){
+                    $indUserName = $verInd->fetchAll();
+                    foreach($indUserName as $vidUserName){
+                        $dispName = $vidUserName['NAME'];
+                    }
+                }
+                else{
+                    $dispName = 'error';
+                }
+            }
+            return $dispName;
+        }
+
+        //CHECK IF USER IS FREELANCER OR INDIVIDUAL
+        public function checkStatus($sessDet){
+            $getSes = $this->dbconnection();
+            $sessProf = 'SELECT USERNAME FROM freelancers WHERE PROFILE_ID = ?';
+            $varSess = $getSes->prepare($sessProf);
+            $varSess->execute([$sessDet]);
+            if($varSess->rowCount() == 1){
+               $stats = 'freelancer';
+            }
+            else{
+                //USER IS AN INDIVIDUAL
+                //GET NAME WITH SESSION['LOG'];
+                $indQue = 'SELECT NAME FROM individual WHERE PROFILE_ID = ?';
+                $verInd = $getSes->prepare($indQue);
+                $verInd->execute([$sessDet]);
+                if($verInd->rowCount() == 1){
+                    $stats = 'individual';
+                }
+                else{
+                    $stats = 'error';
+                }
+            }
+            return $stats;
         }
         
     }

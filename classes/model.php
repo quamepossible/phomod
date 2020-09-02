@@ -22,6 +22,8 @@
             return $getAll;
         }
 
+        //SS
+
         protected function adminUsers($paramOne, $paramTwo){
             $sql = "SELECT * FROM freelancers WHERE VERIFIED = ? AND LANCER_TYPE LIKE ?";
             $stmt = $this->connect()->prepare($sql);
@@ -123,8 +125,10 @@
 
         //CREATE ACCOUNT FOR INDIVIDUAL USER
         protected function createAcc($userid, $email, $name, $pic){
-            $sql = "INSER INTO individual (USER_ID, NAME, EMAIL, PIC) VALUES(?,?,?,?)";
+            $profile_id = str_replace(" ", "", $name);
+            $profile_id = $profile_id . uniqid();
+            $sql = "INSERT INTO individual (USER_ID, PROFILE_ID, NAME, EMAIL, PIC) VALUES(?,?,?,?,?)";
             $stmt = $this->connect()->prepare($sql);
-            $stmt->execute([$userid, $name, $email, $pic]);
+            $stmt->execute([$userid, $profile_id, $name, $email, $pic]);
         }
     }

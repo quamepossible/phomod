@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    include_once 'myauto.php';
+    require_once 'myauto.php';
 ?>
 
 
@@ -13,16 +13,33 @@
 
         $meconn = new controller();
         $getConn = $meconn->getConnect();
+
+        $getStats = $meconn->checkStatus($sesDet);
+
     ?>
-
-    <?php if(isset($_SESSION['log']) && $_SESSION['log'] === $user):?>
-
-            <?php include 'dash/private.php';?>
-
+//i have this
+    <?php if(isset($_SESSION['log']) &&  ($getStats !== 'freelancer')):?>
+                <?php include 'dash/public.php';?>
+   
     <?php else:?>
-            <?php include 'dash/public.php';?>
+        <?php if(isset($_SESSION['log'])):?>
+            <?php
+            
+                $sesDet = $_SESSION['log'];
+                $valConv = $meconn->convert($sesDet);
+            ?>
+            <?php if($valConv === $user):?>
+                <?php include 'dash/private.php';?>
+            <?php else:?>
+                <?php include 'error404.html'?>
+            <?php endif?>
 
+        <?php else:?>
+                <?php include 'dash/public.php';?>
+
+        <?php endif?>
     <?php endif?>
+    
         <script src="Chocolat-master/dist/js/chocolat.js"></script>
         </div>
     </body>
