@@ -1,5 +1,6 @@
 <?php
 
+include_once 'myauto.php';
 require_once 'vendor/autoload.php';
 
 // Get $id_token via HTTPS POST.
@@ -16,9 +17,39 @@ if(isset($_POST['clientid'])){
             $userid = $payload['sub'];
             $email = $payload['email'];
             $name = $payload['name'];
-            $pic = $payload['pic'];
+            $pic = $payload['picture'];
 
-            
+            $checkFree = new controller;
+            $sendDet = $checkFree->userDet($email);
+            $getDet = $sendDet->fetchAll();
+            if($getDet->rowCount() == 1){
+                //THIS MEANS USER IS A FREELANCER
+                echo 'user is a freelancer';
+            }
+
+            //THIS BLOCK EXECUTES IF USER IS NOT IN FREELANCER LIST
+            else{
+                //CHECK FOR USER WITH GOOGLE AUTH USER ID
+                $checkInd = new controller;
+                $indSend = $checkInd->indData($userid);
+                $getInd = $indSend->fetchAll();
+                if($getInd->rowCount() == 1){
+                    //THIS MEANS USER IS AN INDIVIDUAL
+                    echo 'user is an individual';
+                }
+                else{
+                    //THIS MEANS USER IS A NEW USER
+                    //SO CREATE AN INDIVIDUAL DATA FOR THIS USER
+                    $senData = new controller;
+                    $getData = $senData->createInd($userid, $email, $name, $pic);
+                    echo "User created";
+
+
+
+                }
+            }
+            //THIS BLOCK EXECUTES IF USER IS NOT IN FREELANCER LIST
+
 
             // echo 'everything is valid';
         } 

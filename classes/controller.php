@@ -48,8 +48,21 @@
             $changePass = $this->updPass($email, $pass);
         }
 
-        //INDIVIDUAL SIGN IN
+        //CHECK IF USER IS A FREELANCER
+        public function userDet($email){
+            $senDet = $this->getDe($email);
+            return $senDet;
+        }
 
+        //CHECK IF USER IS AN INDIVIDUAL
+        public function indData($userid){
+            $senInd = $this->geInd($userid);
+            return $senInd;
+        }
 
+        //CREATE ACCOUNT FOR INDIVIDUAL USER
+        public function createInd($userid, $email, $name, $pic){
+            $sendData = $this->createAcc($userid, $email, $name, $pic);
+        }
         
     }

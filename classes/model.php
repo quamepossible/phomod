@@ -105,6 +105,26 @@
             $stmt->execute(["pwd" => $pass, "mail" => $email]);
         }
 
-        //INDIVIDUAL SIGN IN
+        //CHECK IF USER IS A FREELANCER
+        protected function getDe($email){
+            $sql = "SELECT * FROM freelancers WHERE EMAIL = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$email]);
+            return $stmt;
+        }
 
+        //CHECK IF USER IS AN INDIVIDUAL
+        protected function geInd($userid){
+            $sql = "SELECT * FROM individual WHERE USER_ID = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$userid]);
+            return $stmt;
+        }
+
+        //CREATE ACCOUNT FOR INDIVIDUAL USER
+        protected function createAcc($userid, $email, $name, $pic){
+            $sql = "INSER INTO individual (USER_ID, NAME, EMAIL, PIC) VALUES(?,?,?,?)";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$userid, $name, $email, $pic]);
+        }
     }
