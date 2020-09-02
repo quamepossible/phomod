@@ -105,4 +105,6 @@
             $stmt->execute(["pwd" => $pass, "mail" => $email]);
         }
 
+        //INDIVIDUAL SIGN IN
+
     }

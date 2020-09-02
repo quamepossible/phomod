@@ -48,5 +48,8 @@
             $changePass = $this->updPass($email, $pass);
         }
 
+        //INDIVIDUAL SIGN IN
+
+
         
     }

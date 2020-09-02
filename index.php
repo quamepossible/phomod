@@ -15,9 +15,12 @@ session_start();
     <link rel="stylesheet" href="resources/media.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#007d9c">
+    <meta name="google-signin-client_id" content="434711358291-ug8416melga73rv6gupqv52n79l5lp6e.apps.googleusercontent.com">
     <script src="bootstrap/dist/js/bootstrap.min.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="authsign.js" defer></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/> -->
     <!-- <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css"> -->
     <!-- <script src="owlcarousel/dist/owl.carousel.min.js" defer></script> -->
@@ -56,6 +59,7 @@ session_start();
                 </div>
             
                 <button id="dis" type="submit" name="submit" class="btn btn-primary log-btn">Login</button>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
                 <p class="res-p"><a href="reset/" class="reset">Reset password</a></p>        
             </form>
         </div>
@@ -401,6 +405,9 @@ session_start();
 
         <!-- <script src="resources/carousel.js"></script> -->
 </div>
+
+<p class="getoken"></p>
+<p class="phd"></p>
 
 </body>
 </html>
