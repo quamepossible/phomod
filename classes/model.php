@@ -22,7 +22,7 @@
             return $getAll;
         }
 
-        //SS
+        
 
         protected function adminUsers($paramOne, $paramTwo){
             $sql = "SELECT * FROM freelancers WHERE VERIFIED = ? AND LANCER_TYPE LIKE ?";

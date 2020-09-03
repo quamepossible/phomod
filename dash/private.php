@@ -292,7 +292,7 @@
     <script src="dash/anmt.js"></script>
 
 <?php elseif($getStats == 'individual'):?>
- <p><?php echo $getStats?></p>
+ <p><?php echo $getStats . ' ' . $valConv?></p>
 
 <?php else:?>
     <?php include 'error404.html'?>
