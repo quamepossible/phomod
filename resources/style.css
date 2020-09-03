@@ -8,6 +8,11 @@ body{
     font-family: 'Hind Siliguri', sans-serif;
 }
 
+.sign-btn{
+    width: 240px;
+    margin: auto;
+}
+
 input,
 textarea,
 button,
@@ -198,6 +203,8 @@ button span{
 
 .res-p{
     text-align: center;
+    padding-top: 10px;
+    font-weight: bold;
 }
 .reset{
     padding: 10px;

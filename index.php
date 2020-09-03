@@ -20,7 +20,7 @@ require_once 'myauto.php';
     <script src="bootstrap/dist/js/bootstrap.min.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <script src="authsign.js" defer></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/> -->
     <!-- <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css"> -->
@@ -60,8 +60,9 @@ require_once 'myauto.php';
                 </div>
             
                 <button id="dis" type="submit" name="submit" class="btn btn-primary log-btn">Login</button>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <p class="res-p"><a href="reset/" class="reset">Reset password</a></p>        
+                <div class="sign-btn"><div id="my-signin2" data-onsuccess="onSignIn"></div></div>
+                
+                <p class="res-p"><a href="reset/" class="reset">Reset password?</a></p>        
             </form>
         </div>
         </div>
