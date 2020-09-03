@@ -1,4 +1,4 @@
-
+<?php $getStats = $meconn->checkStatus($sesDet);?>
 <?php if($getStats == 'freelancer'):?>
     <?php if($getUserInfo->rowCount() == 0):?>
         <?php include 'review.html'?>

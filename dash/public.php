@@ -8,6 +8,7 @@
     <?php 
         $pic = $userr['USERNAME'];
         //GET PROFILE PIC 
+        
         $picObj = new view;
         $getPicMet = $picObj->getProfilePic($pic);
     ?>
