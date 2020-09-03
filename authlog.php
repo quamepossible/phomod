@@ -24,7 +24,6 @@ if(isset($_POST['clientid'])){
             $getDet = $sendDet->fetchAll();
             if($sendDet->rowCount() == 1){
                 //THIS MEANS USER IS A FREELANCER
-                echo 'user is a freelancer';
                 foreach($getDet as $getDet){
                     $freeSes = $getDet['PROFILE_ID'];
                 }
