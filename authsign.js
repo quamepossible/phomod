@@ -33,6 +33,7 @@ function renderButton() {
     'theme': 'dark',
     'onsuccess': onSignIn
   });
+
 }
 
 function signOut() {
@@ -41,3 +42,4 @@ function signOut() {
     console.log('User signed out.');
   });
 }
+

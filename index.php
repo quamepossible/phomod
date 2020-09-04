@@ -20,8 +20,8 @@ require_once 'myauto.php';
     <script src="bootstrap/dist/js/bootstrap.min.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <script src="authsign.js" defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/> -->
     <!-- <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css"> -->
     <!-- <script src="owlcarousel/dist/owl.carousel.min.js" defer></script> -->

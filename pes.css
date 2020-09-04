@@ -241,60 +241,50 @@ a:hover{
 
 .t-span{
     margin: 5px;
-    padding: 5px 20px;
+    padding: 5px;
+    padding-right: 10px;
     background: rgb(0, 162, 255);
     border: 3px solid white;
     color: white;
     border-radius: 60px;
     cursor: pointer;
-    position: relative;
     overflow: hidden;
+    white-space: nowrap;
 }
 
-.name-only{
-    padding-left: 15px;
-}
 
 .comp{
     background-color: black;
 }
 
-.cam-ico{
-    background-color: white;
-    color: black;
-    border-radius: 50%;
-    padding: 5px;
-    font-size: 20px;
-    position: absolute;
-}
 
 .cam-ico, .tag-ico, .roc-ico{
-    left: 3px;
-    margin-top: 17.2px;
+    background: white;
+    position: relative;
+    border-radius: 50%;
+    top: 10px;
+    left: -2px;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.cam-ico{
+    color: black;
 }
 
 .tag-ico{
-    background: white;
     color: blue;
-    border-radius: 50%;
-    padding: 5px;
-    font-size: 20px;
-    position: absolute;
- 
+}
+
+.roc-ico{
+    color: green;
 }
 
 .trav{
     background: green;
 }
 
-.roc-ico{
-    background: white;
-    border-radius: 50%;
-    padding: 5px;
-    color: green;
-    font-size: 20px;
-    position: absolute;
-}
+
 
 
 .others{
