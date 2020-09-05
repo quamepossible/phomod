@@ -26,7 +26,7 @@ require_once 'myauto.php';
     <!-- <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css"> -->
     <!-- <script src="owlcarousel/dist/owl.carousel.min.js" defer></script> -->
     <script src="resources/script.js" defer></script>
-
+    <script src="location/style.js" defer></script>
     <title>Welcome to Phomod</title>
 </head>
 <body>
@@ -204,6 +204,16 @@ require_once 'myauto.php';
     <!------------ BROWSE CATEGORY ------------>
 
 
+    <!------------ FREELANCERS NEAR YOU ------------>
+
+
+    <div class="gerit">
+        
+    </div>
+
+
+
+    <!------------ FREELANCERS NEAR YOU ------------>
 
 
         <!---------------------- FEATURED PHOTOGRAPHERS ---------------------->

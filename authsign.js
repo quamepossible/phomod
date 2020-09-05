@@ -20,6 +20,7 @@ function onSignIn(googleUser) {
         },
         success : function(data){
           $('.phd').html(data);
+          console.log(data)
         }
       })
 }
