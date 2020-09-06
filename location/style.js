@@ -2,7 +2,7 @@
 var startPos;
 var coordinates = [];
 var geoSuccess = function(position) {
-  startPos = position;
+startPos = position;
 console.log("Latitude " + startPos.coords.latitude);
 console.log("Longitude " + startPos.coords.longitude);
 console.log("Accuracy " + startPos.coords.accuracy);
@@ -24,19 +24,45 @@ console.log("Accuracy " + startPos.coords.accuracy);
       var getData = data;
       var city = getData.address.city;
       console.log(city);
-      $.ajax({
-        method : 'GET',
-        url : 'location/getrec.php',
-        data : {
-          city : city
-        },
-        success : function(data){
-          console.log(data);
-          $('.gerit').html(data);
-        }
-      })
+      if(city !== undefined){
+        $.ajax({
+          method : 'GET',
+          url : 'location/getrec.php',
+          data : {
+            city : city
+          },
+          success : function(data){
+            console.log(data);
+            $('.gerit').html(data);
+            var slider = tns({
+              container: '.my-slider',
+              rewind: true,
+              swipeAngle: false,
+              speed: 400,
+              preventScrollOnTouch: 'force',
+              responsive: {
+                  640: {
+                    items: 1
+                  },
+                  700: {
+                    gutter: 30,
+                    items: 2
+                  },
+                  900: {
+                    items: 5
+                  }
+                }
+            });
+          }
+        })
+      }
+      else{
+        console.log("we can't find city");
+      }
     }
   })
 };
 
 navigator.geolocation.watchPosition(geoSuccess, function error(msg) {alert('Please enable your GPS position feature.');}, {enableHighAccuracy:true});
+
+

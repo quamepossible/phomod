@@ -7,6 +7,7 @@ require_once 'myauto.php';
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
@@ -22,11 +23,9 @@ require_once 'myauto.php';
     <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
     <script src="authsign.js" defer></script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/> -->
-    <!-- <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css"> -->
-    <!-- <script src="owlcarousel/dist/owl.carousel.min.js" defer></script> -->
     <script src="resources/script.js" defer></script>
     <script src="location/style.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <title>Welcome to Phomod</title>
 </head>
 <body>
@@ -210,7 +209,6 @@ require_once 'myauto.php';
     <div class="gerit">
         
     </div>
-
 
 
     <!------------ FREELANCERS NEAR YOU ------------>
