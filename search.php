@@ -8,7 +8,6 @@ include 'myauto.php';
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css">
         <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
         <link href="resources/sea.css" rel="stylesheet">

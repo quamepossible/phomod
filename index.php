@@ -7,7 +7,6 @@ require_once 'myauto.php';
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
@@ -15,6 +14,7 @@ require_once 'myauto.php';
     <link rel="shortcut icon" href="phomodlogo.ico">
     <link href="https://fonts.googleapis.com/css2?family=K2D:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="resources/media.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#007d9c">
     <meta name="google-signin-client_id" content="434711358291-ug8416melga73rv6gupqv52n79l5lp6e.apps.googleusercontent.com">
@@ -25,7 +25,7 @@ require_once 'myauto.php';
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <script src="resources/script.js" defer></script>
     <script src="location/style.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script> -->
     <title>Welcome to Phomod</title>
 </head>
 <body>
@@ -207,7 +207,6 @@ require_once 'myauto.php';
 
 
     <div class="gerit">
-        
     </div>
 
 

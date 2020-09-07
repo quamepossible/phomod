@@ -524,7 +524,7 @@ form select, .search, .browse{
 }
 
 .span-1-of-4 div p{
-    color: white;
+    color: rgb(255, 255, 255);
     text-shadow: 0 0 5px black;
     text-transform: uppercase;
     font-weight: bold;
@@ -835,33 +835,56 @@ form select, .search, .browse{
 }
 .near-you{
     width: 100%;
-    height: 250px;
-    /* background: red; */
+    height: auto;
+}
+
+.hol-free{
+    /* background: yellow; */
+    overflow: hidden;
+    height: auto;
+    width: 95%;
 }
 
 .span-1-of-loc{
-    width: 200px;
-    height: 250px;
-    background: blue;
-    margin: 0 5px;
-    padding-top: 10px;
-    display: inline-block;
+    height: auto;
+    width: 19%;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    background: rgb(238, 238, 238);
 }
 
+.each-pic{
+    margin-top: 10px;
+}
 .new-in{
     line-height: 15px;
 }
 
-.hol-free{
-    background: green;
-    width: 95%;
+.s-2{
+    width: 50%;
 }
 
+.l-1{
+    padding-left: 0;
+}
 
+.s-2 .h-2{
+    background: rgb(0, 145, 0);
+}
 
-/* .each-pic{
-    z-index: 1;
-} */
+.det{
+    width: 98%;
+}
 
+.jst{
+    background: red;
+    width: 95%;
+    text-align: center;
+}
+
+.jst-tt{
+    color: white;
+}
 
 /************** LOCATION **************/

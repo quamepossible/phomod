@@ -23,16 +23,27 @@
 //     echo "Valid fields";
 // }
 
-// $name = 'off inso';
-// $name = explode(" ", $name);
-// echo end($name);
-$x = 5;
-if ($x > 10){
-    $out = 'is bigger';
+//THIS IS THE CLASS THAT CONTAINS THE PRIVATE VARIABLE
+class ClassOne{
+    private $name = "Kwame";
+    public function echoName(){
+        $getName = $this->name;
+        return $getName;
+    }
 }
 
-else{
-    $out = 'is smaller';
+//THIS IS THE CLASS THAT'S ACCESSING THE PRIVATE VARIABLE
+class ClassTwo extends ClassOne{
+    public function getName(){
+        $getClass = $this->echoName();
+        return $getClass;
+    }
+}
+class ClassThree{
+    public function justMethod(){
+
+    }
 }
 
-echo $out;
+$classObj = new ClassTwo;
+echo $classObj->getName();

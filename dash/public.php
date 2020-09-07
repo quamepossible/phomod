@@ -95,13 +95,13 @@
         <div class="hold-tags">
             <p>
                 <?php if(!empty($comName)):?>
-                    <span class="t-span comp"><ion-icon name="camera" class="cam-ico"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $comName?></span>
+                    <span class="t-span comp"><ion-icon name="camera" class="cam-ico"></ion-icon><?php echo $comName?></span>
                 <?php endif?>
                 <?php for($k = 0; $k < $tTags; $k++):?>
-                    <span class="t-span"><ion-icon name="pricetag" class="tag-ico"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $getEach[$k]?></span>
+                    <span class="t-span"><ion-icon name="pricetag" class="tag-ico"></ion-icon><?php echo $getEach[$k]?></span>
                 <?php endfor?>
                 <?php if($isTravel == 'YES'):?>
-                    <span class="t-span trav"><ion-icon name="rocket" class="roc-ico"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;Availabe for travel</span>
+                    <span class="t-span trav"><ion-icon name="rocket" class="roc-ico"></ion-icon>Availabe for travel</span>
                 <?php endif?>
             </p>
         </div>

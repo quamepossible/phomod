@@ -213,10 +213,6 @@
         animation-name: stop;
         background: none;
     }
-
-    
-
-
 }
 
 @media screen and (max-width: 985px) and (min-width: 820px){
@@ -343,6 +339,10 @@
     .sec-title, .mod-sec-title{
         width: 78%;
     }
+
+    .jst{
+        width: 95%;
+    }
 }
 
 @media screen and (max-width: 1050px) and (min-width: 905px){
@@ -352,6 +352,10 @@
 
     .sec-title, .mod-sec-title{
         width: 88%;
+    }
+
+    .jst{
+        width: 93%;
     }
 }
 
@@ -374,11 +378,19 @@
     .sec-title, .mod-sec-title{
         width: 99%;
     }
+
+    .jst{
+        width: 93%;
+    }
 }
 
 @media screen and (max-width: 810px){
     .feat-row{
         width: 100%;
+    }
+
+    .hol-free{
+        padding-right: 10px;
     }
 
     /* .span-1-of-3{
@@ -503,4 +515,107 @@
        height: 300px;
        margin: auto;
    }
+}
+
+@media screen and (max-width: 1080px){
+    .span-1-of-loc{
+        width: 23%;
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .span-1-of-loc{
+        width: 31%;
+    }
+}
+
+@media screen and (max-width: 700px){
+
+    .hol-free{
+        width: 100%;
+        padding-right: 5px;
+    }
+
+    .span-1-of-loc{
+        width: 32%;
+        margin-left: 7px;
+        margin-top: 7px;
+    }
+
+    .jst{
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 570px){
+    .span-1-of-loc{
+        width: 45%;
+        margin-left: 18px;
+        margin-top: 18px;
+        
+    }
+
+    .jst{
+        width: 93%;
+    }
+}
+
+@media screen and (max-width: 460px){
+    .span-1-of-loc{
+        width: 47.5%;
+        margin-left: 8px;
+        margin-top: 8px;
+    }
+
+    .jst{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 400px) and (min-width: 350px){
+    
+    .hol-free{
+        padding-right: 0;
+    }
+    
+    .span-1-of-loc{
+        width: 49%;
+        margin: 1.5px;
+    }
+
+    .det{
+        width: 100%;
+    }
+
+    .s-2:first-child{
+        display: none;
+    }
+
+    .jst{
+        width: 99%;
+    }
+}
+
+
+@media screen and (max-width: 350px){
+    .hol-free{
+        padding-right: 0;
+    }
+
+    .span-1-of-loc{
+        width: 90%;
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+@media screen and (max-width: 270px){
+    .span-1-of-3{
+        overflow: auto;
+    }
+    .logoname{
+        display: none;
+    }
 }

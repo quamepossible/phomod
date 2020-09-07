@@ -112,7 +112,5 @@
             }
             return $stats;
         }
-
-        // public function newLoc($)
         
     }
