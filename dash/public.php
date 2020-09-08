@@ -64,6 +64,11 @@
         $valStmt = $getConn->prepare($catStmt);
         $valStmt->execute(['uid' => $pic]);
         $getCat = $valStmt->fetchAll();
+
+        //GET TOTAL NUMBER OF USERS WHO HAVE RATED THIS USER
+        
+        $gehRevv = $getUserObj->getTotRat($user);
+
         foreach($getCat as $allTags){
             //isolate
             $getEach = explode(",", $allTags["CATEGORY"]); 
@@ -120,16 +125,32 @@
                         <p><ion-icon class="ver-ico" name="shield-checkmark"></ion-icon><span class="ver-span">verified</span></p>
                     </div>  
                     <div class="rate">
-                        <p><span class="ratee">5.0</span>
+                        <p class="fet-rev"><span class="ratee">5.0</span>
                             <ion-icon class="star-ico" name="star"></ion-icon>
                             <ion-icon class="star-ico" name="star"></ion-icon>
                             <ion-icon class="star-ico" name="star"></ion-icon>
                             <ion-icon class="star-ico" name="star"></ion-icon>
                             <ion-icon class="star-ico" name="star"></ion-icon>&nbsp;&nbsp;
-                            <?php echo $rating?> reviews
+                            <?php echo $gehRevv?> reviews
                             <span class="rate-btn"><ion-icon name="thumbs-up" class="thumb-ico"></ion-icon><span>Rate</span></span>
                         </p>
-
+                        
+                        <?php if(isset($_SESSION['log'])):?>
+                            <form action="dash/rate.php" method="POST" class='rat-form' onsubmit="return rateg()">
+                                <input type="text" name="lancer" class="lance" value="<?php echo $user?>">
+                                <input type="text" name="rater" class="rater" value="<?php echo $_SESSION['log']?>">
+                                <input type="text" name="votnum" class="votnum">
+                                <p class="hh-sta">
+                                    <ion-icon class="star-ico ico-ns" name="star-outline">1</ion-icon>
+                                    <ion-icon class="star-ico ico-ns" name="star-outline">2</ion-icon>
+                                    <ion-icon class="star-ico ico-ns" name="star-outline">3</ion-icon>
+                                    <ion-icon class="star-ico ico-ns" name="star-outline">4</ion-icon>
+                                    <ion-icon class="star-ico ico-ns" name="star-outline">5</ion-icon>
+                                </p>
+                                <button type="submit" class="done-ra">OK</button>
+                            </form>
+                        <?php endif?>
+                        
                         <p class="location"><ion-icon class="loc-ico" name="location-outline"></ion-icon>&nbsp;<span><?php echo ucwords($region) . ", ". ucfirst($city)?></span></p>
                     </div>
 

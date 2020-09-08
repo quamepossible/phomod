@@ -134,12 +134,12 @@
                 $imgSql = 'INSERT INTO profile_pic(USERNAME, IMG_SRC) VALUES(?, ?)';
                 $imgStm = $connect->prepare($imgSql);
                 $imgStm->execute([$username, $newImgName]);
-                
-                $sql = 'INSERT INTO freelancers(FULL_NAME, USERNAME, PHONE, WHATSAPP, WEBSITE, INSTAGRAM, EMAIL, REGION, CITY, LANCER_TYPE, COMPANY_NAME, WORKING_DAYS, CATEGORY, TRAVEL, VERIFIED, PWD) 
-                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+                $profid = $username . uniqid();
+                $sql = 'INSERT INTO freelancers(FULL_NAME, USERNAME, PHONE, WHATSAPP, WEBSITE, INSTAGRAM, EMAIL, REGION, CITY, LANCER_TYPE, COMPANY_NAME, WORKING_DAYS, CATEGORY, TRAVEL, VERIFIED, PWD, PROFILE_ID) 
+                VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 
                 $stmt = $connect->prepare($sql);
-                $stmt->execute([$name, $username, $phone, $whatsapp, $website, $instagram, $email, $region, $city, $lancer, $company, $days, $mainCategory, $travel, $verified, $pass]);
+                $stmt->execute([$name, $username, $phone, $whatsapp, $website, $instagram, $email, $region, $city, $lancer, $company, $days, $mainCategory, $travel, $verified, $pass, $profid]);
                 header("Location: succlog.php");
             }
         }

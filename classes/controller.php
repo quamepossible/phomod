@@ -113,4 +113,8 @@
             return $stats;
         }
         
+        //ADD RATINGS
+        public function addRate($lancer, $rater, $totVot){
+            $senVot = $this->finVote($lancer, $rater, $totVot);
+        }
     }

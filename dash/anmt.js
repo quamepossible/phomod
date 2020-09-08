@@ -14,6 +14,10 @@ var getSpans = document.querySelectorAll(".span-1-of-3");
     })
 }
 
+$(document).ready(function(){
+  
+})
+ 
 
 ///////////////SCRIPT TO DELETE PICTURE////////////////
 // var getDel = document.querySelectorAll(".delete");

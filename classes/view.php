@@ -43,4 +43,9 @@
             return $getUnverifiedResults;
         }
 
+        public function getTotRat($user){
+            $getRat = $this->senRat($user);
+            return $getRat;
+        }
+
     }

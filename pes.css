@@ -456,6 +456,44 @@ a:hover{
     color: rgb(255, 208, 0);
 }
 
+.ico-ns{
+    color: rgba(255, 255, 255, 0.795);
+    margin-right: -4px;
+    padding: 5px 15px;
+    font-size: 30px;
+    position: relative;
+    bottom: 0;
+}
+
+.rat-form{
+    display: none;
+    white-space: nowrap;
+    /* background: red; */
+    
+}
+
+.rat-form input{
+    display: none;
+}
+
+.hh-sta{
+    position: relative;
+    display: inline-block;
+    /* background: blue; */
+    bottom: -10px;
+}
+
+.done-ra{
+    padding: 12px;
+    color: white;
+    background: green;
+    border: none;
+    position: relative;
+    bottom: 2px;
+    margin-left: 10px;
+    outline: none !important;
+}
+
 .location span{
     padding-left: 17px;
 }
