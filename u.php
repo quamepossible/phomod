@@ -16,7 +16,6 @@
 
         //GET LANCER'S TOTAL STAR
         $lanStar = $getUserObj->getStar($user);
-        
     ?>
 
     <?php if(isset($_SESSION['log'])):?>

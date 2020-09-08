@@ -142,23 +142,34 @@
                             ?>
                             <?php if($checkRate->rowCount() == 1):?>
                                 <?php foreach($verRate as $getRes):?>
-                                    <p class='mark-rate'></p>    
+                                    <p class='mark-rate'></p>
+                                    <?php $alrStar = $getRes['STAR']?>    
                                 <?php endforeach?>
-                            <?php endif?>
+                                <form action="dash/rate.php" method="POST" class='rat-form' onsubmit="return rateg()">
+                                    <input type="text" name="lancer" class="lance" value="<?php echo $user?>">
+                                    <input type="text" name="rater" class="rater" value="<?php echo $_SESSION['log']?>">
+                                    <input type="text" name="votnum" class="votnum">
+                                    <p class="hh-sta">
+                                        <?php include 'dash/revstar.php'?>
+                                    </p>
+                                    <button type="submit" class="done-ra">OK</button>
+                                </form>
 
-                            <form action="dash/rate.php" method="POST" class='rat-form' onsubmit="return rateg()">
-                                <input type="text" name="lancer" class="lance" value="<?php echo $user?>">
-                                <input type="text" name="rater" class="rater" value="<?php echo $_SESSION['log']?>">
-                                <input type="text" name="votnum" class="votnum">
-                                <p class="hh-sta">
-                                    <ion-icon class="star-ico ico-ns" name="star-outline">1</ion-icon>
-                                    <ion-icon class="star-ico ico-ns" name="star-outline">2</ion-icon>
-                                    <ion-icon class="star-ico ico-ns" name="star-outline">3</ion-icon>
-                                    <ion-icon class="star-ico ico-ns" name="star-outline">4</ion-icon>
-                                    <ion-icon class="star-ico ico-ns" name="star-outline">5</ion-icon>
-                                </p>
-                                <button type="submit" class="done-ra">OK</button>
-                            </form>
+                            <?php else:?>
+                                <form action="dash/rate.php" method="POST" class='rat-form' onsubmit="return rateg()">
+                                    <input type="text" name="lancer" class="lance" value="<?php echo $user?>">
+                                    <input type="text" name="rater" class="rater" value="<?php echo $_SESSION['log']?>">
+                                    <input type="text" name="votnum" class="votnum">
+                                    <p class="hh-sta">
+                                        <ion-icon class="star-ico ico-ns" name="star-outline">1</ion-icon>
+                                        <ion-icon class="star-ico ico-ns" name="star-outline">2</ion-icon>
+                                        <ion-icon class="star-ico ico-ns" name="star-outline">3</ion-icon>
+                                        <ion-icon class="star-ico ico-ns" name="star-outline">4</ion-icon>
+                                        <ion-icon class="star-ico ico-ns" name="star-outline">5</ion-icon>
+                                    </p>
+                                    <button type="submit" class="done-ra">OK</button>
+                                </form>
+                            <?php endif?>
                         <?php endif?>
                         
                         <p class="location"><ion-icon class="loc-ico" name="location-outline"></ion-icon>&nbsp;<span><?php echo ucwords($region) . ", ". ucfirst($city)?></span></p>
