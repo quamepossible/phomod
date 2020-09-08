@@ -23,27 +23,9 @@
 //     echo "Valid fields";
 // }
 
-//THIS IS THE CLASS THAT CONTAINS THE PRIVATE VARIABLE
-class ClassOne{
-    private $name = "Kwame";
-    public function echoName(){
-        $getName = $this->name;
-        return $getName;
-    }
+$stars [1,2,3,4,5];
+$count = count($stars);
+$all = 0;
+foreach($stars as $name => $value){
+    echo ($stars[$name])
 }
-
-//THIS IS THE CLASS THAT'S ACCESSING THE PRIVATE VARIABLE
-class ClassTwo extends ClassOne{
-    public function getName(){
-        $getClass = $this->echoName();
-        return $getClass;
-    }
-}
-class ClassThree{
-    public function justMethod(){
-
-    }
-}
-
-$classObj = new ClassTwo;
-echo $classObj->getName();

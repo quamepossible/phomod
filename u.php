@@ -14,6 +14,15 @@
         $meconn = new controller();
         $getConn = $meconn->getConnect();
 
+        //GET LANCER'S TOTAL STAR
+        $lanStar = $getUserObj->getStar($user);
+        if($lanStar->rowCount() > 0){
+            $donStar = $getConn->fetchAll;
+            foreach($donStar as $outStar){
+                $totStar = 
+            }
+        }
+
 
     ?>
 

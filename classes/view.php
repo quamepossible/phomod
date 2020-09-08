@@ -48,4 +48,14 @@
             return $getRat;
         }
 
+        public function hasRate($rater, $lancer){
+            $isRated = $this->getRated($rater, $lancer);
+            return $isRated;
+        }
+
+        public function getStar($lancer){
+            $allStar = $this->calStar($lancer);
+            return $allStar;
+        }
+
     }

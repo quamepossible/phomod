@@ -136,6 +136,19 @@
                         </p>
                         
                         <?php if(isset($_SESSION['log'])):?>
+
+                            <?php
+                                //CHECK IF THIS USER HAS RATED THIS FREELANCER
+                                $rater = $_SESSION['log'];
+                                $checkRate = $getUserObj->hasRate($rater, $user);
+                                $verRate = $checkRate->fetchAll();
+                            ?>
+                            <?php if($checkRate->rowCount() == 1):?>
+                                <?php foreach($verRate as $getRes):?>
+                                    <p class='mark-rate'></p>    
+                                <?php endforeach?>
+                            <?php endif?>
+
                             <form action="dash/rate.php" method="POST" class='rat-form' onsubmit="return rateg()">
                                 <input type="text" name="lancer" class="lance" value="<?php echo $user?>">
                                 <input type="text" name="rater" class="rater" value="<?php echo $_SESSION['log']?>">

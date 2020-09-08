@@ -424,9 +424,10 @@ a:hover{
 .rate-btn{
     background: rgb(201, 181, 0);
     margin-left: 15px;
-    padding: 8px 25px;
     position: relative;
-    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    /* padding-right: 15px; */
     cursor: pointer;
     color: white;
     display: block;

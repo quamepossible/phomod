@@ -185,4 +185,18 @@
             $totRev = $stmt_rat->rowCount();
             return $totRev;
         }
+
+        protected function getRated($rater, $lancer){
+            $sql = "SELECT * FROM rating WHERE RATER = ? and LANCER = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$rater, $lancer]);
+            return $stmt;
+        }
+
+        protected function calStar($lancer){
+            $sql = "SELECT STAR FROM rating WHERE LANCER = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$lancer]);
+            return $stmt;
+        }
     }

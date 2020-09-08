@@ -17,6 +17,7 @@ if(starForm.length > 0){
         $(this).hide();
         $('.rat-form').css('display', 'block');
     })
+
 }
 
 else{
@@ -130,34 +131,43 @@ $(document).ready(function(){
     }     
 
     //AJAX RATE
-$('.rat-form').submit(function(e){
-    e.preventDefault();
-    var lancerr = $('.lance').val();
-    var rater = $('.rater').val();
-    var starl = $('.votnum').val();
+    $('.rat-form').submit(function(e){
+        e.preventDefault();
+        var lancerr = $('.lance').val();
+        var rater = $('.rater').val();
+        var starl = $('.votnum').val();
 
-    $.ajax({
-        method : "POST",
-        url : "dash/rate.php",
-        data : {
-            lancer : lancerr,
-            rater : rater,
-            votnum : starl
-        },
-        success : function(data){
-            if(data == 'empty'){
-                alert('Please rate');
+        $.ajax({
+            method : "POST",
+            url : "dash/rate.php",
+            data : {
+                lancer : lancerr,
+                rater : rater,
+                votnum : starl
+            },
+            success : function(data){
+                if(data == 'empty'){
+                    alert('Please rate');
+                }
+                else{
+                    // alert('done');
+                    $('.fet-rev').load('dash/rev.php',{user : lancerr});
+                }
+                console.log(data);
             }
-            else{
-                // alert('done');
-                $('.fet-rev').load('dash/rev.php',{user : lancerr});
-            }
-            console.log(data);
-        }
+        })
     })
-})
-
-
+    if($('.mark-rate').length > 0){
+        $('.rate-btn').css('background', 'green');
+        $('.rate-btn>span').html("You've rated");
+        $('.thumb-ico').attr('name', 'checkmark-done-outline');
+    }
+    // if(starForm.length > 0){
+    //     console.log($('.mark-rate').html().length)
+    //     if($('.mark-rate').html().length > 0){
+    //         $('.rate-btn').css('background', 'green');
+    //     }
+    // }
     Chocolat(document.querySelectorAll('.chocolat-image'));
 
 })
