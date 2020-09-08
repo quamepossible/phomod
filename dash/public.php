@@ -125,12 +125,9 @@
                         <p><ion-icon class="ver-ico" name="shield-checkmark"></ion-icon><span class="ver-span">verified</span></p>
                     </div>  
                     <div class="rate">
-                        <p class="fet-rev"><span class="ratee">5.0</span>
-                            <ion-icon class="star-ico" name="star"></ion-icon>
-                            <ion-icon class="star-ico" name="star"></ion-icon>
-                            <ion-icon class="star-ico" name="star"></ion-icon>
-                            <ion-icon class="star-ico" name="star"></ion-icon>
-                            <ion-icon class="star-ico" name="star"></ion-icon>&nbsp;&nbsp;
+                        <p class="fet-rev"><span class="ratee"><?php echo $lanStar?></span>
+                        <?php include 'dash/star.php'?>
+                            &nbsp;&nbsp;
                             <?php echo $gehRevv?> reviews
                             <span class="rate-btn"><ion-icon name="thumbs-up" class="thumb-ico"></ion-icon><span>Rate</span></span>
                         </p>

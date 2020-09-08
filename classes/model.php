@@ -197,6 +197,23 @@
             $sql = "SELECT STAR FROM rating WHERE LANCER = ?";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$lancer]);
-            return $stmt;
+
+            //CHECK IF LANCER HAS A RATING
+            if($stmt->rowCount() > 0){
+                //THIS MEANS LANCER HAS BEEN RATED AT LEAST ONES
+                $donStar = $stmt->fetchAll();
+                $totStar = 0;
+                foreach($donStar as $weStar){
+                    $totStarr = $weStar['STAR'];
+                    $totStar += $totStarr;
+                }
+                $granStar = ($totStar) / ($stmt->rowCount());
+                $granStar = round($granStar, 1);
+            }
+            else{
+                //LANCER HAS ZERO RATING
+                $granStar = 'NA';
+            }
+            return $granStar;
         }
     }

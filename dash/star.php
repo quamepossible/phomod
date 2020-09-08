@@ -1,28 +1,4 @@
 <?php
-
-// $name = "Kwame";
-// $email = "hi@gmail.com";
-
-// $name = str_replace(" ", "", $name);
-// $email = str_replace(" ", "", $email);
-// $list = [$name, $email];
-// $coun = count($list);
-
-// $err = "";
-// for($i = 0; $i < $coun; $i++){
-//     if(empty($list[$i])){
-//         $err .= 'empty';
-//     }
-// }
-
-// if(!empty($err)){
-//     echo "Empty fields";
-// }
-
-// else{
-//     echo "Valid fields";
-// }
-
 $ex = explode('.', $lanStar);
 $icons = '';
 
@@ -32,7 +8,7 @@ if(count($ex) == 2){
     for($i = 0; $i < $ex[0]; $i++){
         $icons .= "<ion-icon class='star-ico' name='star'></ion-icon> ";
     }
-    $sem = "<ion-icon class='star-ico' name='star-half-outline'></ion-icon>";
+    $sem = "<ion-icon class='star-ico' name='star-half-outline'></ion-icon> ";
     for($n = 0; $n < ($out-1); $n++){
         $outons .= "<ion-icon class='star-ico' name='star-outline'></ion-icon> ";
     }

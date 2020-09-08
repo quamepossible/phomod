@@ -9,26 +9,6 @@ function rateg(){
     }
 }
 
-//CHECK IF STAR FORM IS AVAILABLE
-var starForm = $('.rat-form');
-if(starForm.length > 0){
-    //THEN USER IS LOGGED IN
-    $('.rate-btn').click(function(){
-        $(this).hide();
-        $('.rat-form').css('display', 'block');
-    })
-
-}
-
-else{
-    $('.rate-btn').click(function(){
-        alert('please login to rate');
-    })
-}
-
-
-
-
 $(document).ready(function(){
     $('.main').css('display', 'block');
     $('.grand').css('display', 'none');
@@ -130,6 +110,22 @@ $(document).ready(function(){
       })
     }     
 
+    //CHECK IF STAR FORM IS AVAILABLE
+    var starForm = $('.rat-form');
+    if(starForm.length > 0){
+        //THEN USER IS LOGGED IN
+        $('.rate-btn').click(function(){
+            $(this).hide();
+            $('.rat-form').css('display', 'block');
+        })
+    }
+
+    else{
+        $('.rate-btn').click(function(){
+            alert('please login to rate');
+        })
+    }
+
     //AJAX RATE
     $('.rat-form').submit(function(e){
         e.preventDefault();
@@ -162,12 +158,6 @@ $(document).ready(function(){
         $('.rate-btn>span').html("You've rated");
         $('.thumb-ico').attr('name', 'checkmark-done-outline');
     }
-    // if(starForm.length > 0){
-    //     console.log($('.mark-rate').html().length)
-    //     if($('.mark-rate').html().length > 0){
-    //         $('.rate-btn').css('background', 'green');
-    //     }
-    // }
     Chocolat(document.querySelectorAll('.chocolat-image'));
 
 })
