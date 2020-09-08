@@ -86,8 +86,7 @@ include 'myauto.php';
                         <?php foreach($rows as $row):?>
                             <?php
                                 $pic = $row['USERNAME'];
-                                $picObj = new view;
-                                $getPicMet = $picObj->getProfilePic($pic);
+                                $getPicMet = $searchObj->getProfilePic($pic);
                             ?>
 
                             <?php if($getPicMet->rowCount() == 0):?>
@@ -126,13 +125,11 @@ include 'myauto.php';
                                 </div>
 
                                 <div class="rate">
-                                    <p><span class="ratee">5.0</span>
-                                        <ion-icon class="star-ico" name="star"></ion-icon>
-                                        <ion-icon class="star-ico" name="star"></ion-icon>
-                                        <ion-icon class="star-ico" name="star"></ion-icon>
-                                        <ion-icon class="star-ico" name="star"></ion-icon>
-                                        <ion-icon class="star-ico" name="star"></ion-icon>&nbsp;&nbsp;
-                                        <?php echo $row['RATING'] . ' reviews';?>
+                                    <p><span class="ratee"><?php echo $searchObj->getStar($row['USERNAME']) ?></span>
+                                        <?php $lanStar = $searchObj->getStar($row['USERNAME']);?>
+                                        <?php include 'dash/star.php'?>
+                                        &nbsp;&nbsp;
+                                        <?php echo $searchObj->getTotRat($row['USERNAME']) . ' reviews';?>
                                     </p>
                                 </div>
 

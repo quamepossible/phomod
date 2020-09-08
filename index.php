@@ -222,9 +222,11 @@ require_once 'myauto.php';
                 <div class="row feat-row">
 
                     <?php
-                        $getFeatObj = new view;
-                        $getFeatData = $getFeatObj->viewFeatPho(); 
+                        $getViewObj = new view;
+                        $getFeatData = $getViewObj->viewFeatPho(); 
                         $getFeatPho = $getFeatData->fetchAll();
+
+                    
                     ?>
 
                     <?php if($getFeatData->rowCount() > 0): ?>
@@ -233,8 +235,7 @@ require_once 'myauto.php';
                             <?php
                                 $pic = $getFP['USERNAME'];
                                 //GET PROFILE PIC AND COVER PIC
-                                $picObj = new view;
-                                $getPicMet = $picObj->getProfilePic($pic);
+                                $getPicMet = $getViewObj->getProfilePic($pic);
                             ?>
 
                             <?php if($getPicMet->rowCount() == 0):?>
@@ -288,13 +289,11 @@ require_once 'myauto.php';
                                 </div>
 
                                 <div class="rate">
-                                    <p><span class="ratee">5.0</span>
-                                        <ion-icon class="star-ico" name="star"></ion-icon>
-                                        <ion-icon class="star-ico" name="star"></ion-icon>
-                                        <ion-icon class="star-ico" name="star"></ion-icon>
-                                        <ion-icon class="star-ico" name="star"></ion-icon>
-                                        <ion-icon class="star-ico" name="star"></ion-icon>&nbsp;&nbsp;
-                                        <?php echo $getFP['RATING'] . ' reviews';?>
+                                    <p><span class="ratee"><?php echo $getViewObj->getStar($getFP['USERNAME']) ?></span>
+                                        <?php $lanStar = $getViewObj->getStar($getFP['USERNAME']);?>
+                                        <?php include 'dash/star.php'?>
+                                        &nbsp;&nbsp;
+                                        <?php echo $getViewObj->getTotRat($getFP['USERNAME']) . ' reviews';?>
                                     </p>
                                 </div>
 
@@ -333,8 +332,7 @@ require_once 'myauto.php';
                 <div class="row feat-row">
 
                     <?php
-                        $getFeatObj = new view;
-                        $getFeatData = $getFeatObj->viewFeatMod(); 
+                        $getFeatData = $getViewObj->viewFeatMod(); 
                         $getFeatMod = $getFeatData->fetchAll();
                         
                     ?>
@@ -346,8 +344,7 @@ require_once 'myauto.php';
                                     <?php
                                         $pic = $getFM['USERNAME'];
                                         //GET PROFILE PIC AND COVER PIC
-                                        $picObj = new view;
-                                        $getPicMet = $picObj->getProfilePic($pic);
+                                        $getPicMet = $getViewObj->getProfilePic($pic);
                                     ?>
 
                                     <?php if($getPicMet->rowCount() == 0):?>
@@ -386,13 +383,11 @@ require_once 'myauto.php';
                                         </div>
 
                                         <div class="rate">
-                                            <p><span class="ratee">5.0</span>
-                                                <ion-icon class="star-ico" name="star"></ion-icon>
-                                                <ion-icon class="star-ico" name="star"></ion-icon>
-                                                <ion-icon class="star-ico" name="star"></ion-icon>
-                                                <ion-icon class="star-ico" name="star"></ion-icon>
-                                                <ion-icon class="star-ico" name="star"></ion-icon>&nbsp;&nbsp;
-                                                <?php echo $getFM['RATING'] . ' reviews';?>
+                                            <p><span class="ratee"><?php echo $getViewObj->getStar($getFM['USERNAME']) ?></span>
+                                                <?php $lanStar = $getViewObj->getStar($getFM['USERNAME']);?>
+                                                <?php include 'dash/star.php'?>
+                                                &nbsp;&nbsp;
+                                                <?php echo $getViewObj->getTotRat($getFM['USERNAME']) . ' reviews';?>
                                             </p>
                                         </div>
 
