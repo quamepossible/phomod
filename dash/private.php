@@ -124,6 +124,10 @@
             $valStmt = $getConn->prepare($catStmt);
             $valStmt->execute(['uid' => $pic]);
             $getCat = $valStmt->fetchAll();
+
+            //GET TOTAL NUMBER OF USERS WHO HAVE RATED THIS USER
+            $gehRevv = $getUserObj->getTotRat($user);
+
             foreach($getCat as $allTags){
                 //isolate
                 $getEach = explode(",", $allTags["CATEGORY"]); 
@@ -180,13 +184,10 @@
                             <p><ion-icon class="ver-ico" name="shield-checkmark"></ion-icon><span class="ver-span">verified</span></p>
                         </div>  
                         <div class="rate">
-                            <p><span class="ratee">5.0</span>
-                                <ion-icon class="star-ico" name="star"></ion-icon>
-                                <ion-icon class="star-ico" name="star"></ion-icon>
-                                <ion-icon class="star-ico" name="star"></ion-icon>
-                                <ion-icon class="star-ico" name="star"></ion-icon>
-                                <ion-icon class="star-ico" name="star"></ion-icon>&nbsp;&nbsp;
-                                <?php echo $rating?> reviews
+                            <p><span class="ratee"><?php echo $lanStar?></span>
+                            <?php include 'dash/star.php'?>
+                                &nbsp;&nbsp;
+                                <?php echo $gehRevv?> reviews
                             </p>
 
                             <p class="location"><ion-icon class="loc-ico" name="location-outline"></ion-icon>&nbsp;<span><?php echo ucwords($region) . ", ". ucfirst($city)?></span></p>

@@ -66,7 +66,6 @@
         $getCat = $valStmt->fetchAll();
 
         //GET TOTAL NUMBER OF USERS WHO HAVE RATED THIS USER
-        
         $gehRevv = $getUserObj->getTotRat($user);
 
         foreach($getCat as $allTags){
