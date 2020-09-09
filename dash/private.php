@@ -290,7 +290,7 @@
     <?php endif?>
 
     <script src="sweetalert/package/dist/sweetalert2.all.min.js"></script>
-    <script src="dash/anmt.js"></script>
+    <script src="dash/private.js"></script>
 
 <?php elseif($getStats == 'individual'):?>
  <p><?php echo $getStats . ' ' . $valConv?></p>

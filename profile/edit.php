@@ -7,7 +7,8 @@
             $getUserObj = new view;
             $getUserInfo = $getUserObj->viewUser($uname);
             $getUserDet = $getUserInfo->fetchAll();
-
+            $lanStar = $getUserObj->getStar($uname);
+            $gehRevv = $getUserObj->getTotRat($uname);
         ?>
         <?php if(isset($_SESSION['log'])):?>
             <?php
@@ -18,7 +19,7 @@
                 $valConv = $meconn->convert($sesDet);
                 $getStats = $meconn->checkStatus($sesDet);
             ?>
-            <?php if($valConv === $uname && $getStats == 'freelancer'):?>
+            <?php if($valConv == $uname && $getStats == 'freelancer'):?>
                 <?php include 'dashboard.php'?>
             <?php else:?>
                 <?php include 'error404.html'?>

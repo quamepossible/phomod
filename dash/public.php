@@ -234,4 +234,5 @@
 
     <?php endforeach ?>
 <?php endif?>
+<script src="dash/public.js"></script>
 

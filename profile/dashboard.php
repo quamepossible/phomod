@@ -2,7 +2,6 @@
     <?php include 'review.html';?>
 
 <?php else:?>
-
     <?php include 'cone.php'; ?>    
 
 <!DOCTYPE html>
@@ -71,14 +70,10 @@
                         </div>
                         <p class="name" style="color:white"><?php echo $name?></p>
                         <div class="rate">
-                            <p><span class="ratee">5.0</span>
-                                <ion-icon class="star-ico" name="star"></ion-icon>
-                                <ion-icon class="star-ico" name="star"></ion-icon>
-                                <ion-icon class="star-ico" name="star"></ion-icon>
-                                <ion-icon class="star-ico" name="star"></ion-icon>
-                                <ion-icon class="star-ico" name="star"></ion-icon>&nbsp;&nbsp;
+                            <p><span class="ratee"><?php echo $lanStar?></span>
+                                <?php include '../dash/star.php'?>  
                                 <span class="quot">
-                                    (<?php echo $rating?>) reviews
+                                    (<?php echo $gehRevv?>) reviews
                                 </span>
                             </p>
 
