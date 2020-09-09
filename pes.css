@@ -371,18 +371,16 @@ a:hover{
 
 .span-s-of-s{
     width: 48%;
-    height: 350px;
+    height: auto;
     margin: auto;
     margin-top: 30px;
     overflow: hidden;
-    /* background: red; */
 }
 
 
 .span-2-of-1{
-    width: 70%;
+    width: 95%;
     margin: auto;
-    margin-top: 50px;
     color: rgb(207, 204, 204);
     position: relative;
 }
@@ -403,11 +401,8 @@ a:hover{
 .span-2-of-2 span{
     /* padding: 10px; */
     background: rgb(5, 100, 189);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;
+    padding: 10px 10px 10px 40px;
     border-radius: 40px;
-    padding-left: 40px;
 }
 
 .rate{
@@ -469,8 +464,6 @@ a:hover{
 .rat-form{
     display: none;
     white-space: nowrap;
-    /* background: red; */
-    
 }
 
 .rat-form input{
@@ -490,7 +483,7 @@ a:hover{
     background: green;
     border: none;
     position: relative;
-    bottom: 2px;
+    bottom: 5px;
     margin-left: 10px;
     outline: none !important;
 }
@@ -507,7 +500,6 @@ a:hover{
 }
 
 .com-name{
-    /* color: b; */
     padding-left: 20px;
 }
 

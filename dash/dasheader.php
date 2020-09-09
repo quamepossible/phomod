@@ -11,7 +11,7 @@
         <script src="user.js" defer></script>
         <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
-        <meta name="theme-color" content="#007d9c">
+        <meta name="theme-color" content="black">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title><?php echo ucfirst($_GET['name'])?></title>
     </head>

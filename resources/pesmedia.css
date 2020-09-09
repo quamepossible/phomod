@@ -1,9 +1,5 @@
 @media screen and (max-width: 1010px){
 
-    .span-2-of-1{
-        width: 90%;
-    }
-
     .over a, .delete{
         width: 80%;
         padding: 10px;
@@ -17,10 +13,7 @@
     }
 }
 
-
-
-
-@media screen and (max-width: 900px){
+@media screen and (max-width: 930px){
     .cover-phot{
         width: 80%;
     }
@@ -41,8 +34,32 @@
     .ico{
         margin-left: 0px;
     }
+}
 
+@media screen and (max-width: 760px) and (min-width: 650px){
+    .ico-ns{
+        padding: 5px 10px;
+    }
+}
 
+@media screen and (max-width: 386px){
+    .ico-ns{
+        padding: 5px 10px;
+    }
+}
+
+@media screen and (max-width: 330px){
+    .done-ra{
+        margin-left: 2px;
+        padding: 7px;
+        bottom: 4px;
+    }
+}
+
+@media screen and (max-width: 830px) and (min-width: 650px){
+    .details{
+        width: 98%;
+    }
 }
 
 @media screen and (max-width: 640px){
@@ -100,7 +117,6 @@
         height: 32vw;
         margin-top: 2vw;
         margin-bottom: 0;
-        /* margin: 1.41vw; */
     }
 
     .span-1-of-3:nth-of-type(3n+2){
@@ -124,7 +140,6 @@
         height: auto;
         border-radius: 15px;
         background: rgb(37, 37, 37);
-
     }
 
     .last{
@@ -149,8 +164,6 @@
 
 @media screen and (max-width: 450px){
 
-    
-
     .hold-tags{
         width: 95%;
     }
@@ -165,8 +178,6 @@
     .span-2-of-2 .p-down{
         overflow: auto;
         padding: 0;
-        /* padding-top: 10px;
-        padding-left: 10px; */
     }
 
     .span-2-of-2 p span{
@@ -192,11 +203,6 @@
         margin-bottom: 20px;
     }
 
-    /* .span-1-of-4{
-        margin-left: 0;
-        margin-right: 0;
-    } */
-
     .up-pics{
         padding: 10px 20px;
         font-size: 25px;
@@ -204,6 +210,28 @@
 
     .add{
         font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 308px){
+    .details{
+        width: 100%;
+    }
+
+    .last{
+        padding: 0;
+    }
+
+    .span-2-of-1{
+        overflow: auto;
+    }
+
+    .span-2-of-2{
+        width: 100%;
+    }
+
+    .span-2-of-2 span{
+        width: 100%;
     }
 }
 
