@@ -9,7 +9,6 @@ include 'myauto.php';
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
         <link href="resources/sea.css" rel="stylesheet">
         <link rel="stylesheet" href="resources/seamedia.css">
         <link rel="shortcut icon" href="phomodlogo.ico">

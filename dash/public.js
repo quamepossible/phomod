@@ -17,7 +17,6 @@ $(document).ready(function(){
     for(x = 0; x < starLen; x++){
       getStars[x].addEventListener('click', function(){
         starID = this.innerHTML;
-        console.log(starID)
         for(y = 0; y < starID; y++){
           getStars[y].style.color = 'rgb(255, 208, 0)';
           getStars[y].setAttribute('name', 'star');
@@ -69,7 +68,6 @@ $(document).ready(function(){
                     // alert('done');
                     $('.fet-rev').load('dash/rev.php',{user : lancerr});
                 }
-                console.log(data);
             }
         })
     })

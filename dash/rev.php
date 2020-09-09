@@ -1,4 +1,3 @@
-
 <?php
     $user = $_POST['user'];
     include '../myauto.php';
