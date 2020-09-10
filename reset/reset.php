@@ -29,7 +29,7 @@ if(isset($_POST['email'])){
             $mail = new PHPMailer(TRUE);
 
             try {
-                $mail->setFrom('email Address here', 'Pho Mod');
+                $mail->setFrom('phomod.com@gmail.com', 'Pho Mod');
                 $mail->addAddress($email);
                 $mail->Subject = 'Password Reset [PHOMOD]';
                 $mail->Body = $fisLine . '<br>'. $secLine. $thiLine;
@@ -38,8 +38,8 @@ if(isset($_POST['email'])){
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = TRUE;
                 $mail->SMTPSecure = 'tls';
-                $mail->Username = 'email Address here';
-                $mail->Password = 'password here';
+                $mail->Username = 'phomod.com@gmail.com';
+                $mail->Password = 'mslvkshaaxngmuyd';
                 $mail->Port = 587;
                 $mail->send();
                 echo 'Sent';

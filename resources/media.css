@@ -176,7 +176,6 @@
 
     li:nth-of-type(odd){
         background-color: #007d9c;
-
     }
 
     li:nth-of-type(even){
@@ -187,9 +186,12 @@
         box-shadow: 0 0 5px white;
     }
 
+    .log-li{
+        padding: 15px 0 25px 0;
+    }
     .li-last{
         padding-left: 0;
-        padding-top: 30px;
+        padding-top: 20px;
         padding-bottom: 20px;
     }
 

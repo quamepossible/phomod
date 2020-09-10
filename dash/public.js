@@ -65,7 +65,6 @@ $(document).ready(function(){
                     alert('Please rate');
                 }
                 else{
-                    // alert('done');
                     $('.fet-rev').load('dash/rev.php',{user : lancerr});
                 }
             }

@@ -66,7 +66,7 @@ require_once 'myauto.php';
     </div>
 </div>
 
-    <!------------------------------- LOGIN FORM ------------------------------->
+<!------------------------------- LOGIN FORM ------------------------------->
 
 
       <!------------ NAVIGATION BAR ------------>
@@ -203,11 +203,9 @@ require_once 'myauto.php';
 
     <!------------ FREELANCERS NEAR YOU ------------>
 
-
     <div class="gerit">
     </div>
-
-
+    
     <!------------ FREELANCERS NEAR YOU ------------>
 
 
@@ -217,107 +215,99 @@ require_once 'myauto.php';
                 <p class="feat-text">FEATURED PHOTOGRAPHERS</p>
             </div>
                         
-                <div class="row feat-row">
+            <div class="row feat-row">
+                <?php
+                    $getViewObj = new view;
+                    $getFeatData = $getViewObj->viewFeatPho(); 
+                    $getFeatPho = $getFeatData->fetchAll();                    
+                ?>
 
-                    <?php
-                        $getViewObj = new view;
-                        $getFeatData = $getViewObj->viewFeatPho(); 
-                        $getFeatPho = $getFeatData->fetchAll();
+                <?php if($getFeatData->rowCount() > 0): ?>
+                    <?php foreach($getFeatPho as $getFP):?>
+                        <?php
+                            $pic = $getFP['USERNAME'];
+                            //GET PROFILE PIC AND COVER PIC
+                            $getPicMet = $getViewObj->getProfilePic($pic);
+                        ?>
 
-                    
-                    ?>
-
-                    <?php if($getFeatData->rowCount() > 0): ?>
-                        <?php foreach($getFeatPho as $getFP):?>
-
-                            <?php
-                                $pic = $getFP['USERNAME'];
-                                //GET PROFILE PIC AND COVER PIC
-                                $getPicMet = $getViewObj->getProfilePic($pic);
-                            ?>
-
-                            <?php if($getPicMet->rowCount() == 0):?>
-                                <?php $src = 'profilepic/avatar.jpg';?>
-                                            
-                                <?php else:?>
-
-                                <?php while($row = $getPicMet->fetch()): ?>            
-                                    <?php $src = 'profilepic/'.$row['IMG_SRC']; ?>
-                                    
-                                <?php endwhile ?>
-                            <?php endif ?>
-
-                            <div class="span-1-of-3">
-
-                                <?php if($getPicMet->rowCount() != 0):?>
-
-                                    <?php while($row = $getPicMet->fetch()): ?>                                          
-                                        <?php if(empty($row['IMG_SRC'])):?>
-                                            <?php $src = 'profilepic/avatar.jpg'?>
-
-                                        <?php else:?>
-                                        <?php $src = 'profilepic/'.$row['IMG_SRC']; ?>
-                                        <?php endif?>
+                        <?php if($getPicMet->rowCount() == 0):?>
+                            <?php $src = 'profilepic/avatar.jpg';?>
                                         
-                                    <?php endwhile ?>
-                                    <div class="dp" style="background:url(<?php echo $src;?>);background-position:center;background-size:cover;">
+                            <?php else:?>
 
-                                    </div>
+                            <?php while($row = $getPicMet->fetch()): ?>            
+                                <?php $src = 'profilepic/'.$row['IMG_SRC']; ?>
+                                
+                            <?php endwhile ?>
+                        <?php endif ?>
+
+                        <div class="span-1-of-3">
+
+                            <?php if($getPicMet->rowCount() != 0):?>
+
+                                <?php while($row = $getPicMet->fetch()): ?>                                          
+                                    <?php if(empty($row['IMG_SRC'])):?>
+                                        <?php $src = 'profilepic/avatar.jpg'?>
 
                                     <?php else:?>
-                                        <div class="dp inidp" style="background-color:#<?php echo $backColor?>;border:8px solid #<?php echo $textColor?>">
-                                            <p class="hold-init" style="color:#<?php echo $textColor?>"><?php echo $finInit?></p>
-                                        </div>
-                                <?php endif ?>
+                                    <?php $src = 'profilepic/'.$row['IMG_SRC']; ?>
+                                    <?php endif?>
+                                    
+                                <?php endwhile ?>
+                                <div class="dp" style="background:url(<?php echo $src;?>);background-position:center;background-size:cover;">
 
-
-                                <div class="short-info">
-                                    <p class="short-name"><?php echo $getFP['FULL_NAME'];?></p>
-                                    <p class="prof"><?php echo $getFP['LANCER_TYPE'];?></p>
                                 </div>
 
-                                <div class="details row">
-                                    <div class="span-1-of-2">
-                                        <p class="location"><ion-icon class="loc-ico" name="location-outline"></ion-icon><?php echo $getFP['CITY'];?></p>
+                                <?php else:?>
+                                    <div class="dp inidp" style="background-color:#<?php echo $backColor?>;border:8px solid #<?php echo $textColor?>">
+                                        <p class="hold-init" style="color:#<?php echo $textColor?>"><?php echo $finInit?></p>
                                     </div>
+                            <?php endif ?>
 
-                                    <div class="span-1-of-2">
-                                        <a href="u.php?name=<?php echo $getFP['USERNAME'];?>" class="hire">Connect</a>
-                                    </div>
-                                </div>
 
-                                <div class="rate">
-                                    <p><span class="ratee"><?php echo $getViewObj->getStar($getFP['USERNAME']) ?></span>
-                                        <?php $lanStar = $getViewObj->getStar($getFP['USERNAME']);?>
-                                        <?php include 'dash/star.php'?>
-                                        &nbsp;&nbsp;
-                                        <?php echo $getViewObj->getTotRat($getFP['USERNAME']) . ' reviews';?>
-                                    </p>
-                                </div>
-
-                                <div class="others">
-                                    <p><ion-icon class="ver-ico" name="shield-checkmark"></ion-icon><span class="ver-span">verified</span></p>
-                                </div>                    
+                            <div class="short-info">
+                                <p class="short-name"><?php echo $getFP['FULL_NAME'];?></p>
+                                <p class="prof"><?php echo $getFP['LANCER_TYPE'];?></p>
                             </div>
-                    
 
+                            <div class="details row">
+                                <div class="span-1-of-2">
+                                    <p class="location"><ion-icon class="loc-ico" name="location-outline"></ion-icon><?php echo $getFP['CITY'];?></p>
+                                </div>
 
-                        <?php endforeach?>
-                    
+                                <div class="span-1-of-2">
+                                    <a href="u.php?name=<?php echo $getFP['USERNAME'];?>" class="hire">Connect</a>
+                                </div>
+                            </div>
 
-                    <?php else:?>
-                        <p>User not found</p>
-                    <?php endif ?>
+                            <div class="rate">
+                                <p><span class="ratee"><?php echo $getViewObj->getStar($getFP['USERNAME']) ?></span>
+                                    <?php $lanStar = $getViewObj->getStar($getFP['USERNAME']);?>
+                                    <?php include 'dash/star.php'?>
+                                    &nbsp;&nbsp;
+                                    <?php echo $getViewObj->getTotRat($getFP['USERNAME']) . ' reviews';?>
+                                </p>
+                            </div>
 
-                    <div class="span-1-of-ban">
-                        <div class="banner">
-                            <p class="ads"><span class="span-one">AD SPACE</span><br><span class="span-two">AVAILABLE</span>
-                                <a href="#" class="contact">Contact Us</a>
-                            </p>
-                        </div>
+                            <div class="others">
+                                <p><ion-icon class="ver-ico" name="shield-checkmark"></ion-icon><span class="ver-span">verified</span></p>
+                            </div>                    
+                        </div>            
+                    <?php endforeach?>
+                
+
+                <?php else:?>
+                    <p>User not found</p>
+                <?php endif ?>
+
+                <div class="span-1-of-ban">
+                    <div class="banner">
+                        <p class="ads"><span class="span-one">AD SPACE</span><br><span class="span-two">AVAILABLE</span>
+                            <a href="#" class="contact">Contact Us</a>
+                        </p>
                     </div>
                 </div>
-
+            </div>
         </section>
 
         <!---------------------- FEATURED MODELS ---------------------->
@@ -327,83 +317,75 @@ require_once 'myauto.php';
                 <p class="feat-text">FEATURED MODELS</p>
             </div>
                         
-                <div class="row feat-row">
+            <div class="row feat-row">
+                <?php
+                    $getFeatData = $getViewObj->viewFeatMod(); 
+                    $getFeatMod = $getFeatData->fetchAll();
+                ?>
 
-                    <?php
-                        $getFeatData = $getViewObj->viewFeatMod(); 
-                        $getFeatMod = $getFeatData->fetchAll();
-                        
-                    ?>
+                <?php if($getFeatData->rowCount() > 0): ?>
+                    <?php foreach($getFeatMod as $getFM):?>
 
-                            <?php if($getFeatData->rowCount() > 0): ?>
-                                <?php foreach($getFeatMod as $getFM):?>
+                        <?php
+                            $pic = $getFM['USERNAME'];
+                            //GET PROFILE PIC AND COVER PIC
+                            $getPicMet = $getViewObj->getProfilePic($pic);
+                        ?>
 
+                        <?php if($getPicMet->rowCount() == 0):?>
+                                        <?php $src = 'profilepic/avatar.jpg';?>
+                                        
+                                <?php else:?>
 
-                                    <?php
-                                        $pic = $getFM['USERNAME'];
-                                        //GET PROFILE PIC AND COVER PIC
-                                        $getPicMet = $getViewObj->getProfilePic($pic);
-                                    ?>
+                                <?php while($row = $getPicMet->fetch()): ?>    
+                                    <?php if(empty($row['IMG_SRC'])):?>
+                                        <?php $src = 'profilepic/avatar.jpg';?>
 
-                                    <?php if($getPicMet->rowCount() == 0):?>
-                                                    <?php $src = 'profilepic/avatar.jpg';?>
-                                                 
-                                            <?php else:?>
+                                    <?php else:?>
+                                        <?php $src = 'profilepic/'.$row['IMG_SRC'];?>
+                                    <?php endif?>
+                                <?php endwhile ?>
+                        <?php endif ?>
 
-                                            <?php while($row = $getPicMet->fetch()): ?>    
-                                                <?php if(empty($row['IMG_SRC'])):?>
-                                                    <?php $src = 'profilepic/avatar.jpg';?>
+                        <div class="span-1-of-3">
+                            <div class="dp" style="background:url(<?php echo $src;?>);background-position:center;background-size:cover;">
+                                <!-- <img class="dp-img" src=""> -->
+                            </div>
 
-                                                <?php else:?>
-                                                    <?php $src = 'profilepic/'.$row['IMG_SRC']; ?>
-                                               <?php endif?>
-                                            <?php endwhile ?>
-                                    <?php endif ?>
+                            <div class="short-info">
+                                <p class="short-name"><?php echo $getFM['FULL_NAME'];?></p>
+                                <p class="prof"><?php echo $getFM['LANCER_TYPE'];?></p>
+                            </div>
 
-                                    <div class="span-1-of-3">
-                                        <div class="dp" style="background:url(<?php echo $src;?>);background-position:center;background-size:cover;">
-                                            <!-- <img class="dp-img" src=""> -->
-                                        </div>
+                            <div class="details row">
+                                <div class="span-1-of-2">
+                                    <p class="location"><ion-icon class="loc-ico" name="location-outline"></ion-icon><?php echo $getFM['CITY'];?></p>
+                                </div>
 
-                                        <div class="short-info">
-                                            <p class="short-name"><?php echo $getFM['FULL_NAME'];?></p>
-                                            <p class="prof"><?php echo $getFM['LANCER_TYPE'];?></p>
-                                        </div>
+                                <div class="span-1-of-2 mod">
+                                    <a href="u.php?name=<?php echo $getFM['USERNAME'];?>" class="hire">Connect</a>
+                                </div>
+                            </div>
 
-                                        <div class="details row">
-                                            <div class="span-1-of-2">
-                                                <p class="location"><ion-icon class="loc-ico" name="location-outline"></ion-icon><?php echo $getFM['CITY'];?></p>
-                                            </div>
+                            <div class="rate">
+                                <p><span class="ratee"><?php echo $getViewObj->getStar($getFM['USERNAME']) ?></span>
+                                    <?php $lanStar = $getViewObj->getStar($getFM['USERNAME']);?>
+                                    <?php include 'dash/star.php'?>
+                                    &nbsp;&nbsp;
+                                    <?php echo $getViewObj->getTotRat($getFM['USERNAME']) . ' reviews';?>
+                                </p>
+                            </div>
 
-                                            <div class="span-1-of-2 mod">
-                                                <a href="u.php?name=<?php echo $getFM['USERNAME'];?>" class="hire">Connect</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="rate">
-                                            <p><span class="ratee"><?php echo $getViewObj->getStar($getFM['USERNAME']) ?></span>
-                                                <?php $lanStar = $getViewObj->getStar($getFM['USERNAME']);?>
-                                                <?php include 'dash/star.php'?>
-                                                &nbsp;&nbsp;
-                                                <?php echo $getViewObj->getTotRat($getFM['USERNAME']) . ' reviews';?>
-                                            </p>
-                                        </div>
-
-                                        <div class="others">
-                                            <p><ion-icon class="ver-ico" name="shield-checkmark"></ion-icon><span class="ver-span">verified</span></p>
-                                        </div>                    
-                                    </div>
-                            
-
-
-                                <?php endforeach?>
-                            
-
-                            <?php else:?>
-                                <p>User not found</p>
-                            <?php endif ?>
-                </div>
-
+                            <div class="others">
+                                <p><ion-icon class="ver-ico" name="shield-checkmark"></ion-icon><span class="ver-span">verified</span></p>
+                            </div>                    
+                        </div>
+                <?php endforeach?>
+                
+                <?php else:?>
+                    <p>User not found</p>
+                <?php endif ?>
+            </div>
         </section>
         <!---------------------- FEATURED MODELS ---------------------->
 
