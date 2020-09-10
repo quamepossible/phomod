@@ -32,7 +32,6 @@
               city : city
             },
             success : function(data){
-              console.log(data);
               $('.gerit').html(data);
             }
           })
