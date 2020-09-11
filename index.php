@@ -85,14 +85,12 @@ require_once 'myauto.php';
                     <span class="spans"></span>
                 </div>
                 
-                <ul>
-                    
+                <ul>                    
                     <li><a href="#">PHOTOGRAPHERS</a></li>
                     <li><a href="#">MODELS</a></li>
                     <li class="log-li"><a href="javascript:void(0)" class="log" data-toggle="modal" data-target="#loginModal"><ion-icon class="log-ico" name="person-circle-outline"></ion-icon>LOG IN</a></li>
                     <li class="li-last"><a href="signup/" class="sign"><ion-icon class="sign-ico" name="person-add-outline"></ion-icon>SIGN UP</a></li>
-                </ul>              
-
+                </ul>          
             </nav>
     
         <?php else:?>
@@ -102,7 +100,6 @@ require_once 'myauto.php';
                 $sessDet = $_SESSION['log'];
                 $conObj = new controller;
                 $getConv = $conObj->convert($sessDet);
-                
             ?>
             <nav>
                 <div class="logo">
@@ -121,8 +118,7 @@ require_once 'myauto.php';
                     <li><a href="#">PHOTOGRAPHERS</a></li>
                     <li><a href="#">MODELS</a></li>
                     <li class="log-li"><a href="u.php?name=<?php echo $getConv?>" class="log"><ion-icon class="log-ico" name="person-circle-outline"></ion-icon><?php echo $getConv?></a></li>
-                    <li class="li-last"><a href="logout.php" class="sign" onclick="signOut()"><ion-icon class="sign-ico" name="log-out-outline"></ion-icon>LOG OUT</a></li>
-
+                    <li class="li-last"><a href="logout.php" class="sign" onclick="signOut()"><ion-icon class="sign-ico" name="log-out-outline"></ion-icon>LOG OUT</a></li> 
                 </ul>
             </nav>
         <?php endif?>
@@ -130,27 +126,29 @@ require_once 'myauto.php';
         <!------------ NAVIGATION BAR ------------>
 
     <!-------------------- HEADER ------------------->
-    <header>
-  
+    <header>  
         <!------------ HERO BOX ------------>
 
-            <div class="hero-box">
+        <div class="hero-box">
 
-                <p class="big-text">NEED A PHOTOGRAPHER?</p>
-                <p class="big-text sub-big">or a model?</p>
-                <p class="text-cont">Browse our collection of freelance Photographers or find a Model to work with</p>
-                <form action='search.php' method="GET">
-                    <select name="need" required>
-                        <option value="" selected style="background:rgb(211, 211, 211)">Need a</option>
-                        <option value="photographer">Photographer</option>
+            <p class="big-text">NEED A PHOTOGRAPHER?</p>
+            <p class="big-text sub-big">or a model?</p>
+            <p class="text-cont">Browse our collection of freelance Photographers or find a Model to work with</p>
+            <form action='search.php' method="GET">
+                <select name="need" required>
+                    <option value="" selected style="background:rgb(211, 211, 211)">Need a</option>
+                    <option value="photographer">Photographer</option>
+                    <option value="model">Model</option>                        
                         <option value="model">Model</option>                        
-                    </select>
-                    <input type="text" id="search" class="search" name="location" placeholder="Browse by Location (Eg; Tema, Abuakwa)" required>
-                    <button type="submit" id="browserr" class="browse"><ion-icon class="search-ico" name="search-outline"></ion-icon></button>
-                </form>
+                    <option value="model">Model</option>                        
+                        <option value="model">Model</option>                        
+                    <option value="model">Model</option>                        
+                </select>
+                <input type="text" id="search" class="search" name="location" placeholder="Browse by Location (Eg; Tema, Abuakwa)" required>
+                <button type="submit" id="browserr" class="browse"><ion-icon class="search-ico" name="search-outline"></ion-icon></button>
+            </form>
 
-            </div>
-
+        </div>
 
         <!------------ HERO BOX ------------>
     </header>
@@ -160,41 +158,41 @@ require_once 'myauto.php';
 
     <section class="category">
       <div class="row">
-          <div class="span-1-of-4">
-            <div style="background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url('gal/wed.jpg');background-position: center;background-size: cover;">
-                <p>Wedding</p>
+            <div class="span-1-of-4">
+                <div style="background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url('gal/map.jpg');background-position: center;background-size: cover;" onclick="getLoc()">
+                    <p><ion-icon name="location-outline" class="near-ico"></ion-icon><span>NEAR YOU</span></p>
+                </div>
             </div>
-          </div>
 
-          <div class="span-1-of-4">
-            <div style="background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url('gal/grad.jpg');background-position: center;background-size: cover;">
-                <p>Graduation</p>
+            <div class="span-1-of-4">
+                <div style="background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url('gal/wed.jpg');background-position: center;background-size: cover;">
+                    <p>Wedding</p>
+                </div>
             </div>
-        </div>
 
-        <div class="span-1-of-4">
-            <div style="background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url('gal/portrait.jpg');background-position: center;background-size: cover;">
-                <p>Portrait</p>
+            <div class="span-1-of-4">
+                <div style="background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url('gal/grad.jpg');background-position: center;background-size: cover;">
+                    <p>Graduation</p>
+                </div>
             </div>
-        </div>
 
-        <div class="span-1-of-4">
-            <div style="background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url('gal/studio.jpg');background-position: center;background-size: cover;">
-                <p>Studio</p>
+            <div class="span-1-of-4">
+                <div style="background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url('gal/portrait.jpg');background-position: center;background-size: cover;">
+                    <p>Portrait</p>
+                </div>
             </div>
-        </div>
 
-        <div class="span-1-of-4">
-            <div style="background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url('gal/port (2).jpg');background-position: center;background-size: cover;">
-                <p>Models</p>
+            <div class="span-1-of-4">
+                <div style="background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url('gal/studio.jpg');background-position: center;background-size: cover;">
+                    <p>Studio</p>
+                </div>
             </div>
-        </div>
 
-        <div class="span-1-of-4">
-            <div style="background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url('gal/food.jpg');background-position: center;background-size: cover;">
-                <p>FOOD</p>
+            <div class="span-1-of-4">
+                <div style="background: linear-gradient(rgba(0, 0, 0, 0.658), rgba(0, 0, 0, 0.692)), url('gal/port (2).jpg');background-position: center;background-size: cover;">
+                    <p>Models</p>
+                </div>
             </div>
-        </div>
       </div>
   </section>
 
@@ -205,7 +203,7 @@ require_once 'myauto.php';
 
     <div class="gerit">
     </div>
-    
+
     <!------------ FREELANCERS NEAR YOU ------------>
 
 
@@ -349,7 +347,6 @@ require_once 'myauto.php';
 
                         <div class="span-1-of-3">
                             <div class="dp" style="background:url(<?php echo $src;?>);background-position:center;background-size:cover;">
-                                <!-- <img class="dp-img" src=""> -->
                             </div>
 
                             <div class="short-info">

@@ -1,11 +1,11 @@
-
-  var startPos;
-  var coordinates = [];
-  var geoSuccess = function(position) {
-  startPos = position;
-  console.log("Latitude " + startPos.coords.latitude);
-  console.log("Longitude " + startPos.coords.longitude);
-  console.log("Accuracy " + startPos.coords.accuracy);
+function getLoc(){
+    var startPos;
+    var coordinates = [];
+    var geoSuccess = function(position) {
+    startPos = position;
+    console.log("Latitude " + startPos.coords.latitude);
+    console.log("Longitude " + startPos.coords.longitude);
+    console.log("Accuracy " + startPos.coords.accuracy);
     var lat = startPos.coords.latitude;
     var lng = startPos.coords.longitude;
     var acc = startPos.coords.accuracy;
@@ -42,6 +42,5 @@
       }
     })
   };
-
   navigator.geolocation.watchPosition(geoSuccess);
-
+}

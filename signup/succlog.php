@@ -13,7 +13,7 @@
 <body>
 
 <div class="parent">
-<ion-icon class="che-ico" name="checkmark-circle-outline"></ion-icon>
+<p class="hol-ico"><ion-icon class="che-ico" name="checkmark-circle-outline"></ion-icon></p>
     <p class="succtext"><span>Your account has been created successfully</span></p>
     <p class="sub">We will review your account and verify it shortly.</p>
     <p class="some">For the mean time, you can browse our collection of photographers and models</p>

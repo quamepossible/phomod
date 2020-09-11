@@ -216,4 +216,20 @@
             }
             return $granStar;
         }
+
+        //
+
+        //CHECK IF EMAIL IS IN FREELANCERS AND VERIFIED = 0
+        protected function newAcc($email){
+            $sql_one = "SELECT EMAIL_CODE FROM freelancers WHERE EMAIL = ? and EMAIL_VERIFIED = 0";
+            $stmt_one = $this->connect()->prepare($sql_one);
+            $stmt_one->execute([$email]);
+            return $stmt_one;
+        }
+
+        // //CHECK IF EMAIL MATCHES EMAIL VERIFY CODE
+        // protected function isMatch($email, $code){
+        //     $sql_two = "SELECT EMAIL_CODE FROM freelancers WHERE EM"
+        // }
+        
     }

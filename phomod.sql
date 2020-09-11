@@ -1,5 +1,4 @@
 
-
 CREATE TABLE `freelancers` (
   `ID` int(11) NOT NULL,
   `FULL_NAME` varchar(70) DEFAULT NULL,

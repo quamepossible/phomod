@@ -287,13 +287,13 @@
         <!----------------- GALLERY SECTION ----------------->
 
     <?php endforeach ?>
-    <?php endif?>
-
     <script src="sweetalert/package/dist/sweetalert2.all.min.js"></script>
     <script src="dash/private.js"></script>
+    <?php endif?>
 
 <?php elseif($getStats == 'individual'):?>
- <p><?php echo $getStats . ' ' . $valConv?></p>
+    <?php header("Location : /");?>
+
 
 <?php else:?>
     <?php include 'error404.html'?>

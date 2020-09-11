@@ -496,6 +496,7 @@ form select, .search, .browse{
 
 .category{
     margin-top: 10px;
+    font-family: 'Lobster Two', cursive;
 }
 
 .category .row{
@@ -528,10 +529,21 @@ form select, .search, .browse{
     text-shadow: 0 0 5px black;
     text-transform: uppercase;
     font-weight: bold;
-    position: absolute;
-    left: 50%;
+    width: 100%;
+    text-align: center;
+    position: relative;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+}
+
+.span-1-of-4 div p span{
+    padding-left: 20px;
+}
+
+.near-ico{
+    color: red;
+    position: absolute;
+    padding: 4px;
 }
 
 .span-1-of-3{

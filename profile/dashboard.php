@@ -76,7 +76,6 @@
                                     (<?php echo $gehRevv?>) reviews
                                 </span>
                             </p>
-
                             <p class="location"><ion-icon class="loc-ico" name="location-outline"></ion-icon>&nbsp;<span><?php echo ucwords($region) . ", ". ucfirst($city)?></span></p>
                         </div>
                     </div>

@@ -30,12 +30,10 @@
                 $pass = password_hash($pass, PASSWORD_DEFAULT);
                 
                 //update password;
-                $updatePass = new controller;
-                $updatePass->newPass($email, $pass);
+                $checkCode->newPass($email, $pass);
                 echo "correct";
                 $newCode = mt_rand(123456, 987654);
-                $changeCode = new controller;
-                $changeCode->resCode($email, $newCode);
+                $checkCode->resCode($email, $newCode);
 
             }
 

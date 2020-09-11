@@ -47,7 +47,7 @@ function validate(){
 
             notMa.innerHTML = 'Passwords do not match';
             notMatch.innerHTML = 'Passwords do not match';
-            alert("You have errors in your form");
+            alert("You have errors on your form");
             return false;
         }
     }
@@ -57,7 +57,7 @@ function validate(){
         inputs[7].classList.add('is-invalid');
         inputs[8].classList.add('is-invalid');
         notMa.innerHTML = 'Password must contain at least one upper and lower case letter, a number, and must be at least 6 characters long';
-        alert("You have errors in your form");
+        alert("You have errors on your form");
         return false;
     }
 
@@ -86,7 +86,7 @@ function validate(){
     var getErr = document.getElementsByClassName("is-invalid");
     var errLen = getErr.length;
     if(errLen > 0){
-        alert("You have errors in your form");
+        alert("You have errors on your form");
         return false;
     }  
 

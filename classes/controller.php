@@ -117,4 +117,31 @@
         public function addRate($lancer, $rater, $totVot){
             $senVot = $this->finVote($lancer, $rater, $totVot);
         }
+
+        //SET EMAIL_CODE
+        public function setEmailCode($email, $ver_code){
+            $sql = "UPDATE freelancers SET EMAIL_CODE = ? WHERE EMAIL = ?";
+            $stmt = $this->dbconnection()->prepare($sql);
+            $stmt->execute([$ver_code, $email]);
+        }
+
+        //CHECK IF EMAIL IS IN FREELANCERS AND EMAIL_VERIFIED = 0
+        public function isAcc($email, $code){
+            $isAnew = $this->newAcc($email);
+            if($isAnew -> rowCount() == 1){
+                //PHASE ONE IS VALID
+                //CHECK IF CODE MATCHES EMAIL VERIFY CODE
+                while($getCode = $isAnew->fetch()){
+                    $thenCode = $getCode['EMAIL_CODE'];
+                    if($code == $thenCode){
+                        //LET EMAIL = VERIFIED
+                        $email_ver = "UPDATE freelancers SET EMAIL_VERIFIED = 1 WHERE EMAIL = ?";
+                        $stmt_ver = $this->dbconnection()->prepare($email_ver);
+                        $stmt_ver->execute([$email]);
+                        //THEN CODE IS VALID
+                        return true;
+                    }
+                }
+            }
+        }
     }

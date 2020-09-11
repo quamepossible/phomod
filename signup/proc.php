@@ -140,7 +140,7 @@
 
                 $stmt = $connect->prepare($sql);
                 $stmt->execute([$name, $username, $phone, $whatsapp, $website, $instagram, $email, $region, $city, $lancer, $company, $days, $mainCategory, $travel, $verified, $pass, $profid]);
-                header("Location: succlog.php");
+                header("Location: sendver.php?email=$email");
             }
         }
     }

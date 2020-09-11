@@ -23,6 +23,7 @@ body{
     left: 50%;
     top: 30%;
     transform: translate(-50%, -30%);
+    padding: 20px;
 }
 
 .succtext{
@@ -30,16 +31,17 @@ body{
     text-align: center;
     color: green;
     padding-top: 50px;
-    position: relative;
+    /* background: yellow; */
+    /* position: relative; */
+}
+
+.hol-ico{
+    text-align: center;
 }
 
 .che-ico{
-    display: block;
     color: green;
     font-size: 100px;
-    position: absolute;
-    top: 20px;
-    left: 200px;
 }
 
 .sub{
@@ -52,9 +54,9 @@ body{
 .some{
     font-size: 20px;
     color: rgb(34, 1, 1);
-    /* text-shadow: 0 0 5px black; */
     padding-top: 20px;
     text-align: center;
+    line-height: 20px;
 }
 
 .link{
@@ -68,45 +70,7 @@ a{
     font-weight: bold;
 }
 
-@media screen and (max-width: 1300px){
-    .che-ico{
-        left: 150px;
-    }
-    /* .succtext span{
-        padding-left: 40px;
-    } */
-}
 
-@media screen and (max-width: 1188px){
-    .che-ico{
-        left: 100px;
-    }
-}
-
-@media screen and (max-width: 1081px){
-    .succtext span{
-        padding-left: 100px;
-    }
-}
-
-@media screen and (max-width: 990px){
-    .succtext span{
-        padding-left: 150px;
-    }
-}
-
-@media screen and (max-width: 940px){
-    .che-ico{
-        font-size: 150px;
-        display: block;
-        left: 0;
-        position: relative;
-        margin: auto;
-    }
-    .succtext span{
-        padding-left: 0;
-    }
-}
 
 @media screen and (max-width: 480px){
     .succtext{

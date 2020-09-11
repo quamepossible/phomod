@@ -7,8 +7,6 @@
             $getUserObj = new view;
             $getUserInfo = $getUserObj->viewUser($uname);
             $getUserDet = $getUserInfo->fetchAll();
-            $lanStar = $getUserObj->getStar($uname);
-            $gehRevv = $getUserObj->getTotRat($uname);
         ?>
         <?php if(isset($_SESSION['log'])):?>
             <?php

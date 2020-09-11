@@ -1,3 +1,8 @@
+$(document).ready(function(){
+  gapi.load('auth2', function() {
+    gapi.auth2.init();
+  });
+})
 function onSignIn(googleUser) {
     // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();

@@ -450,6 +450,7 @@ a:hover{
 
 .star-ico{
     color: rgb(255, 208, 0);
+    cursor: pointer;
 }
 
 .ico-ns{
@@ -486,6 +487,7 @@ a:hover{
     bottom: 5px;
     margin-left: 10px;
     outline: none !important;
+    cursor: pointer;
 }
 
 .location span{

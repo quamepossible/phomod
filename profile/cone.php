@@ -1,7 +1,9 @@
 <?php
+$getUserObj = new view;
+$lanStar = $getUserObj->getStar($uname);
+$gehRevv = $getUserObj->getTotRat($uname);
 //GET USER'S DETAILS
-$getDetails = new view;
-$viewDetails = $getDetails->viewUser($uname);
+$viewDetails = $getUserObj->viewUser($uname);
 $echoDetails = $viewDetails->fetchAll();
 
 foreach($echoDetails as $outDetails){
