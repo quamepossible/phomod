@@ -54,7 +54,7 @@
             </div>
         </div>
     </div>
-<!----------------- DP UPLOAD MODAL ----------------->
+    <!----------------- DP UPLOAD MODAL ----------------->
         <div class="main-page">
             <div class="row">
                 <div class="span-1-of-3">

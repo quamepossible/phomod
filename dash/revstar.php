@@ -1,5 +1,5 @@
 <?php
-$icons = '';
+    $icons = '';
     $out = 5 - $alrStar;
     $outons = '';
     for($l = 0; $l < $alrStar; $l++){

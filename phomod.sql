@@ -16,6 +16,8 @@ CREATE TABLE `freelancers` (
   `WORKING_DAYS` varchar(20) NOT NULL,
   `CATEGORY` varchar(100) DEFAULT NULL,
   `TRAVEL` varchar(10) DEFAULT NULL,
+  `EMAIL_CODE` int(6) DEFAULT NULL,
+  `EMAIL_VERIFIED` int(1) NOT NULL,
   `VERIFIED` varchar(3) DEFAULT NULL,
   `RATING` int(10) DEFAULT NULL,
   `FEATURED` varchar(3) DEFAULT NULL,
@@ -26,46 +28,61 @@ CREATE TABLE `freelancers` (
   `TIME_CREATED` varchar(15) NOT NULL,
   `DATE_VERIFIED` varchar(15) NOT NULL,
   `TIME_VERIFIED` varchar(15) NOT NULL
-) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `freelancers` (`ID`, `FULL_NAME`, `USERNAME`, `PROFILE_ID`, `PHONE`, `WHATSAPP`, `WEBSITE`, `INSTAGRAM`, `EMAIL`, `REGION`, `CITY`, `LANCER_TYPE`, `COMPANY_NAME`, `WORKING_DAYS`, `CATEGORY`, `TRAVEL`, `VERIFIED`, `RATING`, `FEATURED`, `DESCRIPTION`, `PWD`, `RESET_PWD`, `DATE_CREATED`, `TIME_CREATED`, `DATE_VERIFIED`, `TIME_VERIFIED`) VALUES
-(1, 'kwame opoku appiah', 'otherside', 'profile-1', '0241565659', '0547569644', 'www.other-studios.com', 'www.instagram.com/otherside', 'appiah@gmail.com', 'upper west', 'kumasi', 'model', 'O - SIDE STUDIOS', 'Mon - Sun', 'Wedding,Portrait', 'NO', 'YES', 900, 'YES', 'I am a very good photographer', 'kwame', 0, '', '', '', ''),
-(2, 'Samuel Baffoe', 'tender', 'profile-2', '0241565659', '', '', '', 'tender@gmail.com', 'Upper East', 'Kumasi', 'model', 'Tender Photography', 'Mon - Sun', 'Model,events,graduation, Wedding', 'YES', 'YES', 100, 'YES', NULL, '$2y$10$XVEzpQg77b1nLfULC8Xh6OqGjpCU0vDRKkwOdZuOSbsD9RhJZvlpC', 762339, '', '', '', ''),
-(3, 'Emmanuel Adjabeng Appiah ', 'prof', 'profile-3', '0241565659', '', '', '', 'appiahkwame274@gmail.com', 'Northern', 'Kumasi', 'photographer', 'Prof', 'Mon - Sun', 'Wedding,portrait, Graduation', 'YES', 'YES', 230, 'NO', NULL, '$2y$10$ydQ559terJs.pJg27J/yCejFJpLT3NJglHAMbu/Rp3jhnqH6Mg11G', 274119, '', '', '', ''),
-(4, 'oppong andrews', 'drew', 'profile-4', '0241565659', '', '', '', 'appiah@gmail.com', 'brong', 'accra', 'photographer', 'drew', '', 'Wedding,Portrait', 'YES', 'YES', 900, 'YES', 'I am a very good photographerI am a very good photographerI am a very good photographerI am a very good photographer', '', 0, '', '', '', ''),
-(5, 'Owura Dwomoh', 'dwomoh', 'profile-5', '0241565666', '0277990988', 'www.ddstudios.com', 'www.instagram.com/owuradd', 'dwomoh@gmail.com', 'Ashanti', 'Offinso', 'photographer', 'Dwomoh Studioz', 'Mon - Sat', 'Street,model,events,wedding', 'YES', 'YES', 405, 'YES', NULL, '$2y$10$AVvUASpl/gl30xJ/OMvt/evKlQvMIiA.GvM/qRAV2IXXWf2eTG9JS', 0, '', '', '', ''),
-(6, 'hanif issah', 'unruly', 'profile-6', '0241565659', '', '', '', 'appiah@gmail.com', 'brong east', 'tema', 'model', 'unruly', '', 'Wedding,Portrait', 'YES', 'YES', 230, 'YES', NULL, '', 0, '', '', '', ''),
-(8, 'silas essel', 'papa', 'profile-7', '0241565659', '', '', '', 'appiah@gmail.com', 'ashanti', 'kumasi', 'model', 'papa', '', 'Wedding,Portrait', 'YES', 'YES', 900, 'YES', 'I am a very good photographer', '', 0, '', '', '', ''),
-(9, 'asamoah joshua', 'fashion', 'profile-8', '0241565659', '', '', '', 'fashion@gmail.com', 'savannah', 'kumasi', 'model', 'fashion', '', 'Street,Model,Events,Street', 'YES', 'YES', 100, 'YES', NULL, '', 0, '', '', '', ''),
-(10, 'kwabena benedict', 'kobby', 'profile-9', '0241565659', '', '', '', 'kwame274@gmail.com', 'greater accra', 'accra', 'photographer', 'kobby', '', 'Wedding,Portrait', 'YES', 'YES', 230, 'NO', NULL, '', 0, '', '', '', ''),
-(11, 'adu collins', 'chemi', 'profile-10', '0241565659', '', '', '', 'appiah@gmail.com', 'eastern', 'accra', 'photographer', 'chemi', '', 'Wedding,Portrait', 'NO', 'YES', 900, 'YES', 'I am a very good photographer', '', 0, '', '', '', ''),
-(12, 'prince love', 'peeL', 'profile-11', '0241565659', '', '', '', 'peel@gmail.com', 'western', 'accra', 'photographer', 'peeL', '', 'Street,Model,Events,Street', 'YES', 'YES', 100, 'NO', NULL, '', 0, '', '', '', ''),
-(13, 'YTL', 'ytl', 'profile-12', '0241565659', '', '', '', 'appiahkk274@gmail.com', 'central', 'tema', 'model', 'ytl', '', 'Wedding,Portrait', 'NO', 'YES', 230, 'YES', NULL, '', 0, '', '', '', ''),
-(15, 'hi', 'othersiderr', 'profile-13', '0241564456', '', '', '', 'dwomoher@gmail.com', 'hi', 'hi', 'Photographer', 'hi', 'hi', 'hi', 'NO', 'NO', 8, 'NO', NULL, 'hi', 0, '', '', '', ''),
-(16, 'Sampson Osei', 'samposa', 'profile-14', '0245669932', '0241566548', 'www.samphotograph.com', 'www.instagram.com/sampso', 'samposer@gmail.com', 'Ashanti', 'Abuakwa', 'Photographer', 'Sampo Photography', 'Mon - Sat', 'Wedding, Outdooring, Portrait, Graduation', 'NO', 'YES', 10, 'NO', NULL, 'mypass', 0, '', '', '', ''),
-(17, 'Kwame Opoku Appiah ', 'quame', 'profile-15', ' 024157752', '0547042326', 'www.quamephot.com', 'www.instagram.com/quame', 'appiahkk@gmail.com', 'Ashanti', 'Kwadaso', 'Photographer', 'Quame Photo Studios', 'Mon - Fri', 'Portrait, Model', 'NO', 'NO', 5, 'NO', NULL, 'hi', 0, '', '', '', ''),
-(18, 'Kwame Opoku Appiah ', 'quamerr', 'profile-16', ' 024157751', '0547042326', 'www.quamephot.com', 'www.instagram.com/quame', 'appiahdkk@gmail.com', 'Ashanti', 'Kwadaso', 'Photographer', 'Quame Photo Studios', 'Mon - Fri', 'Portrait, Model', 'NO', 'NO', 50, 'NO', NULL, 'hi', 0, '', '', '', ''),
-(20, 'Samuel Baffoe', 'Tende', 'profile-18', '0546589655', '0547042324', 'www.quamephot.com', 'www.instagram.com/quame', 'tenderr@gmail.com', 'Ashanti', 'Adum', 'Photographer', 'Tender Studios', 'Mon - Sun', 'Portrait, Wedding, Graduation', 'NO', 'NO', 200, 'NO', NULL, 'hi', 0, '', '', '', ''),
-(21, 'Hi', 'Tenderrr', 'profile-19', '0214563258', '', '', '', 'appiarrh@gmail.com', 'Hi', 'I', 'Photographer', 'Hi', 'Hi', 'Hi', 'NO', 'YES', 100, 'YES', NULL, 'hi', 0, '', '', '', ''),
-(22, 'Emmanuel Boateng', 'Emma', 'profile-20', '0244563215', '0541223326', 'www.emmaphotos.com', 'www.instagram.com/emma', 'emmmaboat12@gmail.com', 'Ashanti', 'Kwadaso', 'Photographer', 'Emma Studios', 'Mon - Sat', 'Wedding, Engagement, Graduation', 'NO', 'YES', 500, 'YES', NULL, 'hello', 0, '', '', '', ''),
-(23, 'Andrew Oppong', 'lucci', 'profile-21', '0241523672', '', '', '', 'luccidrew@gmail.com', 'Ashanti', 'Fiapre', 'Photographer', 'Phomod', 'Mon - Sat', 'Wedding,Graduation', 'YES', 'YES', 17, 'YES', NULL, 'asdfg123', 0, '', '', '', ''),
-(24, 'Kwame Opoku Appiah', 'othersider', 'profile-22', '0241565659', '', '', '', 'dwomoh15@gmail.com', 'Ashanti ', 'Kumasi', 'Photographer', '', 'Mon - Fri ', 'Wedding', 'NO', 'YES', 5, 'YES', NULL, 'hi', 0, '', '', '', ''),
-(25, 'Kwame Opoku Appiah', 'newuser', 'profile-23', '020456987', '', '', '', 'newuser@gmail.com', 'Accra', 'Kumasi', 'Photographer', '', 'Mon - Fri', 'Wedding', 'NO', 'NO', NULL, NULL, NULL, '$2y$10$mnDwXEK/OIJSn9gRuyQOyOFrOEu500IUtxA35amsvHnaNKl.mdkyS', 0, '', '', '', ''),
-(26, 'Kodom Gyasi Jehoshaphat', 'kgee', 'profile-24', '0245236589', '', '', '', 'kgee@gmail.com', 'Brong ', 'Sunyani', 'Photographer', 'Kgee Studios', 'Mon - Sun', 'Wedding,matriculation,graduation', 'YES', 'YES', 302, 'NO', NULL, '$2y$10$cCKj0wqgXzB.mtaxiHdFx.UWfglV/3jEGfCUaLgjoVO1RGueCEBMK', 0, '', '', '', ''),
-(27, 'Afum Mensah Bismark', 'drake', 'profile-25', '0245163254', '0200000000', 'www.afum.com', 'www.instagram.com/ghdrake', 'afum@gmail.com', 'Ashanti', 'Kumasi', 'Photographer', '', 'Mon - Sat', 'Wedding', 'NO', 'NO', NULL, NULL, NULL, '$2y$10$1/de2zqQCCEH7NSsGQMeXeLehKO4.e1v/rjgdAiRYyQF.fdXBtm/C', 0, '', '', '', ''),
-(28, 'Baffoe Kwarteng Samuel', 'friedten', 'profile-26', '0245152369', '', '', '', 'sammy@gmail.com', 'Ashanti', 'Kumasi', 'Photographer', '', 'Mon - Sun', 'Wedding', 'NO', 'NO', 12000, NULL, NULL, '$2y$10$7NjkI2H914eamfGET5LqrOROyGFMvXIswvWmqk7d0tVWu9Pcm3UdK', 0, '', '', '', ''),
-(29, 'John Jarben', 'johnny', 'profile-27', '540245678', '0244788667', 'www.johnny-shot.com', '@johnnyj', 'johnjj@gmail.com', 'Ashanti', 'Abuakwa', 'Photographer', 'Jj Studios', 'Mon - Sat', 'Wedding', 'NO', 'YES', NULL, NULL, NULL, '$2y$10$KY5TBdDJoLbHAtPbRbs/LuNLFLmspJcUpSbcohvwBeOJKBhba0Mom', 0, '', '', '', ''),
-(30, 'Osei Adjei', 'ooadj', 'profile-28', '0245332323', '0553263258', '', '', 'oseiadj@gmail.com', 'Western', 'Sefwi', 'Photographer', 'Odd Photography', 'Mon - Sun', 'Wedding', 'NO', 'YES', NULL, 'NO', NULL, '$2y$10$00689XJQieoYzgpXjz4D1Ogage4cqm5ndWwSuEgTaY78Uc5w1CGPO', 0, '', '', '', ''),
-(31, 'Selector', 'selector', 'profile-29', '54548488787', '', '', '', 'selector@gmail.com', 'Selector', 'Selector', 'Photographer', '', 'Mon - Sat', 'Wedding', 'NO', 'NO', NULL, NULL, NULL, '$2y$10$wbAev5GEQ2FgQBSwZq9zZ.wNxc/7kdzKObvGa0hYCBZjAJYjfuCpy', 0, '', '', '', ''),
-(36, 'Gertrude Agyemang', 'getty', 'profile-30', '0283872735', '', '', '', 'getty@gmail.com', 'Ashanti', 'Abuakwa', 'Model', 'Gertrude Beauties', 'Mon - Fri', 'Photography,modelling', 'YES', 'YES', 12000, 'YES', NULL, '$2y$10$ou6KHt1MHrRJ/2Oyc5guNud79CfgDkwSjCPNpnLjVZmGVymQ.Bjtq', 0, '', '', '', ''),
-(37, 'New User', 'newuser1', 'profile-31', '0254521454', '', '', '', 'newuser1@gmail.com', 'Ashanti', 'Abuakwa', 'Photographer', '', 'Mon - Sun', 'Photography', 'YES', 'NO', NULL, NULL, NULL, '$2y$10$Uq.8tYNYDtFlL6EMNqkNdepXuxlLlUdikQeDDZdJqmtQKpEsufRhK', 0, '', '', '', '');
+--
+-- Dumping data for table `freelancers`
+--
 
+INSERT INTO `freelancers` (`ID`, `FULL_NAME`, `USERNAME`, `PROFILE_ID`, `PHONE`, `WHATSAPP`, `WEBSITE`, `INSTAGRAM`, `EMAIL`, `REGION`, `CITY`, `LANCER_TYPE`, `COMPANY_NAME`, `WORKING_DAYS`, `CATEGORY`, `TRAVEL`, `EMAIL_CODE`, `EMAIL_VERIFIED`, `VERIFIED`, `RATING`, `FEATURED`, `DESCRIPTION`, `PWD`, `RESET_PWD`, `DATE_CREATED`, `TIME_CREATED`, `DATE_VERIFIED`, `TIME_VERIFIED`) VALUES
+(1, 'kwame opoku appiah', 'otherside', 'profile-1', '0241565659', '0547569644', 'www.other-studios.com', 'www.instagram.com/otherside', 'appiah@gmail.com', 'upper west', 'kumasi', 'model', 'O - SIDE STUDIOS', 'Mon - Sun', 'Wedding,Portrait', 'NO', NULL, 1, 'YES', 900, 'YES', 'I am a very good photographer', 'kwame', 0, '', '', '', ''),
+(2, 'Samuel Baffoe', 'tender', 'profile-2', '0241565659', '', '', '', 'tender@gmail.com', 'Upper East', 'Kumasi', 'model', 'Tender Photography', 'Mon - Sun', 'Model,events,graduation, Wedding', 'YES', NULL, 1, 'YES', 100, 'YES', NULL, '$2y$10$XVEzpQg77b1nLfULC8Xh6OqGjpCU0vDRKkwOdZuOSbsD9RhJZvlpC', 762339, '', '', '', ''),
+(3, 'Emmanuel Adjabeng Appiah ', 'prof', 'profile-3', '0241565659', '', '', '', 'appiahkwame274@gmail.com', 'Ashanti', 'Kumasi', 'photographer', 'Prof\'s Photography', 'Mon - Sun', 'Wedding,portrait, Graduation', 'YES', 393670, 1, 'YES', 230, 'NO', NULL, '$2y$10$ydQ559terJs.pJg27J/yCejFJpLT3NJglHAMbu/Rp3jhnqH6Mg11G', 524367, '', '', '', ''),
+(4, 'Oppong Andrews', 'drew', 'profile-4', '0241565659', '0234156987', 'www.drewgraphy.com', 'www.instagram.com/mrdrew', 'asareosei274@gmail.com', 'Ashanti', 'Kronom', 'photographer', 'Drew Studios', 'Mon - Sat', 'Wedding,portrait', 'YES', NULL, 1, 'YES', 900, 'YES', 'I am a very good photographerI am a very good photographerI am a very good photographerI am a very good photographer', '$2y$10$UPSDQaYXxLOhOHGybtbc.uu7aUwomnvbhXvK7JEfMr7Mcn798G92.', 454007, '', '', '', ''),
+(5, 'Owura Dwomoh', 'dwomoh', 'profile-5', '0241565666', '0277990988', 'www.ddstudios.com', 'www.instagram.com/owuradd', 'dwomoh@gmail.com', 'Ashanti', 'Offinso', 'photographer', 'Dwomoh Studioz', 'Mon - Sat', 'Street,model,events,wedding', 'YES', NULL, 1, 'YES', 405, 'YES', NULL, '$2y$10$AVvUASpl/gl30xJ/OMvt/evKlQvMIiA.GvM/qRAV2IXXWf2eTG9JS', 0, '', '', '', ''),
+(6, 'hanif issah', 'unruly', 'profile-6', '0241565659', '', '', '', 'appiah@gmail.com', 'brong east', 'tema', 'model', 'unruly', '', 'Wedding,Portrait', 'YES', NULL, 1, 'YES', 230, 'YES', NULL, '', 0, '', '', '', ''),
+(8, 'silas essel', 'papa', 'profile-7', '0241565659', '', '', '', 'appiah@gmail.com', 'ashanti', 'kumasi', 'model', 'papa', '', 'Wedding,Portrait', 'YES', NULL, 1, 'YES', 900, 'YES', 'I am a very good photographer', '', 0, '', '', '', ''),
+(9, 'asamoah joshua', 'fashion', 'profile-8', '0241565659', '', '', '', 'fashion@gmail.com', 'savannah', 'kumasi', 'model', 'fashion', '', 'Street,Model,Events,Street', 'YES', NULL, 1, 'YES', 100, 'YES', NULL, '', 0, '', '', '', ''),
+(10, 'kwabena benedict', 'kobby', 'profile-9', '0241565659', '', '', '', 'kwame274@gmail.com', 'greater accra', 'accra', 'photographer', 'kobby', '', 'Wedding,Portrait', 'YES', NULL, 1, 'YES', 230, 'NO', NULL, '', 0, '', '', '', ''),
+(11, 'adu collins', 'chemi', 'profile-10', '0241565659', '', '', '', 'appiah@gmail.com', 'eastern', 'accra', 'photographer', 'chemi', '', 'Wedding,Portrait', 'NO', NULL, 1, 'YES', 900, 'YES', 'I am a very good photographer', '', 0, '', '', '', ''),
+(12, 'prince love', 'peeL', 'profile-11', '0241565659', '', '', '', 'peel@gmail.com', 'western', 'accra', 'photographer', 'peeL', '', 'Street,Model,Events,Street', 'YES', NULL, 1, 'YES', 100, 'NO', NULL, '', 0, '', '', '', ''),
+(13, 'YTL', 'ytl', 'profile-12', '0241565659', '', '', '', 'appiahkk274@gmail.com', 'central', 'tema', 'model', 'ytl', '', 'Wedding,Portrait', 'NO', NULL, 1, 'YES', 230, 'YES', NULL, '', 0, '', '', '', ''),
+(15, 'hi', 'othersiderr', 'profile-13', '0241564456', '', '', '', 'dwomoher@gmail.com', 'hi', 'hi', 'Photographer', 'hi', 'hi', 'hi', 'NO', NULL, 1, 'NO', 8, 'NO', NULL, 'hi', 0, '', '', '', ''),
+(16, 'Sampson Osei', 'samposa', 'profile-14', '0245669932', '0241566548', 'www.samphotograph.com', 'www.instagram.com/sampso', 'samposer@gmail.com', 'Ashanti', 'Abuakwa', 'Photographer', 'Sampo Photography', 'Mon - Sat', 'Wedding, Outdooring, Portrait, Graduation', 'NO', NULL, 1, 'YES', 10, 'NO', NULL, 'mypass', 0, '', '', '', ''),
+(17, 'Kwame Opoku Appiah ', 'quame', 'profile-15', ' 024157752', '0547042326', 'www.quamephot.com', 'www.instagram.com/quame', 'appiahkk@gmail.com', 'Ashanti', 'Kwadaso', 'Photographer', 'Quame Photo Studios', 'Mon - Fri', 'Portrait, Model', 'NO', NULL, 1, 'NO', 5, 'NO', NULL, 'hi', 0, '', '', '', ''),
+(18, 'Kwame Opoku Appiah ', 'quamerr', 'profile-16', ' 024157751', '0547042326', 'www.quamephot.com', 'www.instagram.com/quame', 'appiahdkk@gmail.com', 'Ashanti', 'Kwadaso', 'Photographer', 'Quame Photo Studios', 'Mon - Fri', 'Portrait, Model', 'NO', NULL, 1, 'NO', 50, 'NO', NULL, 'hi', 0, '', '', '', ''),
+(20, 'Samuel Baffoe', 'Tende', 'profile-18', '0546589655', '0547042324', 'www.quamephot.com', 'www.instagram.com/quame', 'tenderr@gmail.com', 'Ashanti', 'Adum', 'Photographer', 'Tender Studios', 'Mon - Sun', 'Portrait, Wedding, Graduation', 'NO', NULL, 1, 'NO', 200, 'NO', NULL, 'hi', 0, '', '', '', ''),
+(21, 'Hi', 'Tenderrr', 'profile-19', '0214563258', '', '', '', 'appiarrh@gmail.com', 'Hi', 'I', 'Photographer', 'Hi', 'Hi', 'Hi', 'NO', NULL, 1, 'YES', 100, 'YES', NULL, 'hi', 0, '', '', '', ''),
+(22, 'Emmanuel Boateng', 'Emma', 'profile-20', '0244563215', '0541223326', 'www.emmaphotos.com', 'www.instagram.com/emma', 'emmmaboat12@gmail.com', 'Ashanti', 'Kwadaso', 'Photographer', 'Emma Studios', 'Mon - Sat', 'Wedding, Engagement, Graduation', 'NO', NULL, 1, 'YES', 500, 'YES', NULL, 'hello', 0, '', '', '', ''),
+(23, 'Andrew Oppong', 'lucci', 'profile-21', '0241523672', '', '', '', 'luccidrew@gmail.com', 'Ashanti', 'Fiapre', 'Photographer', 'Phomod', 'Mon - Sat', 'Wedding,Graduation', 'YES', NULL, 1, 'YES', 17, 'YES', NULL, 'asdfg123', 0, '', '', '', ''),
+(24, 'Kwame Opoku Appiah', 'othersider', 'profile-22', '0241565659', '', '', '', 'dwomoh15@gmail.com', 'Ashanti ', 'Kumasi', 'Photographer', '', 'Mon - Fri ', 'Wedding', 'NO', NULL, 1, 'YES', 5, 'YES', NULL, 'hi', 0, '', '', '', ''),
+(25, 'Kwame Opoku Appiah', 'newuser', 'profile-23', '020456987', '', '', '', 'newuser@gmail.com', 'Accra', 'Kumasi', 'Photographer', '', 'Mon - Fri', 'Wedding', 'NO', NULL, 1, 'NO', NULL, NULL, NULL, '$2y$10$mnDwXEK/OIJSn9gRuyQOyOFrOEu500IUtxA35amsvHnaNKl.mdkyS', 0, '', '', '', ''),
+(26, 'Kodom Gyasi Jehoshaphat', 'kgee', 'profile-24', '0245236589', '', '', '', 'kgee@gmail.com', 'Brong', 'Sunyani', 'Photographer', 'Kgee Studios', 'Mon - Sun', 'Wedding,matriculation,graduation', 'YES', NULL, 1, 'YES', 302, 'NO', NULL, '$2y$10$cCKj0wqgXzB.mtaxiHdFx.UWfglV/3jEGfCUaLgjoVO1RGueCEBMK', 0, '', '', '', ''),
+(27, 'Afum Mensah Bismark', 'drake', 'profile-25', '0245163254', '0200000000', 'www.afum.com', 'www.instagram.com/ghdrake', 'afum@gmail.com', 'Ashanti', 'Kumasi', 'Photographer', '', 'Mon - Sat', 'Wedding', 'NO', NULL, 1, 'NO', NULL, NULL, NULL, '$2y$10$1/de2zqQCCEH7NSsGQMeXeLehKO4.e1v/rjgdAiRYyQF.fdXBtm/C', 0, '', '', '', ''),
+(28, 'Baffoe Kwarteng Samuel', 'friedten', 'profile-26', '0245152369', '', '', '', 'sammy@gmail.com', 'Ashanti', 'Kumasi', 'Photographer', '', 'Mon - Sun', 'Wedding', 'NO', NULL, 1, 'NO', 12000, NULL, NULL, '$2y$10$7NjkI2H914eamfGET5LqrOROyGFMvXIswvWmqk7d0tVWu9Pcm3UdK', 0, '', '', '', ''),
+(29, 'John Jarben', 'johnny', 'profile-27', '540245678', '0244788667', 'www.johnny-shot.com', '@johnnyj', 'johnjj@gmail.com', 'Ashanti', 'Abuakwa', 'Photographer', 'Jj Studios', 'Mon - Sat', 'Wedding', 'NO', NULL, 1, 'YES', NULL, NULL, NULL, '$2y$10$KY5TBdDJoLbHAtPbRbs/LuNLFLmspJcUpSbcohvwBeOJKBhba0Mom', 0, '', '', '', ''),
+(30, 'Osei Adjei', 'ooadj', 'profile-28', '0245332323', '0553263258', '', '', 'oseiadj@gmail.com', 'Western', 'Sefwi', 'Photographer', 'Odd Photography', 'Mon - Sun', 'Wedding', 'NO', NULL, 1, 'YES', NULL, 'NO', NULL, '$2y$10$00689XJQieoYzgpXjz4D1Ogage4cqm5ndWwSuEgTaY78Uc5w1CGPO', 0, '', '', '', ''),
+(31, 'Selector', 'selector', 'profile-29', '54548488787', '', '', '', 'selector@gmail.com', 'Selector', 'Selector', 'Photographer', '', 'Mon - Sat', 'Wedding', 'NO', NULL, 1, 'NO', NULL, NULL, NULL, '$2y$10$wbAev5GEQ2FgQBSwZq9zZ.wNxc/7kdzKObvGa0hYCBZjAJYjfuCpy', 0, '', '', '', ''),
+(36, 'Gertrude Agyemang', 'getty', 'profile-30', '0283872735', '', '', '', 'getty@gmail.com', 'Ashanti', 'Accra', 'Model', 'Gertrude Beauties', 'Mon - Fri', 'Photography,modelling', 'YES', NULL, 1, 'YES', 12000, 'YES', NULL, '$2y$10$ou6KHt1MHrRJ/2Oyc5guNud79CfgDkwSjCPNpnLjVZmGVymQ.Bjtq', 0, '', '', '', ''),
+(37, 'New User', 'newuser1', 'profile-31', '0254521454', '', '', '', 'newuser1@gmail.com', 'Ashanti', 'Abuakwa', 'Photographer', '', 'Mon - Sun', 'Photography', 'YES', NULL, 1, 'NO', NULL, NULL, NULL, '$2y$10$Uq.8tYNYDtFlL6EMNqkNdepXuxlLlUdikQeDDZdJqmtQKpEsufRhK', 0, '', '', '', ''),
+(38, 'Ansu Felix ', 'felicio', 'felicio5f567bdb96684', '0245321452', '', '', '', 'felixx@gmail.com', 'Greater Accra', 'Accra', 'Photographer', 'Felicio Studios', 'Mon - Sun', 'Photography,photoshoot', 'YES', NULL, 1, 'YES', NULL, 'YES', NULL, '$2y$10$vp9cqG69xnfS52ow2EGAVeJnqMmYoIdWzohkN3OkFXetVenhgmc4i', 0, '', '', '', ''),
+(42, 'Ice Prince', 'zarmani', 'zarmani5f5bc2bf8b0fb', '0203693212', '', '', '', 'appiahkwame275@gmail.com', 'Ashanti', 'Obuasi', 'Photographer', 'Zarmani Shots', 'Mon - Sat', 'Photography', 'YES', 309612, 1, 'NO', NULL, NULL, NULL, '$2y$10$kRNtVMIHPkOFnNUw3QN/hO6kxGl6NW0.fK8MmzoAR8rsWOM0oIxre', 434163, '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gallery`
+--
 
 CREATE TABLE `gallery` (
   `ID` int(11) NOT NULL,
   `USERNAME` varchar(100) NOT NULL,
   `IMG_SRC` varchar(100) NOT NULL
-) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gallery`
+--
 
 INSERT INTO `gallery` (`ID`, `USERNAME`, `IMG_SRC`) VALUES
 (1, 'otherside', '5ee39cd93f0a2.jpg'),
@@ -80,7 +97,6 @@ INSERT INTO `gallery` (`ID`, `USERNAME`, `IMG_SRC`) VALUES
 (10, 'drew', '5ee3a8063b5d1.jpg'),
 (11, 'drew', '5ee3a80644b7a.jpg'),
 (12, 'drew', '5ee3a80650fab.jpg'),
-(13, 'drew', '5ee3a8066690e.jpg'),
 (14, 'fashion', '5ee3a837e9913.jpg'),
 (15, 'fashion', '5ee3a9e30655b.jpg'),
 (16, 'fashion', '5ee3a9f07ddcc.jpg'),
@@ -152,7 +168,6 @@ INSERT INTO `gallery` (`ID`, `USERNAME`, `IMG_SRC`) VALUES
 (479, 'getty', '5f50b3e34e041.jpg'),
 (480, 'getty', '5f50b3e35bbc2.jpg'),
 (481, 'getty', '5f50b3e36e03c.jpg'),
-(482, 'getty', '5f50b3e38bd07.jpg'),
 (483, 'getty', '5f50b3e39d1a5.jpg'),
 (484, 'getty', '5f50b3e3b3bd1.jpg'),
 (485, 'getty', '5f50b3e3c78b8.jpg'),
@@ -182,8 +197,55 @@ INSERT INTO `gallery` (`ID`, `USERNAME`, `IMG_SRC`) VALUES
 (509, 'getty', '5f50b3e5231fd.jpg'),
 (510, 'getty', '5f50b3e52e10c.jpg'),
 (511, 'getty', '5f50b3e53df29.jpg'),
-(512, 'getty', '5f50b3f5a5046.jpg');
+(512, 'getty', '5f50b3f5a5046.jpg'),
+(518, 'prof', '5f57fca97fce6.jpg'),
+(519, 'prof', '5f57fca992709.jpg'),
+(524, 'prof', '5f57fcaa86761.jpg'),
+(525, 'prof', '5f57fcaa98143.jpg'),
+(621, 'felicio', '5f58be20d59f1.jpg'),
+(622, 'felicio', '5f58be2204a08.jpg'),
+(623, 'felicio', '5f58be22418de.jpg'),
+(624, 'felicio', '5f58be22558b4.jpg'),
+(626, 'felicio', '5f58be226b20f.jpg'),
+(627, 'felicio', '5f58be2274724.jpg'),
+(628, 'felicio', '5f58be227b4d1.jpg'),
+(629, 'felicio', '5f58be2288de2.jpg'),
+(630, 'felicio', '5f58be229637e.jpg'),
+(631, 'felicio', '5f58be229d13f.jpg'),
+(632, 'felicio', '5f58be22a3c04.jpg'),
+(633, 'felicio', '5f58be22b0107.jpg'),
+(634, 'felicio', '5f58be22b96a3.jpg'),
+(635, 'felicio', '5f58be22c048c.jpg'),
+(636, 'felicio', '5f58be22cc4cb.jpg'),
+(637, 'felicio', '5f58be22d32e4.jpg'),
+(638, 'felicio', '5f58be22dc978.jpg'),
+(639, 'felicio', '5f58be22e36ef.jpg'),
+(640, 'felicio', '5f58be22ecd1a.jpg'),
+(641, 'felicio', '5f58be23023cc.jpg'),
+(642, 'felicio', '5f58be230b7ef.jpg'),
+(643, 'felicio', '5f58be2312658.jpg'),
+(644, 'felicio', '5f58be231bc12.jpg'),
+(645, 'felicio', '5f58be232c02d.jpg'),
+(646, 'felicio', '5f58be2332dde.jpg'),
+(647, 'felicio', '5f58be23cef38.jpg'),
+(648, 'felicio', '5f58be251eded.jpg'),
+(649, 'felicio', '5f58be2598588.jpg'),
+(650, 'felicio', '5f58be25e8e84.jpg'),
+(651, 'felicio', '5f58be265588e.jpg'),
+(652, 'felicio', '5f58be2689f96.jpg'),
+(655, 'felicio', '5f58be26bbcd2.jpg'),
+(656, 'felicio', '5f58be26cd2f7.jpg'),
+(657, 'felicio', '5f58be2761174.jpg'),
+(658, 'felicio', '5f58be2837b69.jpg'),
+(659, 'felicio', '5f58be29b8baf.jpg'),
+(661, 'felicio', '5f58be2a979ac.jpg'),
+(663, 'felicio', '5f58be2ac1514.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `individual`
+--
 
 CREATE TABLE `individual` (
   `ID` int(11) NOT NULL,
@@ -192,22 +254,38 @@ CREATE TABLE `individual` (
   `NAME` varchar(100) NOT NULL,
   `EMAIL` varchar(100) NOT NULL,
   `PIC` varchar(100) NOT NULL
-) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `individual`
+--
+
 INSERT INTO `individual` (`ID`, `USER_ID`, `PROFILE_ID`, `NAME`, `EMAIL`, `PIC`) VALUES
 (1, '102476528003387089843', 'AndroidnPc5f5025b8ef8b1', 'Android n Pc', 'asareosei274@gmail.com', 'https://lh3.googleusercontent.com/a-/AOh14GirTjwBjANwFaGCDqTK7ApkTxCF08n6UHmvonOS=s96-c'),
-(2, '111552732836930630937', 'OthersideDrew5f50a70635d65', 'Otherside Drew', 'drewotherside@gmail.com', 'https://lh6.googleusercontent.com/-X3N9IcShcCQ/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclmFfwmkkgQdH_1dtb60FQZ0');
+(2, '111552732836930630937', 'OthersideDrew5f50a70635d65', 'Otherside Drew', 'drewotherside@gmail.com', 'https://lh6.googleusercontent.com/-X3N9IcShcCQ/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclmFfwmkkgQdH_1dtb60FQZ0'),
+(3, '104682074914493195482', 'PhoMod5f5bf396aed8e', 'Pho Mod', 'phomod.com@gmail.com', 'https://lh3.googleusercontent.com/a-/AOh14GhtgCjNElPVvWLdJytLH0XLyDH2l3cYFakUp_I2=s96-c');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profile_pic`
+--
 
 CREATE TABLE `profile_pic` (
   `ID` int(11) NOT NULL,
   `USERNAME` varchar(100) NOT NULL,
   `IMG_SRC` varchar(100) NOT NULL,
   `COVER` varchar(100) NOT NULL
-) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `profile_pic`
+--
 
 INSERT INTO `profile_pic` (`ID`, `USERNAME`, `IMG_SRC`, `COVER`) VALUES
 (17, 'otherside', 'otherside.jpg', 'ucotherside.jpg'),
 (18, 'tender', 'tender.jpg', 'uctender.jpg'),
-(19, 'prof', '', 'ucprof.jpg'),
+(19, 'prof', 'prof.jpg', 'ucprof.jpg'),
 (20, 'drew', 'drew.jpg', 'ucdrew.jpg'),
 (21, 'dwomoh', 'dwomoh.jpg', 'ucdwomoh.jpg'),
 (22, 'unruly', 'unruly.jpg', 'ucunruly.jpg'),
@@ -233,30 +311,124 @@ INSERT INTO `profile_pic` (`ID`, `USERNAME`, `IMG_SRC`, `COVER`) VALUES
 (43, 'magetad', 'magetad.jpg', ''),
 (44, 'magetad', 'magetad.jpg', ''),
 (45, 'getty', 'getty.jpg', 'ucgetty.jpg'),
-(48, 'newuser1', 'newuser1.jpg', '');
+(48, 'newuser1', 'newuser1.jpg', ''),
+(49, 'felicio', 'felicio.jpg', 'ucfelicio.png'),
+(50, 'felicio', 'felicio.jpg', 'ucfelicio.png'),
+(51, 'zarmani', 'zarmani.jpg', ''),
+(52, 'zarmani', 'zarmani.jpg', ''),
+(53, 'zarmani', 'zarmani.jpg', ''),
+(54, 'zarmani', 'zarmani.jpg', '');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rating`
+--
+
+CREATE TABLE `rating` (
+  `ID` int(10) NOT NULL,
+  `RATER` varchar(50) NOT NULL,
+  `LANCER` varchar(50) NOT NULL,
+  `STAR` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rating`
+--
+
+INSERT INTO `rating` (`ID`, `RATER`, `LANCER`, `STAR`) VALUES
+(1, 'profile-30', 'drew', 5),
+(4, 'profile-21', 'otherside', 4),
+(6, 'profile-30', 'felicio', 3),
+(20, 'profile-30', 'chemi', 1),
+(21, 'profile-3', 'chemi', 2),
+(22, 'profile-5', 'chemi', 5),
+(23, 'profile-5', 'drew', 1),
+(25, 'felicio5f567bdb96684', 'drew', 5),
+(26, 'felicio5f567bdb96684', 'kobby', 5),
+(27, 'felicio5f567bdb96684', 'dwomoh', 3),
+(29, 'profile-30', 'dwomoh', 4),
+(30, 'profile-2', 'drew', 1),
+(31, 'profile-2', 'dwomoh', 4),
+(32, 'profile-2', 'felicio', 5),
+(33, 'profile-2', 'chemi', 3),
+(35, 'profile-2', 'getty', 5),
+(37, 'profile-3', 'dwomoh', 4),
+(38, 'profile-3', 'drew', 5),
+(39, 'profile-3', 'kobby', 4),
+(40, 'profile-3', 'felicio', 2),
+(41, 'profile-3', 'getty', 5),
+(42, 'profile-3', 'otherside', 5),
+(43, 'felicio5f567bdb96684', 'getty', 4),
+(45, 'profile-4', 'dwomoh', 4),
+(46, 'profile-4', 'getty', 5),
+(47, 'profile-4', 'felicio', 5);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `freelancers`
+--
 ALTER TABLE `freelancers`
   ADD PRIMARY KEY (`ID`);
 
+--
+-- Indexes for table `gallery`
+--
 ALTER TABLE `gallery`
   ADD PRIMARY KEY (`ID`);
 
+--
+-- Indexes for table `individual`
+--
 ALTER TABLE `individual`
   ADD PRIMARY KEY (`ID`);
 
+--
+-- Indexes for table `profile_pic`
+--
 ALTER TABLE `profile_pic`
   ADD PRIMARY KEY (`ID`);
 
+--
+-- Indexes for table `rating`
+--
+ALTER TABLE `rating`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `freelancers`
+--
 ALTER TABLE `freelancers`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
+--
+-- AUTO_INCREMENT for table `gallery`
+--
 ALTER TABLE `gallery`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=517;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=664;
 
+--
+-- AUTO_INCREMENT for table `individual`
+--
 ALTER TABLE `individual`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
+--
+-- AUTO_INCREMENT for table `profile_pic`
+--
 ALTER TABLE `profile_pic`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT for table `rating`
+--
+ALTER TABLE `rating`
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 COMMIT;
-

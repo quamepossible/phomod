@@ -96,7 +96,7 @@ require_once 'myauto.php';
         <?php else:?>
             <?php
                 //SESSION['LOG'] = PROFILE_ID
-                //SO CHECK IF SESSION['LOG'] IS IN FREELANCER OR INDIVIDUAL
+                //SO CHECK IF SESSION['LOG'] IS A FREELANCER OR INDIVIDUAL
                 $sessDet = $_SESSION['log'];
                 $conObj = new controller;
                 $getConv = $conObj->convert($sessDet);
@@ -138,11 +138,7 @@ require_once 'myauto.php';
                 <select name="need" required>
                     <option value="" selected style="background:rgb(211, 211, 211)">Need a</option>
                     <option value="photographer">Photographer</option>
-                    <option value="model">Model</option>                        
-                        <option value="model">Model</option>                        
-                    <option value="model">Model</option>                        
-                        <option value="model">Model</option>                        
-                    <option value="model">Model</option>                        
+                    <option value="model">Model</option>                      
                 </select>
                 <input type="text" id="search" class="search" name="location" placeholder="Browse by Location (Eg; Tema, Abuakwa)" required>
                 <button type="submit" id="browserr" class="browse"><ion-icon class="search-ico" name="search-outline"></ion-icon></button>
@@ -224,7 +220,7 @@ require_once 'myauto.php';
                     <?php foreach($getFeatPho as $getFP):?>
                         <?php
                             $pic = $getFP['USERNAME'];
-                            //GET PROFILE PIC AND COVER PIC
+                            //GET PROFILE PIC
                             $getPicMet = $getViewObj->getProfilePic($pic);
                         ?>
 
@@ -248,7 +244,7 @@ require_once 'myauto.php';
                                         <?php $src = 'profilepic/avatar.jpg'?>
 
                                     <?php else:?>
-                                    <?php $src = 'profilepic/'.$row['IMG_SRC']; ?>
+                                        <?php $src = 'profilepic/'.$row['IMG_SRC']; ?>
                                     <?php endif?>
                                     
                                 <?php endwhile ?>
