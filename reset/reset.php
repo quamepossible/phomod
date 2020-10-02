@@ -39,7 +39,7 @@ if(isset($_POST['email'])){
                 $mail->SMTPAuth = TRUE;
                 $mail->SMTPSecure = 'tls';
                 $mail->Username = 'phomod.com@gmail.com';
-                $mail->Password = 'mslvkshaaxngmuyd';
+                $mail->Password = '';
                 $mail->Port = 587;
                 $mail->send();
                 echo 'Sent';
