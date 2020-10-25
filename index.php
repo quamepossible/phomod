@@ -16,7 +16,7 @@ require_once 'myauto.php';
     <link rel="stylesheet" href="resources/media.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#007d9c">
-    <meta name="google-signin-client_id" content="434711358291-ug8416melga73rv6gupqv52n79l5lp6e.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="PASTE-YOUR-CLIENT-ID-HERE.apps.googleusercontent.com">
     <script src="bootstrap/dist/js/bootstrap.min.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
