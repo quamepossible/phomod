@@ -33,7 +33,7 @@ NB:// To be able to use Google OAuth,
 <ul>
  <li>You'll need to setup a developer account on https://www.developers.google.com.</li>
  <li>After setting up a developer account, navigate to https://console.developers.google.com/apis/credentials and click on <b>+CREATE CREDENTIALS</b> and select <b>OAuth client ID</b>, follow the steps to setup OAuth for PHOMOD, set localhost:3000 as your domain</li>
- <li>When you're done setting up your domain (localhost:3000), go to <b>index.php</b> of your <b>PHOMOD</b> folder, and in the <pre><b>head</b></pre> tag, look for this line <br>
+ <li>When you're done setting up your domain (localhost:3000), go to <b>index.php</b> of your <b>PHOMOD</b> folder, and in the <code><b>head</b></code> tag, look for this line <br>
   <pre><b>meta name="google-signin-client_id" content="PASTE YOUR CLIENT ID HERE"</b></pre></li>
  <li>Paste your <b>client ID</b> from your google developer account into the <code><b>content</b></code> attribute above and you'll be all set</li>
  <li>That's all you need to do to setup Google OAuth for PHOMOD, the heavy lifting have already been done, no need to create a new javascript file to get user profile and communicate with backend.</li>
