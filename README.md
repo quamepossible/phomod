@@ -37,10 +37,11 @@ Photographers and Models can be searched based on location, or PHOMOD can access
 <h3>Sign Up</h3>
 <p>When a user signs up on PHOMOD, a verification code is sent to the user's email.</p>
 <p>SMTP Settings for sending the verification code can be found at <b>PHOMOD / signup / sendver.php</b></p>
-<br>
+
 <h3>Reset Password</h3>
 <p>For a user to reset his / her password, you'll need to send a verification code to the user's email (PHOMOD uses PHPMailer for sending mails)</p>
 <p>SMTP settings for sending password reset code is located here, <b>PHOMOD / reset / reset.php</b></p>
 
 <p>NB:// You'll need to setup an email server to send mails, you can setup a google SMTP server for this purpose, read on how to setup SMTP <a href ="https://www.hostinger.com/tutorials/how-to-use-free-google-smtp-server">here</a></p>
  
+ Start PHOMOD from your command line by typing "php -S localhost:3000" (without quotes)
