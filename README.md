@@ -17,7 +17,7 @@ Photographers and Models can be searched based on location, or PHOMOD can access
  <h2>DATABASE SETUP</h2>
  <ul>
  <li>Create a Database in phpmyadmin (XAMPP, or any other local server, or on a web host) and name the Database <b>phomod</b></li>
- <li>After creating the <b>phomod</b> Database, go to where you have your <b>PHOMOD</b> repo(it should be in the <b>htdocs</b> folder of XAMPP or <b>www</b> in other local servers), in the root directory, you'll find <b>phomod.sql</b> and import it to your database</li>
+ <li>After creating the <b>phomod</b> Database, go to where you have your <b>PHOMOD</b> repo (it should be in the <b>htdocs</b> folder of XAMPP or <b>www</b> in other local servers), in the root directory, you'll find <b>phomod.sql</b> and import it to your database</li>
  </ul>
 
 
