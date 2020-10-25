@@ -53,4 +53,4 @@ NB:// To be able to use Google OAuth,
 
 <p>NB:// You'll need to setup an email server to send mails, you can setup a google SMTP server for this purpose, read on how to setup SMTP <a href ="https://www.hostinger.com/tutorials/how-to-use-free-google-smtp-server">here</a></p>
  
- Start PHOMOD from your command line by typing "php -S localhost:3000" (without quotes)
+ Start PHOMOD from your command line by typing "php -S localhost:3000" (without quotes) in the root directory of PHOMOD
