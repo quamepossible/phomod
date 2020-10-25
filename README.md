@@ -1,7 +1,18 @@
 # phomod
 Hi, thanks for your intereset in PHOMOD.<br>
 PHOMOD is an online freelance portal for photographers and models.<br>
-Photographers and Models can be searched based on location, or PHOMOD can access your device GPS coordinates and suggest photographers and models based on your current location.<br>
+Photographers and Models can be searched based on location, or PHOMOD can access user's device GPS coordinates and suggest photographers and models based on user's current location.<br>
+
+<h1>PHOMOD SETUP</h1>
+<b>Prerequisite</b>
+<ul>
+ <li>Local Server (XAMPP, WAMP, MAMP, LAMP, etc)</li>
+ <li>Text Editor (Visual Studio Code, Sublime, Atom, etc)</li>
+ <li>HTML, CSS, JS</li>
+ <li>Familiarity with OOP PHP and PHP Data Objects (PDO) and some MySQL knowledge</li>
+</ul>
+<p>NB:// You should download, or clone <b>PHOMOD</b> into your <b>htdocs</b> or <b>www</b> folder of your local server (XAMPP, WAMP, etc)</p>
+
 
  <h2>DATABASE SETUP</h2>
  <ul>
