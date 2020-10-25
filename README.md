@@ -29,8 +29,12 @@ Photographers and Models can be searched based on location, or PHOMOD can access
 <li>Find freelancers based on <b>GPS coordinates</b></li>
 <li><b>Mobile Responsive</b></li>
 </ul>
-NB:// To be able to use Google OAuth, you'll need to setup a developer account on https://www.developers.google.com.
-After setting up a developer account, navigate to https://console.developers.google.com/apis/credentials and click on <b>+CREATE CREDENTIALS</b> and select <b>OAuth client ID</b>, follow the steps to setup OAuth for PHOMOD, set localhost:3000 as your domain
+NB:// To be able to use Google OAuth, 
+<ul>
+ <li>You'll need to setup a developer account on https://www.developers.google.com.</li>
+ <li>After setting up a developer account, navigate to https://console.developers.google.com/apis/credentials and click on <b>+CREATE CREDENTIALS</b> and select <b>OAuth client ID</b>, follow the steps to setup OAuth for PHOMOD, set localhost:3000 as your domain</li>
+ <li>When you're done setting up your domain (localhost:3000), go to <b>index.php</p> of your <b>PHOMOD</b> folder, and in the <head> </head> tag, look for this line <br>
+  <pre><meta name="google-signin-client_id" content="PASTE YOUR CLIENT ID HERE"></pre></li>
 <p><a href="https://developers.google.com/identity/protocols/oauth2">Read more about Google OAuth here</a></p>
 <br>
 
