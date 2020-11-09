@@ -23,7 +23,7 @@ function getLoc(){
       success : function(data){
         var getData = data;
         var city = getData.address.city;
-        console.log(city);
+        var state = getData.address.state;
         if(city !== undefined){
           $.ajax({
             method : 'GET',
@@ -33,11 +33,29 @@ function getLoc(){
             },
             success : function(data){
               $('.gerit').html(data);
+              Cookies.set("location", city, {expires: 7})
+              
             }
           })
+          console.log(city);
+          console.log(Cookies.get("location"));
         }
+        // else if()
         else{
-          console.log("we can't find city");
+          // console.log("we can't find city");
+          $.ajax({
+            method : 'GET',
+            url : 'location/getrec.php',
+            data : {
+              city : state
+            },
+            success : function(data){
+              $('.gerit').html(data);
+              Cookies.set("location", state, {expires: 7})
+            }
+          })
+          console.log(state)
+          console.log(Cookies.get("location"));
         }
       }
     })

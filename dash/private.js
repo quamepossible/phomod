@@ -114,8 +114,7 @@ $(document).ready(function(){
                     confirmButtonText: 'Yes',
                     showLoaderOnConfirm: true,
                     preConfirm: function(){
-                        return new Promise(function(){
-                        
+                        return new Promise(function(){                        
                         $.ajax({
                             method : 'POST',
                             url : 'dash/delete.php',

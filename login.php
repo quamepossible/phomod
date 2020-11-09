@@ -25,10 +25,17 @@
 
         else{
             $send_data = new controller;    
+
+            //check freelancer
             $get_pwd = $send_data->sendDet($email);
             $pawd = $get_pwd->fetchAll();
+
+            //check indiviual
+            $checkInd = $send_data->indVer($email);
+            $isInd = $checkInd->fetchAll();
     
             if($get_pwd->rowCount() > 0){
+                //USER IS A FREELANCER
                 foreach($pawd as $details){
                     $enc_pwd = $details['PWD'];
                 }
@@ -41,6 +48,11 @@
                 else{
                     echo "Invalid";
                 }
+            }
+
+            elseif($checkInd->rowCount() > 0){
+                //USER IS AN INDIVIDUAL
+                echo 'individual';
             }
     
             else{

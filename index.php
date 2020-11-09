@@ -6,7 +6,8 @@ require_once 'myauto.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script src="resources/jquery.min.js" defer></script>
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
@@ -16,12 +17,12 @@ require_once 'myauto.php';
     <link rel="stylesheet" href="resources/media.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#007d9c">
-    <meta name="google-signin-client_id" content="434711358291-ug8416melga73rv6gupqv52n79l5lp6e.apps.googleusercontent.com">
     <script src="bootstrap/dist/js/bootstrap.min.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+    <meta name="google-signin-client_id" content="434711358291-ug8416melga73rv6gupqv52n79l5lp6e.apps.googleusercontent.com">
     <script src="authsign.js" defer></script>
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="resources/script.js" defer></script>
     <script src="location/style.js" defer></script>
     <title>Welcome to Phomod</title>
@@ -29,43 +30,44 @@ require_once 'myauto.php';
 <body>
 <?php include 'overlay.html';?>
 
+
 <div class="mn-ppga">
+
 <!------------------------------- LOGIN FORM ------------------------------->
 
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-     
-    <div class="modal-dialog" role="document">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="close-mod">       
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true" class="cls">&times;</span>
                 </button>
             </div>
-        <div class="modal-body">
-            <p class="log-tex">Login to <span style="color:#007d9c;font-weight:bold;">PHOMOD</p>
-            <p class="put-cen">
-                <img src="logo.png" class="cir-logo" alt="" width="100px">
-            </p>
-            <p class="err"></p>
-            <form action="login.php" method="POST" onsubmit="return logVal()" id="log-form">
-                <div class="cent-inp">
-                    <p class="e-text">Email</p>
-                    <input type="email" name="email" id="mail-inp">
 
-                    <p class="p-text">Password</p>
-                    <input type="password" name="pwd" id="pwd-inp">
-                </div>
-            
-                <button id="dis" type="submit" name="submit" class="btn btn-primary log-btn">Login</button>
-                <div class="sign-btn"><div id="my-signin2" data-onsuccess="onSignIn"></div></div>
+            <div class="modal-body">
+                <p class="log-tex">Login to <span style="color:#007d9c;font-weight:bold;">PHOMOD</p>
+                <p class="put-cen">
+                    <img src="logo.png" class="cir-logo" alt="" width="100px">
+                </p>
+                <p class="err"></p>
+                <form action="login.php" method="POST" onsubmit="return logVal()" id="log-form">
+                    <div class="cent-inp">
+                        <p class="e-text">Email</p>
+                        <input type="email" name="email" id="mail-inp">
+
+                        <p class="p-text">Password</p>
+                        <input type="password" name="pwd" id="pwd-inp">
+                    </div>
                 
-                <p class="res-p"><a href="reset/" class="reset">Reset password?</a></p>        
-            </form>
-        </div>
+                    <button id="dis" type="submit" name="submit" class="btn btn-primary log-btn">Login</button>
+                    <div class="sign-btn"><div class="g-signin2" data-onsuccess="onSignIn"></div></div>
+                    
+                    <p class="res-p"><a href="reset/" class="reset">Reset password?</a></p>        
+                </form>
+            </div>
         </div>
     </div>
 </div>
-
 <!------------------------------- LOGIN FORM ------------------------------->
 
 

@@ -73,6 +73,13 @@
             return $stmt;
         }
 
+        protected function indLog($email){
+            $sql = 'SELECT EMAIL FROM individual WHERE EMAIL = ?';
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$email]);
+            return $stmt;
+        }
+
         protected function verifyMethod($verified, $user){
             $sql = 'UPDATE freelancers SET VERIFIED = ? WHERE USERNAME = ?';
             $stmt = $this->connect()->prepare($sql);

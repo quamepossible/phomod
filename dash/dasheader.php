@@ -11,7 +11,8 @@
         <script src="user.js" defer></script>
         <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
-        <meta name="theme-color" content="black">
+        <meta name="google-signin-client_id" content="434711358291-ug8416melga73rv6gupqv52n79l5lp6e.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script><meta name="theme-color" content="black">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title><?php echo ucfirst($_GET['name'])?></title>
     </head>

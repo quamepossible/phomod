@@ -56,7 +56,7 @@
             </div>
         </section>
     <?php else:?>
-        <p>Empty results</p>
+        <!-- <p>Empty results</p> -->
     <?php endif?>
     
 

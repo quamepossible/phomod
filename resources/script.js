@@ -13,8 +13,25 @@
     }
 
 $(document).ready(function(){
+    city = Cookies.get("location");
+    console.log(Cookies.get("location"));
+    if(city !== undefined){
+        $.ajax({
+                method : 'GET',
+                url : 'location/getrec.php',
+                data : {
+                city : city
+            },
+            success : function(data){
+                $('.gerit').html(data);
+            }
+        })
+    }
+    
+
     $('.mn-ppga').css('display', 'block');
     $('.grand').css('display', 'none');
+
 
     var searchInput = document.querySelector("#search");
     var buttonn = document.getElementById("browserr");
@@ -106,13 +123,17 @@ $(document).ready(function(){
                                 window.location.replace('/');
                             },1500);
                         }
+                        else if(data == 'individual'){
+                            $('.err').html('Email is registered with google, Sign in with Google');
+                        }
 
                         else if(data == 'Invalid'){
                             $('.err').html("Email and password don't match");
                         }
                         else{
-                            $('.err').html('No user found with this email');
+                            $('.err').html("Email and password don't match");
                         }
+                        console.log(data)
                     }
                 }
             })

@@ -551,6 +551,19 @@
     }
 }
 
+@media (max-width: 575px){
+    .modal-dialog{
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 575px) and (max-height: 740px){
+    #loginModal .modal-content{
+        height: 100vh;
+    }
+}
+
 @media screen and (max-width: 570px){
     .span-1-of-loc{
         width: 45%;

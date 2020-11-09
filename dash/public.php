@@ -37,6 +37,43 @@
 
         
         <?php endif ?>
+
+        <!------------------------------- LOGIN FORM ------------------------------->
+
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="close-mod">       
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="cls">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p class="log-tex">Login to <span style="color:#007d9c;font-weight:bold;">PHOMOD</p>
+                        <p class="put-cen">
+                            <img src="logo.png" class="cir-logo" alt="" width="100px">
+                        </p>
+                        <p class="err"></p>
+                        <form action="login.php" method="POST" id="log-form">
+                            <div class="cent-inp">
+                                <p class="e-text">Email</p>
+                                <input type="email" name="email" id="mail-inp">
+
+                                <p class="p-text">Password</p>
+                                <input type="password" name="pwd" id="pwd-inp">
+                            </div>
+                        
+                            <button id="dis" type="submit" name="submit" class="btn btn-primary log-btn">Login</button>
+                            <div class="sign-btn"><div class="g-signin2" data-onsuccess="onSignIn"></div></div>
+                            
+                            <p class="res-p"><a href="reset/" class="reset">Reset password?</a></p>        
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!------------------------------- LOGIN FORM ------------------------------->
         <div class="cover-blur" style="background: url(<?php echo $cov;?>);background-position:center;background-size:cover">
         
         </div>
@@ -131,15 +168,19 @@
                             <span class="rate-btn"><ion-icon name="thumbs-up" class="thumb-ico"></ion-icon><span>Rate</span></span>
                         </p>
                         
+                        <!-- CHECK IF USER IS LOGGED IN -->
                         <?php if(isset($_SESSION['log'])):?>
-
+                                <!-- USER IS LOGGED IN -->
                             <?php
                                 //CHECK IF THIS USER HAS RATED THIS FREELANCER
                                 $rater = $_SESSION['log'];
                                 $checkRate = $getUserObj->hasRate($rater, $user);
                                 $verRate = $checkRate->fetchAll();
                             ?>
+
+                            <!-- CHECK IF USER HAS RATED THE FREELANCER -->
                             <?php if($checkRate->rowCount() == 1):?>
+                                <!-- USER HAS RATED -->
                                 <?php foreach($verRate as $getRes):?>
                                     <p class='mark-rate'></p>
                                     <?php $alrStar = $getRes['STAR']?>    
@@ -155,6 +196,7 @@
                                 </form>
 
                             <?php else:?>
+                                <!-- USER HAS NOT RATED -->
                                 <form action="dash/rate.php" method="POST" class='rat-form' onsubmit="return rateg()">
                                     <input type="text" name="lancer" class="lance" value="<?php echo $user?>">
                                     <input type="text" name="rater" class="rater" value="<?php echo $_SESSION['log']?>">

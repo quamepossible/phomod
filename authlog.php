@@ -28,13 +28,13 @@ if(isset($_POST['clientid'])){
                     $freeSes = $getDet['PROFILE_ID'];
                 }
                 $_SESSION['log'] = $freeSes;
+                echo "$email user is a freelancer";
             }
 
             //THIS BLOCK EXECUTES IF USER IS NOT IN FREELANCER LIST
             else{
                 //CHECK FOR USER WITH GOOGLE AUTH USER ID
-                $checkInd = new controller;
-                $indSend = $checkInd->indData($userid);
+                $indSend = $checkFree->indData($userid);
                 $getInd = $indSend->fetchAll();
                 if($indSend->rowCount() == 1){
                     //THIS MEANS USER IS AN INDIVIDUAL
@@ -42,15 +42,13 @@ if(isset($_POST['clientid'])){
                         $indSes = $indDet['PROFILE_ID'];
                     }
                     $_SESSION['log'] = $indSes;
-                    echo 'user is an individual';
+                    echo "$email user is an individual";
                 }
                 else{
                     //THIS MEANS USER IS A NEW USER
                     //SO CREATE AN INDIVIDUAL DATA FOR THIS USER
-                    $senData = new controller;
-                    $getData = $senData->createInd($userid, $email, $name, $pic);
-
-                    echo "User created";
+                    $getData = $checkFree->createInd($userid, $email, $name, $pic);
+                    echo "$email User created";
 
                 }
             }

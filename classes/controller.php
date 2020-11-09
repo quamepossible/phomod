@@ -19,6 +19,10 @@
             return $this->login($email);
         }
 
+        public function indVer($email){
+            return $this->indLog($email);
+        }
+
         public function verify($verified, $user){
             return $this->verifyMethod($verified, $user);
         }
