@@ -7,7 +7,7 @@ require_once 'myauto.php';
 <html lang="en">
 <head>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-    <script src="resources/jquery.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@ require_once 'myauto.php';
     <script src="bootstrap/dist/js/bootstrap.min.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
-    <meta name="google-signin-client_id" content="PASTE-YOUR-CLIENT-ID-HERE.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="434711358291-ug8416melga73rv6gupqv52n79l5lp6e.apps.googleusercontent.com">
     <script src="authsign.js" defer></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="resources/script.js" defer></script>
@@ -60,7 +60,7 @@ require_once 'myauto.php';
                     </div>
                 
                     <button id="dis" type="submit" name="submit" class="btn btn-primary log-btn">Login</button>
-                    <div class="sign-btn"><div class="g-signin2" data-onsuccess="onSignIn"></div></div>
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
                     
                     <p class="res-p"><a href="reset/" class="reset">Reset password?</a></p>        
                 </form>
@@ -250,7 +250,7 @@ require_once 'myauto.php';
                                     <?php endif?>
                                     
                                 <?php endwhile ?>
-                                <div class="dp" style="background:url(<?php echo $src;?>);background-position:center;background-size:cover;">
+                                <div class="dp" style="background-image:url(<?php echo $src;?>);">
 
                                 </div>
 
@@ -344,7 +344,7 @@ require_once 'myauto.php';
                         <?php endif ?>
 
                         <div class="span-1-of-3">
-                            <div class="dp" style="background:url(<?php echo $src;?>);background-position:center;background-size:cover;">
+                            <div class="dp" style="background-image:url(<?php echo $src;?>);">
                             </div>
 
                             <div class="short-info">

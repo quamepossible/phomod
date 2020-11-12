@@ -1,5 +1,3 @@
-
-
 function rateg(){
     var rateNum = $('.votnum').val();
     if(rateNum.length == 0){
@@ -12,58 +10,6 @@ function rateg(){
 }
 
 $(document).ready(function(){
-
-        gapi.load('auth2', function() {
-            gapi.auth2.init();
-        });
-
-      function onSignIn(googleUser) {
-          // Useful data for your client-side scripts:
-          var profile = googleUser.getBasicProfile();
-          console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-          console.log('Full Name: ' + profile.getName());
-          console.log('Given Name: ' + profile.getGivenName());
-          console.log('Family Name: ' + profile.getFamilyName());
-          console.log("Image URL: " + profile.getImageUrl());
-          console.log("Email: " + profile.getEmail());
-      
-          // The ID token you need to pass to your backend:
-          var id_token = googleUser.getAuthResponse().id_token;
-          console.log("ID Token: " + id_token);
-      
-            $.ajax({
-              method : 'POST',
-              url : '../authlog.php',
-              data : {
-                clientid : id_token
-              },
-              success : function(data){
-                $('.phd').html(data);
-                console.log(data)
-              }
-            })
-      }
-      
-      // function renderButton() {
-      //   gapi.signin2.render('my-signin2', {
-      //     'scope': 'profile email',
-      //     'width': 240,
-      //     'height': 50,
-      //     'longtitle': true,
-      //     'theme': 'dark',
-      //     'onsuccess': onSignIn
-      //   });
-      
-      // }
-      
-      function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-          console.log('User signed out.');
-        });
-      }
-      
-      
     
     var getStars = document.querySelectorAll('.ico-ns');
     var starLen = getStars.length;
@@ -85,6 +31,7 @@ $(document).ready(function(){
 
     //CHECK IF STAR FORM IS AVAILABLE
     var starForm = $('.rat-form');
+    var unver = $('.unver');
     if(starForm.length > 0){
         //THEN USER IS LOGGED IN
         $('.rate-btn').click(function(){
@@ -94,9 +41,17 @@ $(document).ready(function(){
     }
 
     else{
-        $('.rate-btn').click(function(){
-            $('#loginModal').modal('toggle');
-        })
+        if(unver.length > 0){
+            //THEN USER IS AN UNVERIFIED FREELANCER
+            $('.rate-btn').click(function(){
+                alert('account pending');
+            })
+        }
+        else{
+            $('.rate-btn').click(function(){
+                $('#loginModal').modal('toggle');
+            })
+        }
     }
 
     //AJAX RATE

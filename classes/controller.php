@@ -56,6 +56,11 @@
             return $senInd;
         }
 
+        //CHECK IF USER IS VERIFIED
+        public function isVerified($checkUser){
+            return $this->retVerified($checkUser);
+        }
+
         //CREATE ACCOUNT FOR INDIVIDUAL USER
         public function createInd($userid, $email, $name, $pic){
             $sendData = $this->createAcc($userid, $email, $name, $pic);

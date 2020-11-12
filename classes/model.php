@@ -128,6 +128,18 @@
             return $stmt;
         }
 
+        //CHECK IF USER IS VERIFIED
+        protected function retVerified($checkUser){
+            $sql = "SELECT VERIFIED FROM freelancers WHERE PROFILE_ID = ?";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute([$checkUser]);
+            if($stmt->rowCount () == 1){
+                while($getVer = $stmt->fetch()){
+                    return $getVer['VERIFIED'];
+                }
+            }
+        }
+
         //CREATE ACCOUNT FOR INDIVIDUAL USER
         protected function createAcc($userid, $email, $name, $pic){
             $profile_id = str_replace(" ", "", $name);

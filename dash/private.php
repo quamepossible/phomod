@@ -292,8 +292,7 @@
     <?php endif?>
 
 <?php elseif($getStats == 'individual'):?>
-    <?php header("Location : /");?>
-
+    <?php echo 'individual';?>
 
 <?php else:?>
     <?php include 'error404.html'?>

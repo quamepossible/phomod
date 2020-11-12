@@ -170,47 +170,62 @@
                         
                         <!-- CHECK IF USER IS LOGGED IN -->
                         <?php if(isset($_SESSION['log'])):?>
-                                <!-- USER IS LOGGED IN -->
+                            <!-- USER IS LOGGED IN -->
+
+                            <!-- CHECK STATUS OF USER (FREELANCER OR INDIVIDUAL) -->
                             <?php
-                                //CHECK IF THIS USER HAS RATED THIS FREELANCER
-                                $rater = $_SESSION['log'];
-                                $checkRate = $getUserObj->hasRate($rater, $user);
-                                $verRate = $checkRate->fetchAll();
+                                $checkStat = $_SESSION['log'];
+                                $getStats = $meconn->checkStatus($checkStat);
                             ?>
+                            <?php if($getStats == 'freelancer' || $getStats == 'individual'):?>
+                                <!-- CHECK IF USER IS VERIFIED -->
+                                <?php $getVerified = $meconn->isVerified($checkStat);?>
+                                <?php if($getVerified == 'YES' || $getStats == 'individual'):?>
+                                    <?php
+                                        //CHECK IF THIS USER HAS RATED THIS FREELANCER
+                                        $rater = $_SESSION['log'];
+                                        $checkRate = $getUserObj->hasRate($rater, $user);
+                                        $verRate = $checkRate->fetchAll();
+                                    ?>
 
-                            <!-- CHECK IF USER HAS RATED THE FREELANCER -->
-                            <?php if($checkRate->rowCount() == 1):?>
-                                <!-- USER HAS RATED -->
-                                <?php foreach($verRate as $getRes):?>
-                                    <p class='mark-rate'></p>
-                                    <?php $alrStar = $getRes['STAR']?>    
-                                <?php endforeach?>
-                                <form action="dash/rate.php" method="POST" class='rat-form' onsubmit="return rateg()">
-                                    <input type="text" name="lancer" class="lance" value="<?php echo $user?>">
-                                    <input type="text" name="rater" class="rater" value="<?php echo $_SESSION['log']?>">
-                                    <input type="text" name="votnum" class="votnum">
-                                    <p class="hh-sta">
-                                        <?php include 'dash/revstar.php'?>
-                                    </p>
-                                    <button type="submit" class="done-ra">OK</button>
-                                </form>
+                                    <!-- CHECK IF USER HAS RATED THE FREELANCER -->
+                                    <?php if($checkRate->rowCount() == 1):?>
+                                        <!-- USER HAS RATED -->
+                                        <?php foreach($verRate as $getRes):?>
+                                            <p class='mark-rate'></p>
+                                            <?php $alrStar = $getRes['STAR']?>    
+                                        <?php endforeach?>
+                                        <form action="dash/rate.php" method="POST" class='rat-form' onsubmit="return rateg()">
+                                            <input type="text" name="lancer" class="lance" value="<?php echo $user?>">
+                                            <input type="text" name="rater" class="rater" value="<?php echo $_SESSION['log']?>">
+                                            <input type="text" name="votnum" class="votnum">
+                                            <p class="hh-sta">
+                                                <?php include 'dash/revstar.php'?>
+                                            </p>
+                                            <button type="submit" class="done-ra">OK</button>
+                                        </form>
 
-                            <?php else:?>
-                                <!-- USER HAS NOT RATED -->
-                                <form action="dash/rate.php" method="POST" class='rat-form' onsubmit="return rateg()">
-                                    <input type="text" name="lancer" class="lance" value="<?php echo $user?>">
-                                    <input type="text" name="rater" class="rater" value="<?php echo $_SESSION['log']?>">
-                                    <input type="text" name="votnum" class="votnum">
-                                    <p class="hh-sta">
-                                        <ion-icon class="star-ico ico-ns" name="star-outline">1</ion-icon>
-                                        <ion-icon class="star-ico ico-ns" name="star-outline">2</ion-icon>
-                                        <ion-icon class="star-ico ico-ns" name="star-outline">3</ion-icon>
-                                        <ion-icon class="star-ico ico-ns" name="star-outline">4</ion-icon>
-                                        <ion-icon class="star-ico ico-ns" name="star-outline">5</ion-icon>
-                                    </p>
-                                    <button type="submit" class="done-ra">OK</button>
-                                </form>
-                            <?php endif?>
+                                        <?php else:?>
+                                            <!-- USER HAS NOT RATED -->
+                                            <form action="dash/rate.php" method="POST" class='rat-form' onsubmit="return rateg()">
+                                                <input type="text" name="lancer" class="lance" value="<?php echo $user?>">
+                                                <input type="text" name="rater" class="rater" value="<?php echo $_SESSION['log']?>">
+                                                <input type="text" name="votnum" class="votnum">
+                                                <p class="hh-sta">
+                                                    <ion-icon class="star-ico ico-ns" name="star-outline">1</ion-icon>
+                                                    <ion-icon class="star-ico ico-ns" name="star-outline">2</ion-icon>
+                                                    <ion-icon class="star-ico ico-ns" name="star-outline">3</ion-icon>
+                                                    <ion-icon class="star-ico ico-ns" name="star-outline">4</ion-icon>
+                                                    <ion-icon class="star-ico ico-ns" name="star-outline">5</ion-icon>
+                                                </p>
+                                                <button type="submit" class="done-ra">OK</button>
+                                            </form>
+                                    <?php endif?>
+                                
+                                    <?php else:?>
+                                        <p class="unver"></p>
+                                <?php endif?>
+                            <?php endif?>                        
                         <?php endif?>
                         
                         <p class="location"><ion-icon class="loc-ico" name="location-outline"></ion-icon>&nbsp;<span><?php echo ucwords($region) . ", ". ucfirst($city)?></span></p>
@@ -277,4 +292,5 @@
     <?php endforeach ?>
 <?php endif?>
 <script src="dash/public.js"></script>
+<script src="authsign.js"></script>
 

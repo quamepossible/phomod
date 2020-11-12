@@ -16,7 +16,7 @@ body{
     z-index: 5;
 }
 
-button span{
+.modal button span{
     font-size: 50px;
     color: white;
 }
@@ -25,10 +25,6 @@ button span{
     /* background-color: rgb(211, 211, 211); */
     background-color: rgba(0, 0, 0, 0.541);
 
-}
-
-.modal-dialog{
-    /* background: green; */
 }
 
 #loginModal .modal-content{
@@ -74,7 +70,10 @@ button span{
     margin: auto;
     margin-top: 10px;
     /* background-color: green; */
+}
 
+.unver{
+    display: none;
 }
 
 .cent-inp{
