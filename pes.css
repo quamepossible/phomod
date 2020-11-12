@@ -109,6 +109,12 @@ body{
     border-radius: 30px;
 }
 
+.holog{
+    background: red;
+    width: 240px;
+    margin: auto;
+}
+
 #err{
     position: absolute;
     left: 50%;

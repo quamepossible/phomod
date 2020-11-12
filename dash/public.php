@@ -65,7 +65,7 @@
                             </div>
                         
                             <button id="dis" type="submit" name="submit" class="btn btn-primary log-btn">Login</button>
-                            <div class="sign-btn"><div class="g-signin2" data-onsuccess="onSignIn"></div></div>
+                            <div class="holog"><div id="my-signin2"></div></div> 
                             
                             <p class="res-p"><a href="reset/" class="reset">Reset password?</a></p>        
                         </form>
@@ -293,4 +293,5 @@
 <?php endif?>
 <script src="dash/public.js"></script>
 <script src="authsign.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 
