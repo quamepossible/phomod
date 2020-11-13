@@ -116,10 +116,10 @@ require_once 'myauto.php';
                     <span class="spans"></span>
                 </div>
 
-                <ul>
-                    <li><a href="#">PHOTOGRAPHERS</a></li>
-                    <li><a href="#">MODELS</a></li>
-                    <li class="log-li"><a href="u.php?name=<?php echo $getConv?>" class="log"><ion-icon class="log-ico" name="person-circle-outline"></ion-icon><?php echo $getConv?></a></li>
+                <ul class="row">
+                    <li class="ph"><a href="#">PHOTOGRAPHERS</a></li>
+                    <li class="mh"><a href="#">MODELS</a></li>
+                    <li class="log-li"><a href="u.php?name=<?php echo $getConv?>" class="log"><ion-icon class="log-ico" name="person-circle-outline"></ion-icon><span><?php echo $getConv?></span></a></li>
                     <li class="li-last"><a href="logout.php" class="sign" onclick="signOut()"><ion-icon class="sign-ico" name="log-out-outline"></ion-icon>LOG OUT</a></li> 
                 </ul>
             </nav>
