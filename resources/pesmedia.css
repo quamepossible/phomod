@@ -152,6 +152,20 @@
     }
 }
 
+@media screen and (max-width: 500px){
+    .cent-inp{
+        width: 85%;
+    }
+
+}
+
+@media screen and (max-width: 430px){
+
+    .cent-inp{
+        width: 95%;
+    }
+}
+
 @media screen and (max-width: 400px){
     .view-ico, .del-ico{
         display: none;
