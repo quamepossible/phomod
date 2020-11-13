@@ -182,12 +182,15 @@
     }
 
     .log-li{
-        padding: 15px 0 25px 0;
+        padding: 20px 0;
+        /* display: none; */
     }
+    
     .li-last{
         padding-left: 0;
         padding-top: 20px;
         padding-bottom: 20px;
+        /* display: none; */
     }
 
     .li-last a{
