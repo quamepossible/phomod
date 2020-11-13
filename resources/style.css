@@ -269,17 +269,35 @@ nav{
 
 ul{
     /* background-color: red; */
-    width: 50%;
-    left: 50%;
-    top: 40%;
-    transform: translateY(-40%);
+    width: 60%;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
     position: absolute;
 }
 
 li{
-    display: inline;
+    display: inline-block;
+    width: 25%;
     list-style: none;
-    padding-left: 50px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* .ph, .mh{
+    width: 15%;
+}
+
+.log-li, .li-last{
+    width: 35%;
+} */
+
+li:nth-of-type(even){
+    /* background-color: green; */
+}
+
+li:nth-of-type(odd){
+    /* background-color: blue; */
 }
 
 li a{
@@ -307,18 +325,20 @@ a:hover{
 .log{
     background: white;
     color: orangered;    
-    padding: 10px 30px;
+    padding: 10px 25px;
     border-radius: 40px;
     border: 2px solid orangered;
+    position: relative;
 }
 
 .sign{
     background: orangered;
-    padding: 10px 30px;
+    padding: 10px 25px;
     border-radius: 40px;
     color: white;
     border: none;
     border: 2px solid orangered;
+    position: relative;
 }
 
 .log-ico{
@@ -326,21 +346,30 @@ a:hover{
     font-size: 30px;
     font-weight: bold;
     padding-right: 5px;
-    top: 10px; 
-    position: relative;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .sign-ico{
     color: white;
-    font-size: 20px;
+    /* font-size: 20px; */
     font-weight: bold;
     padding-right: 5px;
     position: relative;
     top: 4px;
 }
 
+.log span{
+    padding-left: 35px;
+}
+
+.log-li{
+    
+}
+
 .li-last{
-    padding-left: 25px;
+    /* padding-left: 25px; */
 }
 
 
@@ -482,6 +511,10 @@ form select, .search, .browse{
 }
 
 .row{
+    margin: auto;
+}
+
+.feat-row{
     width: 75%;
     margin: auto; 
     margin-top: 0px;
@@ -762,53 +795,6 @@ form select, .search, .browse{
 /************* FEATURED PHOTOGRAPHERS ************/
 
 
-/************* PHOTOGRAPHER OF THE WEEK ************/
-
-.photo-week{
-    /* margin-top: 70px;
-    padding-bottom: 50px; */
-    background: rgb(27, 27, 27);    
-}
-
-.photo-week .row{
-    width: 100%;
-    height: 200px;
-}
-
-.feat-star{
-    width: 90%;
-    margin: auto;
-    padding-top: 30px;
-    padding-bottom: 40px;
-}
-
-.feat-star span{
-    font-size: 30px;
-    padding-left: 30px;
-    color: #fbe328;
-}
-
-.star{
-    padding: 10px;
-    width: 100px;
-    background: black;
-    border: 5px solid #fbe328;
-    border-radius: 50%;
-    box-shadow: 0 0 10px black;
-}
-
-/* .owl-theme{    
-
-}
-
-.owl-theme div{
-    height: 200px;
-} */
-
-
-/************* PHOTOGRAPHER OF THE WEEK ************/
-
-
 /************** FEATURED MODELS **************/
 
 
@@ -893,5 +879,6 @@ form select, .search, .browse{
 .jst-tt{
     color: white;
 }
+
 
 /************** LOCATION **************/

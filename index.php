@@ -87,10 +87,10 @@ require_once 'myauto.php';
                     <span class="spans"></span>
                 </div>
                 
-                <ul>                    
-                    <li><a href="#">PHOTOGRAPHERS</a></li>
-                    <li><a href="#">MODELS</a></li>
-                    <li class="log-li"><a href="javascript:void(0)" class="log" data-toggle="modal" data-target="#loginModal"><ion-icon class="log-ico" name="person-circle-outline"></ion-icon>LOG IN</a></li>
+                <ul class="row">                    
+                    <li class="ph"><a href="#">PHOTOGRAPHERS</a></li>
+                    <li class="mh"><a href="#">MODELS</a></li>
+                    <li class="log-li"><a href="javascript:void(0)" class="log" data-toggle="modal" data-target="#loginModal"><ion-icon class="log-ico" name="person-circle-outline"></ion-icon><span>LOG IN</span></a></li>
                     <li class="li-last"><a href="signup/" class="sign"><ion-icon class="sign-ico" name="person-add-outline"></ion-icon>SIGN UP</a></li>
                 </ul>          
             </nav>
