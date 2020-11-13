@@ -292,6 +292,7 @@
     <?php endforeach ?>
 <?php endif?>
 <script src="dash/public.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 <script src="authsign.js"></script>
 <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 

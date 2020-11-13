@@ -66,18 +66,14 @@ body{
 }
 
 #log-form{
-    width: 100%;
+    width: 90%;
     margin: auto;
     margin-top: 10px;
     /* background-color: green; */
 }
 
-.unver{
-    display: none;
-}
-
 .cent-inp{
-    width: 70%;
+    width: 90%;
     margin: auto;
     /* background: red; */
 }
@@ -87,14 +83,12 @@ body{
     color: white;
 }
 
-
 #mail-inp, #pwd-inp{
     width: 100%;
     padding: 10px 20px;
     border-radius: 50px;
     border: none;
     outline: none !important;
-    margin: auto;
 }
 
 #mail-inp{
@@ -534,10 +528,6 @@ a:hover{
     position: relative;
 }
 
-.span-2-of-2 .p-down{
-    /* background: yellow; */
-}
-
 .span-2-of-2 span{
     /* padding: 10px; */
     background: rgb(5, 100, 189);
@@ -721,6 +711,10 @@ a:hover{
     /* background-color: yellow; */
 }
 
+
+.unver{
+    display: none;
+}
 
 /***************** DETAILS SECTION *****************/
 

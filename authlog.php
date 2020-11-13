@@ -28,7 +28,7 @@ if(isset($_POST['clientid'])){
                     $freeSes = $getDet['PROFILE_ID'];
                 }
                 $_SESSION['log'] = $freeSes;
-                echo "$email user is a freelancer";
+                echo "freelancer";
             }
 
             //THIS BLOCK EXECUTES IF USER IS NOT IN FREELANCER LIST
@@ -42,13 +42,13 @@ if(isset($_POST['clientid'])){
                         $indSes = $indDet['PROFILE_ID'];
                     }
                     $_SESSION['log'] = $indSes;
-                    echo "$email user is an individual";
+                    echo "individual";
                 }
                 else{
                     //THIS MEANS USER IS A NEW USER
                     //SO CREATE AN INDIVIDUAL DATA FOR THIS USER
                     $getData = $checkFree->createInd($userid, $email, $name, $pic);
-                    echo "$email User created";
+                    echo "created";
 
                 }
             }
@@ -59,7 +59,7 @@ if(isset($_POST['clientid'])){
         } 
     } 
     else {
-    echo  'Invalid ID token';
+        echo  'Invalid ID token';
     }
 }
 else{

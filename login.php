@@ -50,13 +50,15 @@
                 }
             }
 
-            elseif($checkInd->rowCount() > 0){
-                //USER IS AN INDIVIDUAL
-                echo 'individual';
-            }
-    
             else{
-                echo "No user found";
+                if($checkInd->rowCount() > 0){
+                    //USER IS AN INDIVIDUAL
+                    echo 'individual';
+                }
+    
+                else{
+                    echo "No user found";
+                }
             }
         }
     }

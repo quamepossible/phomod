@@ -118,6 +118,10 @@ $(document).ready(function(){
                             },1500);
                         }
 
+                        else if(data == 'individual'){
+                            $('.err').html('Email is registered with google, Sign in with Google');
+                        }
+
                         else if(data == 'Invalid'){
                             $('.err').html("Email and password don't match");
                         }

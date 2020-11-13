@@ -2,8 +2,14 @@
 function onSuccess(googleUser) {
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
-    // console.log("ID Token: " + id_token);
 
+    //Check if we have cookie
+    var gtc = Cookies.get("refresh");
+    if(gtc !== undefined){
+      console.log('we have cookies')
+    }
+
+    else{    
       $.ajax({
         method : 'POST',
         url : 'authlog.php',
@@ -11,13 +17,30 @@ function onSuccess(googleUser) {
           clientid : id_token
         },
         success : function(data){
-          console.log(data)
+          // console.log(data)
+          if(data == 'freelancer' || data == 'individual' || data == 'created'){
+            Cookies.set("refresh", id_token, {expires: 7})
+            $('.err').html('Logged in');
+            $('.err').css('color', 'green');
+            setTimeout(function(){
+                $('#loginModal').modal('toggle');
+                window.location.replace('/');
+            },1500);
+          }
+          
+          else{
+              $('.err').html("Unable to login, try again");
+              $('.err').css('color', 'red');
+          }
         }
       })
+    }
+
 }
 
-function onFailure(error) {
-  console.log(error);
+function onFailure() {
+  $('.err').html("Unable to login, try again");
+  $('.err').css('color', 'red');
 }
 
 function renderButton() {
@@ -34,6 +57,7 @@ function renderButton() {
 }
 
 function signOut() {
+  Cookies.remove('refresh', { path: '' })
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
     console.log('User signed out.');

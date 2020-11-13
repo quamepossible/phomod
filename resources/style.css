@@ -105,11 +105,6 @@ button span{
     background-color: black;
 
 }
-
-.modal-dialog{
-    /* background: green; */
-}
-
 #loginModal .modal-content{
     background: linear-gradient(rgba(0, 0, 0, 0.473), rgba(0, 0, 0, 0.473)), url('../gallery/MODELS/model.jpg');
     height: auto;
@@ -212,7 +207,6 @@ button span{
 }
 
 /* LOGIN SECTION */
-
 
 
 
