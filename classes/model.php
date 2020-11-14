@@ -240,7 +240,7 @@
 
         //CHECK IF EMAIL IS IN FREELANCERS AND VERIFIED = 0
         protected function newAcc($email){
-            $sql_one = "SELECT EMAIL_CODE FROM freelancers WHERE EMAIL = ? and EMAIL_VERIFIED = 0";
+            $sql_one = "SELECT EMAIL_CODE FROM freelancers WHERE EMAIL = ? and EMAIL_VERIFIED = 'NO'";
             $stmt_one = $this->connect()->prepare($sql_one);
             $stmt_one->execute([$email]);
             return $stmt_one;

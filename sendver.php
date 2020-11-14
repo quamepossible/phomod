@@ -3,8 +3,8 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-include '../myauto.php';
-require '../vendor/autoload.php';
+include 'myauto.php';
+require 'vendor/autoload.php';
 
 
 if(isset($_GET['email'])){
@@ -40,7 +40,7 @@ if(isset($_GET['email'])){
                 $mail->Password = 'mslvkshaaxngmuyd';
                 $mail->Port = 587;
                 $mail->send();
-                header("Location: vermail.php?email=$email");
+                header("Location: verify/index.php?email=$email");
             }
             catch (Exception $e)
             {

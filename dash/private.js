@@ -144,4 +144,9 @@ $(document).ready(function(){
 
 })
  
-
+function openWin(){
+    var link = document.querySelector('#resid');
+    link.getAttribute('href');
+    window.open(link, '_self');
+    return false;
+}

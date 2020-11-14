@@ -120,7 +120,7 @@
 
     <?php
             //get categories
-            $catStmt = "SELECT CATEGORY, RATING, TRAVEL, WORKING_DAYS, COMPANY_NAME, REGION, CITY, INSTAGRAM, WHATSAPP, WEBSITE, PHONE, EMAIL_VERIFIED, DESCRIPTION FROM freelancers WHERE USERNAME = :uid";
+            $catStmt = "SELECT CATEGORY, EMAIL, RATING, TRAVEL, WORKING_DAYS, COMPANY_NAME, REGION, CITY, INSTAGRAM, WHATSAPP, WEBSITE, PHONE, EMAIL_VERIFIED, DESCRIPTION FROM freelancers WHERE USERNAME = :uid";
             $valStmt = $getConn->prepare($catStmt);
             $valStmt->execute(['uid' => $pic]);
             $getCat = $valStmt->fetchAll();
@@ -143,6 +143,7 @@
                 $rating = $allTags["RATING"];
                 $days = $allTags["WORKING_DAYS"];
                 $ver = $allTags["EMAIL_VERIFIED"];
+                $email = $allTags['EMAIL'];
             }
             $tTags = count($getEach);
 
@@ -186,7 +187,7 @@
                             <p><ion-icon class="ver-ico" name="shield-checkmark"></ion-icon><span class="ver-span">verified</span></p>
                             
                             <?php else:?>
-                                <p class="unv-pp"><ion-icon class="unv-ico" name="alert-circle"></ion-icon><span class="unv-span">Verify your email</span><span class="yever">Verify</span></p>
+                                <p class="unv-pp"><ion-icon class="unv-ico" name="alert-circle"></ion-icon><span class="unv-span">Verify your email</span><a href="sendver.php?email=<?php echo $email;?>" id="resid" onclick="return openWin()" class="btn btn-success"><span class="yever">Verify</span></a></p>
                         <?php endif?>
                         </div>  
                         <div class="rate">

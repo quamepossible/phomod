@@ -146,7 +146,7 @@
                     $thenCode = $getCode['EMAIL_CODE'];
                     if($code == $thenCode){
                         //LET EMAIL = VERIFIED
-                        $email_ver = "UPDATE freelancers SET EMAIL_VERIFIED = 1 WHERE EMAIL = ?";
+                        $email_ver = "UPDATE freelancers SET EMAIL_VERIFIED = 'YES' WHERE EMAIL = ?";
                         $stmt_ver = $this->dbconnection()->prepare($email_ver);
                         $stmt_ver->execute([$email]);
                         //THEN CODE IS VALID

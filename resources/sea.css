@@ -298,7 +298,7 @@ a:hover{
 
 .ver-ico{
     color: white;
-    background: rgb(0, 140, 255);
+    background: green;
     border: 2px solid white;
     padding: 2px;
     border-radius: 50%;
@@ -313,7 +313,7 @@ a:hover{
     border-radius: 20px;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
-    background: rgb(0, 140, 255);
+    background: green;
     color: white;
     line-height: 1px;
 }

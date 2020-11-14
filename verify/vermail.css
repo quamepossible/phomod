@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(226, 226, 226);
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+.container{
+    /* background: red; */
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text{
+    /* background: yellow; */
+    line-height: 40px;
+}
+
+.par-text{
+    font-size: 30px;
+    padding-bottom: 30px;
+    font-weight: bold;
+}
+
+.sub-text{
+    font-size: 20px;
+    color: green;
+}
+
+.err{
+    /* font-weight: bold; */
+    /* position: absolute;
+    left: 50%;
+    transform: translateX(-50%); */
+}
+
+.form-container{
+    /* background: green; */
+    margin-top: 30px
+}
+
+input{
+    font-weight: bold;
+    width: 400px;
+    padding: 15px 10px;
+    border-radius: 40px;
+    border: 2px solid white;
+    outline: none !important;
+    box-shadow: 0 0 5px rgba(124, 123, 123, 0.726);
+    transition: 0.3s;
+    z-index: 5;
+    margin-bottom: 20px;
+}
+
+.email, .re-mail{
+    display: none;
+}
+
+input:focus{
+    border: 2px solid rgb(0, 140, 255);
+    box-shadow: none;
+}
+
+.spin{
+    position: relative;
+    /* background: red; */
+}
+
+.hold-load{
+    width: 100%;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background: black; */
+    position: absolute;
+    visibility: hidden;
+}
+
+.over{
+    position: absolute;
+    background: white;
+    box-shadow: 0 0 5px rgba(124, 121, 121, 0.836);
+    width: 270px;
+    padding: 25px 20px;
+    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+}
+
+.lds-ripple {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 50px;
+    height: 50px;
+    /* background: red; */
+}
+
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid rgb(0, 140, 255);
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+    0% {
+      top: 21px;
+      left: 21px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+      width: 45px;
+      height: 45px;
+      opacity: 0;
+    }
+}
+  
+.hol{
+    display: inline-block;
+    position: relative;
+    margin: 20px 0;
+    /* background: blue; */
+    /* overflow: hidden; */
+}
+
+.hol .mail{
+    background: rgb(0, 0, 0);
+    color: white;
+    border: 3px solid white;
+    box-shadow: 0 0 5px black;
+    padding: 7px;
+    padding-left: 40px;
+    border-radius: 30px;
+}
+
+.p-ico{
+    background: white;
+    color: rgb(0, 140, 255);
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 5px;
+    left: 7px;
+    top: 4.5px;
+    position: absolute;
+}
+
+.pl-ico{
+    font-size: 20px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 20px;
+}
+
+button{
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    background: rgb(0, 140, 255);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+    outline: none !important;
+    /* overflow: hidden; */
+}
+
+input::placeholder{
+    font-size: 15px;
+    font-weight: 100;
+}
+
+button:hover{
+    background: white;
+    color: rgb(0, 140, 255);
+}
+
+button span{
+    padding-left: 40px;
+}
+
+.ver{
+    background: green;
+}
+
+.ver-ico{
+    font-size: 30px;
+    bottom: 7px;
+    position: absolute;
+}
+
+@media screen and (max-width: 420px){
+    input{
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 370px){
+    input{
+        width: 300px;
+    }
+}

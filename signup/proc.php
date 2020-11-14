@@ -1,5 +1,5 @@
 <?php
-
+session_start();
     if(isset($_POST['username'])){
 
         include '../myauto.php';
@@ -125,6 +125,7 @@
 
             if(!empty($allErr)){
                 header("Location: index.php?err=$allErr&&det[]=$name&det[]=$username&det[]=$phone&det[]=$whatsapp&det[]=$instagram&det[]=$website&det[]=$email&det[]=$region&det[]=$city&det[]=$company&det[]=$days");
+                session_destroy();
             }
 
             else{
@@ -135,18 +136,20 @@
                 $imgStm = $connect->prepare($imgSql);
                 $imgStm->execute([$username, $newImgName]);
                 $profid = $username . uniqid();
-                $sql = 'INSERT INTO freelancers(FULL_NAME, USERNAME, PHONE, WHATSAPP, WEBSITE, INSTAGRAM, EMAIL, REGION, CITY, LANCER_TYPE, COMPANY_NAME, WORKING_DAYS, CATEGORY, TRAVEL, VERIFIED, PWD, PROFILE_ID) 
+                $sql = 'INSERT INTO freelancers(FULL_NAME, USERNAME, PHONE, WHATSAPP, WEBSITE, INSTAGRAM, EMAIL, REGION, CITY, LANCER_TYPE, COMPANY_NAME, WORKING_DAYS, CATEGORY, TRAVEL, EMAIL_VERIFIED, PWD, PROFILE_ID) 
                 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 
                 $stmt = $connect->prepare($sql);
                 $stmt->execute([$name, $username, $phone, $whatsapp, $website, $instagram, $email, $region, $city, $lancer, $company, $days, $mainCategory, $travel, $verified, $pass, $profid]);
-                header("Location: sendver.php?email=$email");
+                $_SESSION['log'] = $profid;
+                header("Location: ../u.php?name=$username");
             }
         }
     }
 
     else{
         include 'error404.html';
+        session_destroy();
     }
 
 

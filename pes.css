@@ -454,6 +454,10 @@ a:hover{
     
 }
 
+#resid{
+    margin-left: 10px;
+}
+
 .unv-ico{
     color: red;
     font-size: 30px;
@@ -470,10 +474,7 @@ a:hover{
 }
 
 .yever{
-    background: green;
     color: white;
-    margin-left: 10px;
-    padding: 5px 10px;
     cursor: pointer;
 
 }
