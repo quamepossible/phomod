@@ -120,7 +120,7 @@ $(document).ready(function(){
                             $('.err').css('color', 'green');
                             setTimeout(function(){
                                 $('#loginModal').modal('toggle');
-                                window.location.replace('/');
+                                location.reload();
                             },1500);
                         }
                         else if(data == 'individual'){

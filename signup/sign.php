@@ -18,11 +18,12 @@
   <?php 
     $details = $_GET['det'];
   ?>
-<?php else:?>
-  <?php for($i = 0; $i < 11; $i++){
-      $details[$i] = '';
-  }
-  ?>
+  <?php else:?>
+    <?php 
+      for($i = 0; $i < 11; $i++){
+          $details[$i] = '';
+      }
+    ?>
 <?php endif?>
 
 <div class="form-row">

@@ -16,7 +16,7 @@ body{
     z-index: 5;
 }
 
-.modal button span{
+#loginModal button span{
     font-size: 50px;
     color: white;
 }

@@ -94,6 +94,8 @@
                     $dispName = 'error';
                 }
             }
+            $dispName = explode(" ", $dispName);
+            $dispName = $dispName[0];
             return $dispName;
         }
 

@@ -24,7 +24,7 @@ function onSuccess(googleUser) {
             $('.err').css('color', 'green');
             setTimeout(function(){
                 $('#loginModal').modal('toggle');
-                window.location.replace('/');
+                location.reload();
             },1500);
           }
           
@@ -57,10 +57,10 @@ function renderButton() {
 }
 
 function signOut() {
-  Cookies.remove('refresh', { path: '' })
   var auth2 = gapi.auth2.getAuthInstance();
   auth2.signOut().then(function () {
-    console.log('User signed out.');
+    Cookies.remove('refresh', { path: '' })
+    console.log("cookies removed")
   });
 }
 
