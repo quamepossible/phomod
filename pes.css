@@ -450,6 +450,34 @@ a:hover{
     line-height: 1px;
 }
 
+.unv-pp{
+    
+}
+
+.unv-ico{
+    color: red;
+    font-size: 30px;
+    position: relative;
+    top: 10px;
+}
+
+.unv-span{
+    margin-left: 10px;
+    background: red;
+    padding: 2px 10px;
+    border-radius: 20px;
+    color: white;
+}
+
+.yever{
+    background: green;
+    color: white;
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+
+}
+
 /***************** TAGS SECTION *****************/
 
 

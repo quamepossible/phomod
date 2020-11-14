@@ -15,10 +15,10 @@
 
         protected function getUsers($user){
             $getConn = $this->connect();
-            $verified = 'YES';
-            $sql= "SELECT * FROM freelancers WHERE USERNAME = :user and VERIFIED = :verified";
+            // $verified = 'YES';
+            $sql= "SELECT * FROM freelancers WHERE USERNAME = :user";
             $getAll = $getConn->prepare($sql);
-            $getAll->execute(['user' => $user, 'verified' => $verified]);
+            $getAll->execute(['user' => $user]);
             return $getAll;
         }
 
@@ -52,10 +52,10 @@
         protected function searchUser($need, $search){
             $need = "%$need%";
             $search = "%$search%";
-            $verified = 'YES';
-            $sql = "SELECT * FROM freelancers WHERE (CITY LIKE :search || REGION LIKE :search) and LANCER_TYPE LIKE :lancer and VERIFIED = :verified";
+            // $verified = 'YES';
+            $sql = "SELECT * FROM freelancers WHERE (CITY LIKE :search || REGION LIKE :search) and LANCER_TYPE LIKE :lancer ";
             $stmt = $this->connect()->prepare($sql);
-            $stmt->execute(["search" => $search, "lancer" => $need, "verified" => $verified]);
+            $stmt->execute(["search" => $search, "lancer" => $need]);
             return $stmt;
         }
 
@@ -130,12 +130,12 @@
 
         //CHECK IF USER IS VERIFIED
         protected function retVerified($checkUser){
-            $sql = "SELECT VERIFIED FROM freelancers WHERE PROFILE_ID = ?";
+            $sql = "SELECT EMAIL_VERIFIED FROM freelancers WHERE PROFILE_ID = ?";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$checkUser]);
             if($stmt->rowCount () == 1){
                 while($getVer = $stmt->fetch()){
-                    return $getVer['VERIFIED'];
+                    return $getVer['EMAIL_VERIFIED'];
                 }
             }
         }

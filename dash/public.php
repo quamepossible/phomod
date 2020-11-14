@@ -97,7 +97,7 @@
 
     <?php
         //get categories
-        $catStmt = "SELECT CATEGORY, RATING, WORKING_DAYS, TRAVEL, COMPANY_NAME, REGION, CITY, INSTAGRAM, WHATSAPP, WEBSITE, PHONE, DESCRIPTION FROM freelancers WHERE USERNAME = :uid";
+        $catStmt = "SELECT CATEGORY, EMAIL_VERIFIED, RATING, WORKING_DAYS, TRAVEL, COMPANY_NAME, REGION, CITY, INSTAGRAM, WHATSAPP, WEBSITE, PHONE, DESCRIPTION FROM freelancers WHERE USERNAME = :uid";
         $valStmt = $getConn->prepare($catStmt);
         $valStmt->execute(['uid' => $pic]);
         $getCat = $valStmt->fetchAll();
@@ -119,6 +119,7 @@
             $desc = $allTags["DESCRIPTION"];
             $rating = $allTags["RATING"];
             $days = $allTags["WORKING_DAYS"];
+            $ver = $allTags["EMAIL_VERIFIED"];
         }
         $tTags = count($getEach);
 
@@ -158,7 +159,9 @@
             <div class="span-s-of-s">
                 <div class="span-2-of-1">
                     <div class="others">
-                        <p><ion-icon class="ver-ico" name="shield-checkmark"></ion-icon><span class="ver-span">verified</span></p>
+                        <?php if($ver == 'YES'):?>
+                            <p><ion-icon class="ver-ico" name="shield-checkmark"></ion-icon><span class="ver-span">verified</span></p>
+                        <?php endif?>
                     </div>  
                     <div class="rate">
                         <p class="fet-rev"><span class="ratee"><?php echo $lanStar?></span>

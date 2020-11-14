@@ -133,7 +133,9 @@ include 'myauto.php';
                                 </div>
 
                                 <div class="others">
-                                    <p><ion-icon class="ver-ico" name="shield-checkmark"></ion-icon><span class="ver-span">verified</span></p>
+                                    <?php if($row['EMAIL_VERIFIED'] == 'YES'):?>
+                                        <p><ion-icon class="ver-ico" name="shield-checkmark"></ion-icon><span class="ver-span">verified</span></p>
+                                    <?php endif?>
                                 </div>                    
                             </div>
                     
