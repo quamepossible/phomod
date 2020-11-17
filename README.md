@@ -37,7 +37,7 @@ NB:// To be able to use Google OAuth,
   <pre><b>meta name="google-signin-client_id" content="PASTE-YOUR-CLIENT-ID-HERE.apps.googleusercontent.com"</b></pre></li>
  <li>Paste your <b>client ID</b> from your google developer account into the <code><b>content</b></code> attribute above and you'll be all set</li>
  <li>That's all you need to do to setup Google OAuth for PHOMOD, the heavy lifting have already been done, no need to create a new javascript file to get user profile and communicate with backend.</li>
-<p><a href="https://developers.google.com/identity/protocols/oauth2"><b>Read more about Google OAuth here</b></a></p>
+<p><a href="https://developers.google.com/identity/sign-in/web/sign-in"><b>Read more about Google OAuth here</b></a></p>
 <br>
 
 
