@@ -32,7 +32,6 @@
 
     <?php else:?>
         <?php include 'dash/public.php';?>
-
     <?php endif?>
     
         <script src="Chocolat-master/dist/js/chocolat.js"></script>

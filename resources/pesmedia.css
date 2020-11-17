@@ -11,6 +11,10 @@
         width: 90%;
         padding: 5px;
     }
+
+    .cov-up{
+        top: 10px;
+    }
 }
 
 @media screen and (max-width: 930px){

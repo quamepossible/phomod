@@ -74,20 +74,24 @@
             </div>
         </div>
         <!------------------------------- LOGIN FORM ------------------------------->
-        <div class="cover-blur" style="background: url(<?php echo $cov;?>);background-position:center;background-size:cover">
-        
-        </div>
-        <div class="cover-phot" style="background: url(<?php echo $cov;?>);background-position:center;background-size:cover">
+        <div class="cover-blur" style="background-image: url(<?php echo $cov;?>)"></div>
+            <?php 
+                if($cov == 'profilepic/no-cover.png'){
+                    $ots = 'background-size:contain;background-repeat:no-repeat;background-position:unset';
+                }
+                else{
+                    $ots = '';
+                }
+            ?>
+            <div class="cover-phot" style="background-image: url(<?php echo $cov;?>);<?php echo $ots?>">
             <div class="cover-name">
                 <p class="cov">
                 <?php echo '@'.$userr['USERNAME'];?>
                 </p>
             </div>
-
-        </div>
+        </div>           
             
-        
-        <div class="dp" style="background: url(<?php echo $src?>);background-position:center;background-size:cover">
+        <div class="dp" style="background-image: url(<?php echo $src?>)">
       
         </div>
 
@@ -165,7 +169,7 @@
                     </div>  
                     <div class="rate">
                         <p class="fet-rev"><span class="ratee"><?php echo $lanStar?></span>
-                        <?php include 'dash/star.php'?>
+                            <?php include 'dash/star.php'?>
                             &nbsp;&nbsp;
                             <?php echo $gehRevv?> reviews
                             <span class="rate-btn"><ion-icon name="thumbs-up" class="thumb-ico"></ion-icon><span>Rate</span></span>

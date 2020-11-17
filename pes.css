@@ -224,7 +224,6 @@ span{
     height: 500px;
     margin-top: -20px;
     margin-left: -150px;
-    background: linear-gradient(rgba(0, 0, 0, 0.77), rgba(0, 0, 0, 0.77)), url(./gallery/MODELS/model\ \(11\).jpg);
     background-position: center;
     background-size: cover;
     filter: blur(120px);
@@ -238,7 +237,6 @@ span{
     transform: translateX(-50%);
     width: 60%;
     height: 400px;
-    background: linear-gradient(rgba(0, 0, 0, 0.511), rgba(0, 0, 0, 0.511)), url(./gallery/MODELS/model\ \(11\).jpg);
     background-position: center;
     background-size: cover;
     z-index: 1;
@@ -317,6 +315,8 @@ a:hover{
     cursor: pointer;
     transition: 0.2s;
     border: 10px solid white;
+    background-position: center;
+    background-size: cover;
 }
 
 .hold-a{
@@ -565,7 +565,6 @@ a:hover{
 }
 
 .rate{
-  
     margin-top: 20px;
 }
 
@@ -623,6 +622,8 @@ a:hover{
 
 .rat-form{
     display: none;
+    margin-top: 30px;
+    margin-bottom: 10px;
     white-space: nowrap;
 }
 

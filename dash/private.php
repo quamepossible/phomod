@@ -37,10 +37,16 @@
 
             
             <?php endif ?>
-            <div class="cover-blur" style="background: url(<?php echo $cov;?>);background-position:center;background-size:cover">
-            
-            </div>
-            <div class="cover-phot" style="background: url(<?php echo $cov;?>);background-position:center;background-size:cover">
+            <div class="cover-blur" style="background-image: url(<?php echo $cov;?>)"></div>
+            <?php 
+                if($cov == 'profilepic/no-cover.png'){
+                    $ots = 'background-size:contain;background-repeat:no-repeat;background-position:unset';
+                }
+                else{
+                    $ots = '';
+                }
+            ?>
+            <div class="cover-phot" style="background-image: url(<?php echo $cov;?>);<?php echo $ots?>">
                 <div class="cover-name">
                     <p class="cov">
                     <?php echo '@'.$userr['USERNAME'];?>
@@ -102,7 +108,7 @@
     <!----------------- DP UPLOAD MODAL ----------------->
                 
 
-            <div class="dp" style="background: url(<?php echo $src?>);background-position:center;background-size:cover">
+            <div class="dp" style="background-image: url(<?php echo $src?>)">
             
                 <div class="hold-a">
                     <a class="hover" href="javascript:void(0);" data-toggle="modal" data-target="#dpUploadModal">

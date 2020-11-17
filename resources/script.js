@@ -27,6 +27,34 @@ $(document).ready(function(){
             }
         })
     }
+
+    setInterval(() => {
+        var lct = Cookies.get("refresh");
+        var mtlog = document.querySelectorAll('#mtlog')
+        if(lct !== undefined && mtlog.length > 0){
+            $.ajax({
+                method : 'POST',
+                url : 'authlog.php',
+                data : {clientid : lct},
+                success : (data) => {
+                    if(data == 'Invalid ID token'){
+                        var auth2 = gapi.auth2.getAuthInstance();
+                        auth2.signOut().then(function () {
+                            Cookies.remove('refresh', { path: '' })
+                            console.log("cookies removed")
+                        });
+                        location.reload();
+                    }
+                    else{
+                        location.reload();
+                    }
+                }
+            })
+        }
+        else{
+            // console.log('all set')
+        }
+    },2000)
     
 
     $('.mn-ppga').css('display', 'block');

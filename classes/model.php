@@ -245,10 +245,5 @@
             $stmt_one->execute([$email]);
             return $stmt_one;
         }
-
-        // //CHECK IF EMAIL MATCHES EMAIL VERIFY CODE
-        // protected function isMatch($email, $code){
-        //     $sql_two = "SELECT EMAIL_CODE FROM freelancers WHERE EM"
-        // }
         
     }

@@ -9,8 +9,7 @@ function rateg(){
     }
 }
 
-$(document).ready(function(){
-    
+$(document).ready(function(){    
     var getStars = document.querySelectorAll('.ico-ns');
     var starLen = getStars.length;
     var starID;
@@ -54,6 +53,36 @@ $(document).ready(function(){
         }
     }
 
+    //check if user is logged in with google but session is not available
+
+    setInterval(() => {
+        var lct = Cookies.get("refresh");
+        if(lct !== undefined && starForm.length == 0){
+            $.ajax({
+                method : 'POST',
+                url : 'authlog.php',
+                data : {clientid : lct},
+                success : (data) => {
+                    if(data == 'Invalid ID token'){
+                        var auth2 = gapi.auth2.getAuthInstance();
+                        auth2.signOut().then(function () {
+                            Cookies.remove('refresh', { path: '' })
+                            console.log("cookies removed")
+                        });
+                        location.reload();
+                    }
+                    else{
+                        location.reload();
+                    }
+                }
+            })
+        }
+        else{
+            // console.log('all set')
+        }
+    },2000)
+    
+
     //AJAX RATE
     $('.rat-form').submit(function(e){
         e.preventDefault();
@@ -75,10 +104,17 @@ $(document).ready(function(){
                 }
                 else{
                     $('.fet-rev').load('dash/rev.php',{user : lancerr});
-                    // $('.rat-form').css('display', 'none');
-                    // $('.rate-btn').css('background-color', 'red');
+                    $.holdReady(true);                            
+                    function releaseHold() { $.holdReady(false); }
+                    $.getScript('dash/public.js', releaseHold); 
+                    $('.rat-form').css('display', 'none');
+                    $('.rate-btn').css('display', 'block');                    
                 }
-            }
+            },
+            // complete : () => {
+            //     $('.rat-form').css('display', 'none');
+            //     $('.rate-btn').css('display', 'block');                    
+            // }
         })
     })
     if($('.mark-rate').length > 0){
@@ -135,3 +171,4 @@ $(document).ready(function(){
     }) 
 
 })
+
