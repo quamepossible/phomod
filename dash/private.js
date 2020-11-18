@@ -173,9 +173,6 @@ $(document).ready(function(){
     //UPLOAD GALLERY PICTURES
     $('.gal-upl').submit(function(event){
         event.preventDefault();
-        var getForm = $('.muluser').parents('form');
-        var nameInp = getForm[0].getElementsByTagName('input')[1].value;
-        console.log(nameInp)
         $.ajax({
             method : 'POST',
             url : 'multimg.php',
@@ -212,7 +209,6 @@ $(document).ready(function(){
 
                     else if(data > 0){
                         $('.files').val('');
-                        // $('#galleryModal').modal('toggle');
                         swal.fire({
                             title: 'The file(s) you uploaded is not supported, please choose another file',
                             icon: 'error' 

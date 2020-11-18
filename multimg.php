@@ -35,7 +35,6 @@ if(isset($_SESSION['log'])){
                 if(in_array($newExt, $imgTypeArr)){
 
                     if($imgSize <= 20000000){
-                        //get location
 
                         //new file name
                         $newName = uniqid() . "." . $newExt;
@@ -49,7 +48,6 @@ if(isset($_SESSION['log'])){
                         $val_query = $getConn->prepare($sql);
                         $val_query->execute([$username, $newName]);
                         echo "files uploaded";
-                        // header("Location: u.php?name=$username");
                     }
                     else{
                         echo "File too big";
