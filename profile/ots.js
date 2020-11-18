@@ -38,10 +38,22 @@ $('.f-form').submit(function(e){
             success : function(data){
                 data = $.trim(data);
                 console.log(data);
-                // if(data == 'invalid'){
+                if(data == 'logout'){
+                    swal.fire({
+                        title: 'Error, please log in',
+                        icon: 'error'
+                    }).then(()=> {
+                        location.reload();
+                    })
+                }
+                else if(data == 'Empty fields'){
+                    swal.fire({
+                        title: 'please fill all fields',
+                        icon: 'error'
+                    })
+                }
 
-                // }
-                if(data == 'changed'){
+                else if(data == 'changed'){
                     swal.fire(
                         'Saved',
                         'Changes saved successfully',

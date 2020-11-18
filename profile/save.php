@@ -1,12 +1,14 @@
 <?php
+    session_start();
     include '../myauto.php';
     $conn = new controller;
     $connect = $conn->getConnect();
 
-    if(isset($_POST['username'])){
-
+    if(isset($_SESSION['log'])){
+        $prid = $_SESSION['log'];
+        $getConv = $conn->convert($prid);
+        $username = $getConv;
         $name = $_POST['fullname'];
-        $username = $_POST['username'];
         $phone = $_POST['phone'];
         $whatsapp = $_POST['whatsapp'];
         $instagram = $_POST['instagram'];
@@ -29,7 +31,6 @@
 
         if(!empty($err)){
             echo "Empty fields";
-            // header("Location: edit.php?name=$username&mes=Please fill all fields marked *");
         }
 
         else{    
@@ -54,7 +55,6 @@
                 $stmt = $connect->prepare($sql);
                 $stmt->execute([$name, $phone, $whatsapp, $website, $instagram, $region, $city, $company, $days, $category, $travel]);
                 echo 'changed';
-                // header("Location: edit.php?name=$username&mes=success");
             }
 
             else{
@@ -64,7 +64,7 @@
     }
 
     else{
-        include 'error404.html';
+        echo 'logout';
     }
     
 ?>

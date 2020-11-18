@@ -25,21 +25,142 @@ $(document).ready(function(){
         childer.style.visibility = "hidden";
     })
 
+    //COVER PIC UPLOAD AJAX
+
+    $('.cov-form').submit(function(event){
+        event.preventDefault();
+        $.ajax({
+            method : 'POST',
+            url : 'coverupload.php',
+            processData : false,
+            contentType : false,
+            data : new FormData(this),
+            success : function(data){
+                console.log(data)
+                if(data == 'logout'){
+                    $('#covff').val('');
+                    $('#coverModal').modal('toggle');
+                    swal.fire({
+                        title: 'login to upload cover picture',
+                        icon: 'error'
+                    }).then(()=> {
+                        location.reload();
+                    })
+                }
+                else if (data == 'try again'){
+                    $('#covff').val('');
+                    $('#coverModal').modal('toggle');
+                    swal.fire({
+                        title: 'Error, try again',
+                        icon: 'error'
+                    })
+                }
+
+                else if (data == 'not supported'){
+                    $('#covff').val('');
+                    swal.fire({
+                        title: 'file not supported, upload an image',
+                        icon: 'error'
+                    })
+                }
+
+                else if(data == 'empty'){
+                    swal.fire({
+                        title: 'upload a picture',
+                        icon: 'error'
+                    })
+                }
+
+                else if (data == 'max'){
+                    $('#coverModal').modal('toggle');
+                    swal.fire({
+                        title: 'Error, image is too big',
+                        icon: 'error'
+                    })
+                }
+
+                else{
+                    $('#coverModal').modal('toggle');
+                    swal.fire({
+                        title: 'cover pic changed',
+                        icon: 'success'
+                    }).then(()=> {
+                        location.reload();
+                    })
+                }
+            },
+            error : function(data){
+                console.log("failed")
+                console.log(data)
+
+            }
+        })
+    });
+
+
     //UPLOAD DP AJAX
 
     $('.dp-form').submit(function(event){
         event.preventDefault();
-
         $.ajax({
             method : 'POST',
             url : 'upload.php',
             processData : false,
             contentType : false,
             data : new FormData(this),
-            success : function(res){
-                console.log("success");
-                console.log(res);
-                location.reload();
+            success : function(data){
+                console.log(data)
+                if(data == 'logout'){
+                    $('#file').val('');
+                    $('#dpUploadModal').modal('toggle');
+                    swal.fire({
+                        title: 'login to upload picture',
+                        icon: 'error'
+                    }).then(()=> {
+                        location.reload();
+                    })
+                }
+                else if (data == 'try again'){
+                    $('#file').val('');
+                    $('#dpUploadModal').modal('toggle');
+                    swal.fire({
+                        title: 'Error, try again',
+                        icon: 'error'
+                    })
+                }
+
+                else if (data == 'not supported'){
+                    $('#file').val('');
+                    swal.fire({
+                        title: 'file not supported, upload an image',
+                        icon: 'error'
+                    })
+                }
+
+                else if(data == 'empty'){
+                    swal.fire({
+                        title: 'upload a picture',
+                        icon: 'error'
+                    })
+                }
+
+                else if (data == 'max'){
+                    $('#dpUploadModal').modal('toggle');
+                    swal.fire({
+                        title: 'Error, image is too big',
+                        icon: 'error'
+                    })
+                }
+
+                else{
+                    $('#dpUploadModal').modal('toggle');
+                    swal.fire({
+                        title: 'dp changed',
+                        icon: 'success'
+                    }).then(()=> {
+                        location.reload();
+                    })
+                }
             },
             error : function(data){
                 console.log("failed")
@@ -62,26 +183,55 @@ $(document).ready(function(){
             contentType : false,
             data : new FormData(this),
             success : function(data){
-                if(data == 'no file'){
-                    swal.fire({
-                        title: 'Please upload a picture',
-                        icon: 'info'
-                    })
-                }
-                else{
-                    console.log(data);
+
+                if(data == 'logout'){
                     $('.files').val('');
                     $('#galleryModal').modal('toggle');
                     swal.fire({
-                        title: 'Uploaded',
-                        icon: 'success'
+                        title: 'login to upload picture',
+                        icon: 'error'
+                    }).then(()=> {
+                        location.reload();
                     })
-                    $('.pho-gal').load('load.php', {
-                        username : nameInp
-                    });
-                    $.holdReady(true);                            
-                    function releaseHold() { $.holdReady(false); }
-                    $.getScript('dash/private.js', releaseHold); 
+                }
+
+                else if(data == 'max'){
+                    swal.fire({
+                        title: 'Upload up to 5 files',
+                        icon: 'error'
+                    })
+                }
+
+                else{
+                    if(data == 'no file'){
+                        swal.fire({
+                            title: 'Please upload a picture',
+                            icon: 'info'
+                        })
+                    }
+
+                    else if(data > 0){
+                        $('.files').val('');
+                        // $('#galleryModal').modal('toggle');
+                        swal.fire({
+                            title: 'The file(s) you uploaded is not supported, please choose another file',
+                            icon: 'error' 
+                        })
+                    }
+
+                    else{
+                        console.log(data);
+                        $('.files').val('');
+                        $('#galleryModal').modal('toggle');
+                        swal.fire({
+                            title: 'Uploaded',
+                            icon: 'success'
+                        })
+                        $('.pho-gal').load('load.php');
+                        $.holdReady(true);                            
+                        function releaseHold() { $.holdReady(false); }
+                        $.getScript('dash/private.js', releaseHold); 
+                    }
                 }
             },
             error : function(){

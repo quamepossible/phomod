@@ -8,7 +8,7 @@ require_once 'vendor/autoload.php';
 if(isset($_POST['clientid'])){
     $id_token = $_POST['clientid'];
 
-    $CLIENT_ID = 'PASTE-YOUR-CLIENT-ID-HERE.apps.googleusercontent.com';
+    $CLIENT_ID = '434711358291-ug8416melga73rv6gupqv52n79l5lp6e.apps.googleusercontent.com';
     $client = new Google_Client(['client_id' => $CLIENT_ID]);  // Specify the CLIENT_ID of the app that accesses the backend
     $payload = $client->verifyIdToken($id_token);
     if ($payload) {

@@ -18,11 +18,13 @@
 
         <?php
             session_start();
+            $prid = $_SESSION['log'];
             include_once 'myauto.php';
             $meconn = new controller();
             $getConn = $meconn->getConnect();
+            $getConv = $meconn->convert($prid);
 
-            $username = $_POST['username'];
+            $username = $getConv;
 
             $sql = "SELECT IMG_SRC FROM gallery WHERE USERNAME = :pic ORDER BY ID DESC";
             $val_sql = $getConn->prepare($sql);
@@ -53,7 +55,10 @@
 
                 <?php else:?>
                     <!-- GALLERY IS EMPTY -->
-
+                    <div class="galemp">
+                        <p class="emt">EMPTY GALLERY</p>
+                        <img src="empgal.png" alt="" class="emp">
+                    </div>
             <?php endif ?>
             </div>
         </div>

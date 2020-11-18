@@ -279,14 +279,17 @@
                     <?php while($galRow = $val_sql->fetch()):?>
                         <div class="span-1-of-3">
                             <a href="gallery/<?php echo $galRow['IMG_SRC']?>" class="chocolat-image">
-                                <div class="div-img" style="background: url('gallery/<?php echo $galRow['IMG_SRC'];?>');background-position:center;background-size:cover"></div>
+                                <div class="div-img" style="background-image: url('gallery/<?php echo $galRow['IMG_SRC'];?>')"></div>
                             </a>
                         </div>
                     <?php endwhile ?>
 
                 <?php else:?>
                     <!-- GALLERY IS EMPTY -->
-
+                    <div class="galemp">
+                        <p class="emt">EMPTY GALLERY</p>
+                        <img src="empgal.png" alt="" class="emp">
+                    </div>
                 <?php endif ?>
                 
             

@@ -1,5 +1,9 @@
 <?php
 
-$name = "kwame opoku";
-$name = explode(" ", $name);
-echo $name[0];
+$names = 'kwame';
+if(is_array($names)){
+    echo 'yes';
+}
+else{
+    echo 'no';
+}

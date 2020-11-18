@@ -69,9 +69,8 @@
                 </button>
             </div> 
             <div class="modal-body">
-                <form action="coverupload.php" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="coverImg" accept="image/x-png,image/gif,image/jpeg">
-                    <input style="visibility:hidden" type="text" name='pid' value="<?php echo $userr['USERNAME'];?>">
+                <form action='' class="cov-form" method="POST" enctype="multipart/form-data">
+                    <input id="covff" type="file" name="coverImg" accept="image/x-png,image/gif,image/jpeg">
                     <button type="submit" name="submit" class="btn btn-primary">Upload</button>
                 </form>
 
@@ -97,7 +96,6 @@
                     <div class="modal-body">
                         <form action="upload.php" class="dp-form" method="POST" enctype="multipart/form-data">
                             <input id="file" type="file" name="myImg" accept="image/x-png,image/gif,image/jpeg, image/jpg">
-                            <input class="username" style="display:none" type="text" name='pid' value="<?php echo 'u.php?name='.$userr['USERNAME'];?>">
                             <button type="submit" name="submit" class="btn btn-primary up-btn">Upload</button>
                         </form>
                         
@@ -242,7 +240,6 @@
 
                 <form class="gal-upl" action="multimg.php" method="POST" enctype="multipart/form-data">
                     <input class="files" type="file" name="files[]" accept="image/x-png,image/gif,image/jpeg" multiple>
-                    <input class="muluser" style="visibility:hidden" type="text" name='pid' value="<?php echo $userr['USERNAME'];?>">
                     <button class="btn btn-primary up-btn" type="submit" name="submit">upload</button>
                 </form>
                 
@@ -285,14 +282,17 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="div-img" style="background: url('gallery/<?php echo $galRow['IMG_SRC'];?>');background-position:center;background-size:cover"></div>
+                            <div class="div-img" style="background-image: url('gallery/<?php echo $galRow['IMG_SRC'];?>')"></div>
                         
                         </div>
                     <?php endwhile ?>
 
                     <?php else:?>
                         <!-- GALLERY IS EMPTY -->
-
+                        <div class="galemp">
+                            <p class="emt">EMPTY GALLERY</p>
+                            <img src="empgal.png" alt="" class="emp">
+                        </div>
                 <?php endif ?>
                 </div>
             </div>
