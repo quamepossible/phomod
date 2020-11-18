@@ -140,7 +140,7 @@ $(document).ready(function(){
                 else if(data == 'empty'){
                     swal.fire({
                         title: 'upload a picture',
-                        icon: 'error'
+                        icon: 'info'
                     })
                 }
 
