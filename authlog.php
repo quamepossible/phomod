@@ -54,8 +54,6 @@ if(isset($_POST['clientid'])){
             }
             //THIS BLOCK EXECUTES IF USER IS NOT IN FREELANCER LIST
 
-
-            // echo 'everything is valid';
         } 
     } 
     else {
