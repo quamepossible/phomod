@@ -1,5 +1,5 @@
 <?php
-$getUserObj = new view;
+$getUserObj = new View;
 $lanStar = $getUserObj->getStar($uname);
 $gehRevv = $getUserObj->getTotRat($uname);
 //GET USER'S DETAILS
@@ -26,8 +26,7 @@ foreach($echoDetails as $outDetails){
 
 
 //GET USER'S PROFILE IMAGE AND COVER IMAGE
-$getPic = new view;
-$viewPic = $getPic->getProfilePic($uname);
+$viewPic = $getUserObj->getProfilePic($uname);
 $echoPic = $viewPic->fetchAll();
 
 foreach($echoPic as $userPics){

@@ -3,7 +3,7 @@ session_start();
     if(isset($_POST['username'])){
 
         include '../myauto.php';
-        $conn = new controller;
+        $conn = new Controller;
         $connect = $conn->getConnect();
 
         $name = $_POST['fullname'];

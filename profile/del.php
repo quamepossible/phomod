@@ -1,11 +1,13 @@
 <?php
-
+session_start();
 include '../myauto.php';
-$conn = new controller;
+$conn = new Controller;
 $connect = $conn->getConnect();
 
-    if(isset($_POST['user'])){
-        $username = $_POST['user'];
+    if(isset($_SESSION['log'])){
+        $prid = $_SESSION['log'];
+        $getConv = $conn->convert($prid);
+        $username = $getConv;
 
         $picPath = 'profilepic/';
         $initPath = '../profilepic/' . $username . "*";

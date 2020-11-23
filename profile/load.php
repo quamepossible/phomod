@@ -1,6 +1,9 @@
-<?php 
-$uname = $_POST['uname'];
+<?php
+session_start(); 
 include '../myauto.php';
+$conn = new Controller;
+$getConv = $conn->convert($_SESSION['log']);
+$uname = $getConv;
 include 'cone.php';
 ?>
 

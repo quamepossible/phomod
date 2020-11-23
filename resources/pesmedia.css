@@ -67,15 +67,12 @@
 }
 
 @media screen and (max-width: 640px){
-    .cover-phot{
-        width: 90%;
-    }
-
     #cover{
         height: 400px;
     }
 
     .cover-phot{
+        width: 90%;
         height: 300px;
     }
 
@@ -90,16 +87,16 @@
 
 @media screen and (max-width: 640px){
     .cover-name{
-        width: 70%;
+        width: 85%;
         padding: 5px;
     }
 }
 
 @media screen and (max-width: 480px){
-    .cover-name{
+    /* .cover-name{
         width: 85%;
         padding: 5px;
-    }
+    } */
     .over a, .delete{
         width: 100%;
         padding: 5px;

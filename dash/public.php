@@ -13,8 +13,45 @@
         $getPicMet = $picObj->getProfilePic($pic);
     ?>
 
-    <section id="cover">
+    <!------------------------------- LOGIN FORM ------------------------------->
 
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="close-mod">       
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="cls">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <p class="log-tex">Login to <span style="color:#007d9c;font-weight:bold;">PHOMOD</p>
+                    <p class="put-cen">
+                        <img src="logo.png" class="cir-logo" alt="" width="100px">
+                    </p>
+                    <p class="err"></p>
+                    <form action="login.php" method="POST" id="log-form">
+                        <div class="cent-inp">
+                            <p class="e-text">Email</p>
+                            <input type="email" name="email" id="mail-inp">
+
+                            <p class="p-text">Password</p>
+                            <input type="password" name="pwd" id="pwd-inp">
+                        </div>
+                    
+                        <button id="dis" type="submit" name="submit" class="btn btn-primary log-btn">Login</button>
+                        <div class="holog"><div id="my-signin2"></div></div> 
+                        
+                        <p class="res-p"><a href="reset/" class="reset">Reset password?</a></p>        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------- LOGIN FORM ------------------------------->
+        
+        
+    <section id="cover">
         <?php if($getPicMet->rowCount() == 0): ?>
                 <?php $src = 'profilepic/avatar.jpg';?>
                 <?php $cov = 'profilepic/no-cover.png';?>
@@ -38,55 +75,28 @@
         
         <?php endif ?>
 
-        <!------------------------------- LOGIN FORM ------------------------------->
-
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="close-mod">       
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" class="cls">&times;</span>
-                        </button>
-                    </div>
-
-                    <div class="modal-body">
-                        <p class="log-tex">Login to <span style="color:#007d9c;font-weight:bold;">PHOMOD</p>
-                        <p class="put-cen">
-                            <img src="logo.png" class="cir-logo" alt="" width="100px">
-                        </p>
-                        <p class="err"></p>
-                        <form action="login.php" method="POST" id="log-form">
-                            <div class="cent-inp">
-                                <p class="e-text">Email</p>
-                                <input type="email" name="email" id="mail-inp">
-
-                                <p class="p-text">Password</p>
-                                <input type="password" name="pwd" id="pwd-inp">
-                            </div>
-                        
-                            <button id="dis" type="submit" name="submit" class="btn btn-primary log-btn">Login</button>
-                            <div class="holog"><div id="my-signin2"></div></div> 
-                            
-                            <p class="res-p"><a href="reset/" class="reset">Reset password?</a></p>        
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!------------------------------- LOGIN FORM ------------------------------->
+        
+        <!------------------------------- COVER AND DP ------------------------------->
         <div class="cover-blur" style="background-image: url(<?php echo $cov;?>)"></div>
-            <?php 
-                if($cov == 'profilepic/no-cover.png'){
-                    $ots = 'background-size:contain;background-repeat:no-repeat;background-position:unset';
-                }
-                else{
-                    $ots = '';
-                }
-            ?>
-            <div class="cover-phot" style="background-image: url(<?php echo $cov;?>);<?php echo $ots?>">
+        <?php 
+            if($cov == 'profilepic/no-cover.png'){
+                $ots = 'background-size:contain;background-repeat:no-repeat;background-position:unset';
+            }
+            else{
+                $ots = '';
+            }
+        ?>
+        <div class="cover-phot" style="background-image: url(<?php echo $cov;?>);<?php echo $ots?>">
             <div class="cover-name">
                 <p class="cov">
-                <?php echo '@'.$userr['USERNAME'];?>
+                    <?php echo '@'.$userr['USERNAME'];?>
+                    <p class="locc"><ion-icon class="hgh" name="location-outline">&nbsp;&nbsp;</ion-icon><span class="unloc"></span></p>
+                </p>
+            </div>
+            <div class="allst">
+                <p class="sts">
+                    <ion-icon class='star-ico us-st' name='star'></ion-icon>
+                    <span class="trate" style="color:white"></span>
                 </p>
             </div>
         </div>           
@@ -96,6 +106,7 @@
         </div>
 
     </section>
+    <!------------------------------- COVER AND DP ------------------------------->
 
     <!----------------- CATEGORY AND TAG SECTION ----------------->
 
@@ -235,7 +246,7 @@
                             <?php endif?>                        
                         <?php endif?>
                         
-                        <p class="location"><ion-icon class="loc-ico" name="location-outline"></ion-icon>&nbsp;<span><?php echo ucwords($region) . ", ". ucfirst($city)?></span></p>
+                        <p class="location"><ion-icon class="loc-ico" name="location-outline"></ion-icon>&nbsp;<span class="alloc"><?php echo ucwords($region) . ", ". ucfirst($city)?></span></p>
                     </div>
 
                     <p class="work-day">

@@ -15,7 +15,7 @@ if(isset($_SESSION['log'])){
     $imgTypeArr = ['jpg', 'jpeg', 'png', 'gif', 'jfif', 'pjpeg', 'pjp'];
 
     $errMes = 0;
-    if(count($fileNames) > 5){
+    if(count($fileNames) > 20){
         echo 'max';
     }
 

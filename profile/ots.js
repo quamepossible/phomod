@@ -59,7 +59,7 @@ $('.f-form').submit(function(e){
                         'Changes saved successfully',
                         'success'
                     )
-                    $('.span-1-of-3').load('load.php', {uname : userName});
+                    $('.span-1-of-3').load('load.php');
                 }
 
                 else{
@@ -74,10 +74,9 @@ $('.f-form').submit(function(e){
     }
 })
 
-
+//DP UPLOAD AJAX
 $('.up-form').submit(function(er){
     er.preventDefault();
-    var Usernamer =  $('#validationServerUsername').val();
     $.ajax({
         method : 'POST',
         url : '../upload.php',
@@ -86,39 +85,71 @@ $('.up-form').submit(function(er){
         data : new FormData(this),
         success : function(data){
             console.log(data)
-            if(data == 'empty'){
+            if(data == 'logout'){
+                $('.dpimg').val('');
+                $('#dpUploadModal').modal('toggle');
                 swal.fire({
-                    title: 'Please upload a picture',
-                    icon: 'info'
+                    title: 'login to upload picture',
+                    icon: 'error'
+                }).then(()=> {
+                    location.reload();
                 })
             }
-            else if (data == 'not supported'){
+            else if (data == 'try again'){
+                $('.dpimg').val('');
+                $('#dpUploadModal').modal('toggle');
                 swal.fire({
-                    title: 'File error',
-                    text: 'Only image files are accepted',
+                    title: 'Error, try again',
                     icon: 'error'
                 })
             }
-            else if (data == 'file uploaded'){
+
+            else if (data == 'not supported'){
+                $('.dpimg').val('');
+                swal.fire({
+                    title: 'file not supported, upload an image',
+                    icon: 'error'
+                })
+            }
+
+            else if(data == 'empty'){
+                swal.fire({
+                    title: 'upload a picture',
+                    icon: 'info'
+                })
+            }
+
+            else if (data == 'max'){
+                $('#dpUploadModal').modal('toggle');
+                swal.fire({
+                    title: 'Error, image is too big',
+                    icon: 'error'
+                })
+            }
+
+            else{
                 $('#upload-file-info').html('');
                 $('#dpUploadModal').modal('toggle');
                 swal.fire({
-                    title: 'Uploaded',
+                    title: 'dp changed',
                     icon: 'success'
                 })
-            
-                $('.span-1-of-3').load('load.php', {uname : Usernamer});
+                $('.span-1-of-3').load('load.php');
             }
+        },
+        error : function(data){
+            console.log("failed")
+            console.log(data)
+
         }
     })
 
 })
 
+
+//DP DELETE AJAX
 $('.del-pic').submit(function(del){
     del.preventDefault();
-
-    var uName = $('.dpuser').val();
-
     swal.fire({
         title: 'Delete!',
         text: 'Do you want to delete your profile pic',
@@ -129,14 +160,11 @@ $('.del-pic').submit(function(del){
         confirmButtonText: 'Yes',
         showLoaderOnConfirm: true,
         preConfirm: function(){
-            return new Promise(function(){
-               
+            return new Promise(function(){               
             $.ajax({
                 method : 'POST',
                 url : 'del.php',
-                data : {
-                    user : uName
-                },
+                data : {},
                 success : function(data){
                     if(data == 'done'){
                         swal.fire(
@@ -146,10 +174,7 @@ $('.del-pic').submit(function(del){
                         )
                         $('#upload-file-info').html('');
                         $('#dpUploadModal').modal('toggle');
-                        $('.span-1-of-3').load('load.php', {
-                            uname : uName
-                        });
-                        
+                        $('.span-1-of-3').load('load.php');                        
                     }
                     else{
                         swal.fire(

@@ -10,7 +10,7 @@
         <?php 
             $pic = $userr['USERNAME'];
             //GET PROFILE PIC 
-            $picObj = new view;
+            $picObj = new View;
             $getPicMet = $picObj->getProfilePic($pic);
         ?>
         <section id="cover">
@@ -60,24 +60,22 @@
 
     <!----------------- COVER UPLOAD MODAL ----------------->
         <div class="modal fade" id="coverModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">upload cover photo</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div> 
-            <div class="modal-body">
-                <form action='' class="cov-form" method="POST" enctype="multipart/form-data">
-                    <input id="covff" type="file" name="coverImg" accept="image/x-png,image/gif,image/jpeg">
-                    <button type="submit" name="submit" class="btn btn-primary">Upload</button>
-                </form>
-
-                
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">upload cover photo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div> 
+                    <div class="modal-body">
+                        <form action='' class="cov-form" method="POST" enctype="multipart/form-data">
+                            <input id="covff" type="file" name="coverImg" accept="image/x-png,image/gif,image/jpeg">
+                            <button type="submit" name="submit" class="btn btn-primary">Upload</button>
+                        </form>                
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
     <!----------------- COVER UPLOAD MODAL ----------------->
 
@@ -259,7 +257,6 @@
             </div>
 
             <?php
-
                 $sql = "SELECT IMG_SRC FROM gallery WHERE USERNAME = :pic ORDER BY ID DESC";
                 $val_sql = $getConn->prepare($sql);
                 $val_sql->execute(['pic' => $pic]);
@@ -273,7 +270,6 @@
                                 <div class="hol-btn">
                                     <a href="gallery/<?php echo $galRow['IMG_SRC']?>" class="view"><ion-icon name="eye" class="view-ico"></ion-icon><span>View Image</span></a>
                                     <form>
-                                        <input class="uname dshow" type="text" value="<?php echo $pic?>" name="username">
                                         <input class="link dshow" type="text" value="<?php echo $galRow['IMG_SRC']?>" name="link">
                                         <button type="submit" class="delete btn btn-danger">
                                             <ion-icon name="trash" class="del-ico"></ion-icon>
@@ -283,7 +279,6 @@
                                 </div>
                             </div>
                             <div class="div-img" style="background-image: url('gallery/<?php echo $galRow['IMG_SRC'];?>')"></div>
-                        
                         </div>
                     <?php endwhile ?>
 

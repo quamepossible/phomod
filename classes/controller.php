@@ -1,6 +1,6 @@
 <?php
 
-    class Controller extends model{
+    class Controller extends Model{
 
         public function getConnect(){
             $mainConnect = $this->dbconnection();

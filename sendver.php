@@ -60,3 +60,7 @@ if(isset($_GET['email'])){
         
     }
 }
+
+else{
+    echo 'No email found';
+}

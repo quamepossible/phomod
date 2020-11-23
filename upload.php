@@ -4,7 +4,7 @@ include 'myauto.php';
 
 if(isset($_SESSION['log'])){
     $prid = $_SESSION['log'];
-    $dbconn = new controller();
+    $dbconn = new Controller();
     $getConn = $dbconn->getConnect();
     $getConv = $dbconn->convert($prid);
     $username = $getConv;

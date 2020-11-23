@@ -36,7 +36,7 @@
                 <div class="modal-body">
                     <form class="up-form" action="../upload.php" method="POST" enctype="multipart/form-data">
                         <label class="upl-btn" for="my-file-selector">
-                            <input name="myImg" accept="image/x-png,image/gif,image/jpeg, image/jpg" id="my-file-selector" type="file" style="display:none" 
+                            <input name="myImg" class="dpimg" accept="image/x-png,image/gif,image/jpeg, image/jpg" id="my-file-selector" type="file" style="display:none" 
                             onchange="$('#upload-file-info').html(this.files[0].name)">
                             <ion-icon class="clo-ico" name="cloud-upload-outline"></ion-icon>
                             <span>upload picture</span>
@@ -46,7 +46,6 @@
                         <button type="submit" name="submit" class="btn btn-primary up-btn">Upload</button>
                     </form>
                     <form action="del.php" method="POST" class="del-pic">
-                        <input type="text" name="user" value="<?php echo $username?>" class="dpuser">
                         <button class="btn btn-danger del-btn">Delete picture</button>
                     </form>
                     

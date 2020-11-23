@@ -172,3 +172,248 @@ $(document).ready(function(){
 
 })
 
+
+$(window).scroll(()=>{
+
+    var bigWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    console.log('big Width : ' + bigWidth)
+    if(bigWidth > 640){
+    // //BIG SCREENS
+    // console.log('width : ' + window.innerWidth)
+    // console.log('screen : ' + screen.width)
+    // const totHeight = 550;
+    // var covHeight = totHeight - window.pageYOffset;
+    // console.log(covHeight);
+    // $('#cover').css({
+    //     height: covHeight,
+    // })
+
+    // $('.dp').css({
+
+    // })
+
+    // if(covHeight < 400){
+    //     $('.dp').css({
+    //         width: '80px',
+    //         height: '80px',
+    //         border: '3px solid white',
+    //         top: '50%',
+    //         left: '10px',
+    //         transform: 'translate(0, -50%)',
+    //     })
+    //     $('#cover').css({
+    //         height: '80px',
+    //         position: 'fixed',
+    //         top: 0,
+    //         zIndex: 5,
+    //     })
+
+    //     $('.cover-blur').css({
+    //         filter: 'blur(200px)',
+    //     })
+
+    //     $('.cover-phot').css({
+    //         // display: 'none',
+    //         width: 0,
+    //         height: 0,
+    //     })
+
+    //     $('.cover-name').css({
+    //         width: '250px',
+    //         // height: '80px',
+    //         background: 'none',
+    //         border: 'none',
+    //         marginTop: '40px',
+    //         padding: 0,
+    //     })
+
+    //     $('.cov').css({
+    //         marginTop: 0,
+    //     })
+
+    //     var alloc = $('.alloc').html();
+    //     $('.unloc').html(alloc)
+    //     $('.locc').css({
+    //         display: 'block'
+    //     })
+
+    //     $('.allst').css({
+    //         display: 'block',
+    //     })
+
+    //     var topSta = $('.ratee').html();
+    //     $('.trate').html(topSta);
+
+    //     $('.tag-section').css({
+    //         marginTop: '300px',
+    //     })
+    // }
+    // else{
+    //     $('.dp').css({
+    //         width: '200px',
+    //         height: '200px',
+    //         border: '10px solid white',
+    //         // top: 0,
+    //         left: '50%',
+    //         transform: 'translate(0,0)',
+    //         transform: 'translateX(-50%)',
+    //     })
+    //     $('#cover').css({
+    //         height: '400px',
+    //         position: 'relative',
+    //     })
+    //     $('.cover-phot').css({
+    //         // display: 'block',
+    //         width: '90%',
+    //         height: '300px',
+    //     })
+        
+    //     $('.cover-name').css({
+    //         background: 'rgba(0, 0, 0, 0.582)',
+    //         width: '85%',
+    //         border: '5px solid white',
+    //         marginTop: 0,
+    //         padding: '5px',
+    //     })
+
+    //     $('.cov').css({
+    //         marginTop: '20px',
+    //     })
+
+    //     $('.unloc').html('');
+    //     $('.locc').css({
+    //         display: 'none'
+    //     })
+    //     $('.allst').css({
+    //         display: 'none',
+    //     })
+
+    //     $('.cover-blur').css({
+    //         filter: 'blur(120px)',
+    //     })
+    //     $('.tag-section').css({
+    //         marginTop: '30px',
+    //     })
+    // }
+    }
+
+    else{
+    //SMALL SCREENS
+        console.log('width : ' + window.innerWidth)
+        console.log('screen : ' + screen.width)
+        const totHeight = 400;
+        var covHeight = totHeight - window.pageYOffset;
+        console.log(covHeight);
+        $('#cover').css({
+            height: covHeight,
+        })
+
+        $('.dp').css({
+
+        })
+    
+        if(covHeight < 200){
+            $('.dp').css({
+                width: '80px',
+                height: '80px',
+                border: '3px solid white',
+                top: '50%',
+                left: '10px',
+                transform: 'translate(0, -50%)',
+            })
+            $('#cover').css({
+                height: '80px',
+                position: 'fixed',
+                top: 0,
+                zIndex: 5,
+            })
+
+            $('.cover-blur').css({
+                filter: 'blur(200px)',
+            })
+
+            $('.cover-phot').css({
+                // display: 'none',
+                width: 0,
+                height: 0,
+            })
+
+            $('.cover-name').css({
+                width: '250px',
+                // height: '80px',
+                background: 'none',
+                border: 'none',
+                marginTop: '40px',
+                padding: 0,
+            })
+
+            $('.cov').css({
+                marginTop: 0,
+            })
+
+            var alloc = $('.alloc').html();
+            $('.unloc').html(alloc)
+            $('.locc').css({
+                display: 'block'
+            })
+
+            $('.allst').css({
+                display: 'block',
+            })
+
+            var topSta = $('.ratee').html();
+            $('.trate').html(topSta);
+
+            $('.tag-section').css({
+                marginTop: '300px',
+            })
+        }
+        else{
+            $('.dp').css({
+                width: '200px',
+                height: '200px',
+                border: '10px solid white',
+                // top: 0,
+                left: '50%',
+                transform: 'translate(0,0)',
+                transform: 'translateX(-50%)',
+            })
+            $('#cover').css({
+                height: '400px',
+                position: 'relative',
+            })
+            $('.cover-phot').css({
+                // display: 'block',
+                width: '90%',
+                height: '300px',
+            })
+            
+            $('.cover-name').css({
+                background: 'rgba(0, 0, 0, 0.582)',
+                width: '85%',
+                border: '5px solid white',
+                marginTop: 0,
+                padding: '5px',
+            })
+
+            $('.cov').css({
+                marginTop: '20px',
+            })
+
+            $('.unloc').html('');
+            $('.locc').css({
+                display: 'none'
+            })
+            $('.allst').css({
+                display: 'none',
+            })
+
+            $('.cover-blur').css({
+                filter: 'blur(120px)',
+            })
+            $('.tag-section').css({
+                marginTop: '30px',
+            })
+        }
+    }
+})

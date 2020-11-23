@@ -24,7 +24,7 @@
         }
 
         else{
-            $send_data = new controller;    
+            $send_data = new Controller;    
 
             //check freelancer
             $get_pwd = $send_data->sendDet($email);

@@ -220,13 +220,12 @@ span{
 }
 
 .cover-blur{
-    width: 120%;
-    height: 500px;
-    margin-top: -20px;
-    margin-left: -150px;
+    width: 100%;
+    height: 550px;
     background-position: center;
     background-size: cover;
     filter: blur(120px);
+    transition: 0.2s;
     z-index: -1;
 }
 
@@ -254,6 +253,7 @@ span{
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: auto;
+    overflow: hidden;
 }
 
 .cov{
@@ -261,6 +261,52 @@ span{
     font-size: 30px;
     /* background: red; */
     margin-top: 20px;
+}
+
+.locc{
+    display: none;
+    text-align: center;
+    /* background: blue; */
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+}
+
+.hgh{
+    position: relative;
+    top: 2px;
+    color: red;
+}
+
+.unloc{
+    font-size: 15px;
+}
+
+.allst{
+    display: none;
+    background: green;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    text-align: center;
+    right: -100;
+    top: 15px;
+    transform: translateX(50%);
+}
+
+.sts{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;    
+}
+
+.us-st{
+    position: relative;
+    top: 2px;
 }
 
 .cov-up{
@@ -309,7 +355,8 @@ a:hover{
     box-shadow: 0 0 10px black;
     position: absolute;
     left: 50%;
-    top: 50%;
+    /* top: 50%; */
+    bottom: 0;
     transform: translateX(-50%);
     z-index: 2;
     cursor: pointer;
@@ -351,6 +398,11 @@ a:hover{
 }
 
 .up-btn{
+    display: block;
+    margin: auto;
+}
+
+.cov-form button{
     display: block;
     margin: auto;
 }

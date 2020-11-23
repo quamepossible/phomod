@@ -76,7 +76,7 @@ include 'myauto.php';
                 <?php else:?>               
 
                     <?php
-                        $searchObj = new view;
+                        $searchObj = new View;
                         $getData = $searchObj->viewSearchItem($need, $search);
                         $rows = $getData->fetchAll();
                     ?>

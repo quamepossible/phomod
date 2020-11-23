@@ -99,7 +99,6 @@ $(document).ready(function(){
 
 
     //UPLOAD DP AJAX
-
     $('.dp-form').submit(function(event){
         event.preventDefault();
         $.ajax({
@@ -165,7 +164,6 @@ $(document).ready(function(){
             error : function(data){
                 console.log("failed")
                 console.log(data)
-
             }
         })
     });
@@ -180,7 +178,6 @@ $(document).ready(function(){
             contentType : false,
             data : new FormData(this),
             success : function(data){
-
                 if(data == 'logout'){
                     $('.files').val('');
                     $('#galleryModal').modal('toggle');
@@ -243,13 +240,9 @@ $(document).ready(function(){
         allDel[i].addEventListener('click',function(){
             var curForm = $(this).parents('form');
             inps = curForm[0].getElementsByTagName('input');
-            // console.log(inps[1].value)
             curForm.submit(function(event){
                 event.preventDefault();
-
-                var getUsername = inps[0].value;
-                var getLink = inps[1].value;
-
+                var getLink = inps[0].value;
                 swal.fire({
                     title: 'Delete!',
                     text: 'Do you want to delete this picture',
@@ -264,19 +257,14 @@ $(document).ready(function(){
                         $.ajax({
                             method : 'POST',
                             url : 'dash/delete.php',
-                            data : {
-                                username : getUsername,
-                                link : getLink
-                            },
+                            data : {link : getLink},
                             success : function(){
                             swal.fire(
                                 'Deleted!',
                                 'Picture deleted successfully',
                                 'success'
                             )
-                            $('.pho-gal').load('load.php', {
-                                username : getUsername
-                            });
+                            $('.pho-gal').load('load.php');
                             $.holdReady(true);                            
                             function releaseHold() { $.holdReady(false); }
                             $.getScript('dash/private.js', releaseHold); 
