@@ -20,7 +20,7 @@ require_once 'myauto.php';
     <script src="bootstrap/dist/js/bootstrap.min.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
-    <meta name="google-signin-client_id" content="434711358291-ug8416melga73rv6gupqv52n79l5lp6e.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="PASTE-YOUR-CLIENT-ID-HERE.apps.googleusercontent.com">
     <script src="authsign.js" defer></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="resources/script.js" defer></script>
