@@ -183,7 +183,6 @@ $(window).scroll(()=>{
     //SMALL SCREENS
         const totHeight = 400;
         var covHeight = totHeight - window.pageYOffset;
-        console.log(covHeight);
         $('#cover').css({
             height: covHeight,
         })
