@@ -176,14 +176,11 @@ $(document).ready(function(){
 $(window).scroll(()=>{
 
     var bigWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    console.log('big Width : ' + bigWidth)
     if(bigWidth > 640){
     }
 
     else{
     //SMALL SCREENS
-        console.log('width : ' + window.innerWidth)
-        console.log('screen : ' + screen.width)
         const totHeight = 400;
         var covHeight = totHeight - window.pageYOffset;
         console.log(covHeight);
