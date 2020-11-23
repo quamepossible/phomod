@@ -43,9 +43,9 @@ NB:// To be able to use Google OAuth,
 
 <h2>ACCOUNT SETTINGS</h2>
 
-<h3>Sign Up</h3>
+<s><h3>Sign Up</h3>
 <p>When a user signs up on PHOMOD, a verification code is sent to the user's email.</p>
-<p>SMTP Settings for sending the verification code can be found at <b>PHOMOD / signup / sendver.php</b></p>
+<p>SMTP Settings for sending the verification code can be found at <b>PHOMOD / signup / sendver.php</b></p></s>
 
 <h3>Reset Password</h3>
 <p>For a user to reset his / her password, you'll need to send a verification code to the user's email (PHOMOD uses PHPMailer for sending mails)</p>
