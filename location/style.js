@@ -3,9 +3,6 @@ function getLoc(){
     var coordinates = [];
     var geoSuccess = function(position) {
     startPos = position;
-    console.log("Latitude " + startPos.coords.latitude);
-    console.log("Longitude " + startPos.coords.longitude);
-    console.log("Accuracy " + startPos.coords.accuracy);
     var lat = startPos.coords.latitude;
     var lng = startPos.coords.longitude;
     var acc = startPos.coords.accuracy;
@@ -37,8 +34,6 @@ function getLoc(){
               
             }
           })
-          console.log(city);
-          console.log(Cookies.get("location"));
         }
         // else if()
         else{
@@ -54,8 +49,7 @@ function getLoc(){
               Cookies.set("location", state, {expires: 7})
             }
           })
-          console.log(state)
-          console.log(Cookies.get("location"));
+          
         }
       }
     })
