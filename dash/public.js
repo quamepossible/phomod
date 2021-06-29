@@ -173,20 +173,13 @@ $(document).ready(function(){
 })
 
 
+
 $(window).scroll(()=>{
-
     var bigWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    console.log('big Width : ' + bigWidth)
-    if(bigWidth > 640){
-    }
-
-    else{
+    if(bigWidth < 640){
     //SMALL SCREENS
-        console.log('width : ' + window.innerWidth)
-        console.log('screen : ' + screen.width)
         const totHeight = 400;
         var covHeight = totHeight - window.pageYOffset;
-        console.log(covHeight);
         $('#cover').css({
             height: covHeight,
         })
@@ -256,7 +249,6 @@ $(window).scroll(()=>{
                 width: '200px',
                 height: '200px',
                 border: '10px solid white',
-                // top: 0,
                 left: '50%',
                 transform: 'translate(0,0)',
                 transform: 'translateX(-50%)',
@@ -266,7 +258,6 @@ $(window).scroll(()=>{
                 position: 'relative',
             })
             $('.cover-phot').css({
-                // display: 'block',
                 width: '90%',
                 height: '300px',
             })
@@ -296,6 +287,59 @@ $(window).scroll(()=>{
             })
             $('.tag-section').css({
                 marginTop: '30px',
+            })
+        }
+    }  
+
+    else{
+        $('.dp').css({
+            width: '200px',
+            height: '200px',
+            border: '10px solid white',
+            left: '50%',
+            transform: 'translate(0,0)',
+            transform: 'translateX(-50%)',
+        })
+
+        $('#cover').css({
+            height: '550px',
+            position: 'relative',
+        })
+        
+        $('.cover-phot').css({
+            width: '60%',
+            height: '400px',
+        })
+        
+        $('.cover-name').css({
+            background: 'rgba(0, 0, 0, 0.582)',
+            width: '50%',
+            border: '5px solid white',
+            marginTop: 0,
+            padding: '20px',
+        })
+
+        $('.cov').css({
+            marginTop: '20px',
+        })
+
+        $('.unloc').html('');
+        $('.locc').css({
+            display: 'none'
+        })
+        $('.allst').css({
+            display: 'none',
+        })
+
+        $('.cover-blur').css({
+            filter: 'blur(120px)',
+        })
+        $('.tag-section').css({
+            marginTop: '30px',
+        })
+        if(bigWidth >= 640 && bigWidth <= 930){
+            $('.cover-phot').css({
+                width: '80%',
             })
         }
     }

@@ -123,9 +123,16 @@ include 'myauto.php';
                                     </div>
                                 </div>
 
+
                                 <div class="rate">
-                                    <p><span class="ratee"><?php echo $searchObj->getStar($row['USERNAME']) ?></span>
-                                        <?php $lanStar = $searchObj->getStar($row['USERNAME']);?>
+                                    <?php
+                                        $lanStar = $searchObj->getStar($row['USERNAME']);
+                                    ?>
+                                    <?php if($lanStar == 'NA'):?>
+                                        <p><span class='ratee'><?php echo $lanStar?></span>
+                                    <?php else:?>
+                                        <p><span class="ratee"><?php echo number_format($lanStar, 1, '.', '')?></span>
+                                    <?php endif?>
                                         <?php include 'dash/star.php'?>
                                         &nbsp;&nbsp;
                                         <?php echo $searchObj->getTotRat($row['USERNAME']) . ' reviews';?>

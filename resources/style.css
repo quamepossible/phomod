@@ -474,8 +474,6 @@ form select, .search, .browse{
 
 /************* FEATURED PHOTOGRAPHERS*************/
 
-
-
 .feat-phot{
     background: rgb(255, 255, 255);
     /* background-color: red; */
@@ -491,17 +489,6 @@ form select, .search, .browse{
     margin: auto;
     z-index: 10;
 }
-/* 
-.sec-title{
-    width: 73%;
-    height: 50px;
-    background: rgb(0, 140, 255);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom: 10px solid rgb(0, 140, 255);
-    margin: auto;
-} */
-
 
 .feat-text{
     text-align: center;

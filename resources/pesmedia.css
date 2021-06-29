@@ -80,9 +80,6 @@
         padding: 10px;
     }
 
-    /* .cover-blur{
-        height: 300px;
-    } */
 }
 
 @media screen and (max-width: 640px){
@@ -93,10 +90,6 @@
 }
 
 @media screen and (max-width: 480px){
-    /* .cover-name{
-        width: 85%;
-        padding: 5px;
-    } */
     .over a, .delete{
         width: 100%;
         padding: 5px;

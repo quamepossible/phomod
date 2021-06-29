@@ -240,7 +240,6 @@ require_once 'myauto.php';
                         <div class="span-1-of-3">
 
                             <?php if($getPicMet->rowCount() != 0):?>
-
                                 <?php while($row = $getPicMet->fetch()): ?>                                          
                                     <?php if(empty($row['IMG_SRC'])):?>
                                         <?php $src = 'profilepic/avatar.jpg'?>
@@ -277,8 +276,12 @@ require_once 'myauto.php';
                             </div>
 
                             <div class="rate">
-                                <p><span class="ratee"><?php echo $getViewObj->getStar($getFP['USERNAME']) ?></span>
-                                    <?php $lanStar = $getViewObj->getStar($getFP['USERNAME']);?>
+                                <?php $lanStar = $getViewObj->getStar($getFP['USERNAME']);?>
+                                <?php if($lanStar == 'NA'):?>
+                                    <p><span class="ratee"><?php echo $lanStar?></span>
+                                <?php else:?>
+                                    <p><span class="ratee"><?php echo number_format($lanStar, 1, '.', '')?></span>
+                                <?php endif?>
                                     <?php include 'dash/star.php'?>
                                     &nbsp;&nbsp;
                                     <?php echo $getViewObj->getTotRat($getFP['USERNAME']) . ' reviews';?>
@@ -323,7 +326,6 @@ require_once 'myauto.php';
 
                 <?php if($getFeatData->rowCount() > 0): ?>
                     <?php foreach($getFeatMod as $getFM):?>
-
                         <?php
                             $pic = $getFM['USERNAME'];
                             //GET PROFILE PIC AND COVER PIC
@@ -365,9 +367,13 @@ require_once 'myauto.php';
                             </div>
 
                             <div class="rate">
-                                <p><span class="ratee"><?php echo $getViewObj->getStar($getFM['USERNAME']) ?></span>
-                                    <?php $lanStar = $getViewObj->getStar($getFM['USERNAME']);?>
-                                    <?php include 'dash/star.php'?>
+                                <?php $lanStar = $getViewObj->getStar($getFM['USERNAME']);?>
+                                <?php if($lanStar == 'NA'):?>
+                                    <p><span class="ratee"><?php echo $lanStar?></span>
+                                <?php else:?>
+                                    <p><span class="ratee"><?php echo number_format($lanStar, 1, '.', '')?></span>
+                                <?php endif?>
+                                <?php include 'dash/star.php'?>
                                     &nbsp;&nbsp;
                                     <?php echo $getViewObj->getTotRat($getFM['USERNAME']) . ' reviews';?>
                                 </p>

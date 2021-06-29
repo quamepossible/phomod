@@ -63,8 +63,4 @@ if(isset($_POST['clientid'])){
 else{
     echo "not set";
 }
-
-// echo $_POST['email'];
-
-
 ?>

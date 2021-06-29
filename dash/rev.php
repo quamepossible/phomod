@@ -6,7 +6,7 @@
     $lanStar = $weObj->getStar($user);
 ?>
 
-<span class="ratee"><?php echo $lanStar?></span>
+<span class="ratee"><?php echo number_format($lanStar, 1, '.', '')?></span>
 <?php include 'star.php'?>
 &nbsp;&nbsp;
 <?php echo $getRev?> reviews

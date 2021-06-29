@@ -179,7 +179,11 @@
                         <?php endif?>
                     </div>  
                     <div class="rate">
-                        <p class="fet-rev"><span class="ratee"><?php echo $lanStar?></span>
+                        <?php if($lanStar == 'NA'):?>
+                            <p class="fet-rev"><span class="ratee"><?php echo $lanStar?></span>
+                        <?php else:?>
+                            <p class="fet-rev"><span class="ratee"><?php echo number_format($lanStar, 1, '.', '')?></span>
+                        <?php endif?>
                             <?php include 'dash/star.php'?>
                             &nbsp;&nbsp;
                             <?php echo $gehRevv?> reviews
